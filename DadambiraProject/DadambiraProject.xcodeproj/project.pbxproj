@@ -60,6 +60,8 @@
 		495B9D02249F5064009C5317 /* DadambiraProject */ = {
 			isa = PBXGroup;
 			children = (
+				495B9D03249F5064009C5317 /* AppDelegate.swift */,
+				495B9D05249F5064009C5317 /* SceneDelegate.swift */,
 				495B9D11249F5066009C5317 /* Info.plist */,
 				495B9D3E249F6A95009C5317 /* supporting Files */,
 				495B9D3D249F6A04009C5317 /* jwlee07 */,
@@ -79,8 +81,6 @@
 		495B9D3E249F6A95009C5317 /* supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				495B9D03249F5064009C5317 /* AppDelegate.swift */,
-				495B9D05249F5064009C5317 /* SceneDelegate.swift */,
 				495B9D07249F5064009C5317 /* ViewController.swift */,
 				495B9D0E249F5066009C5317 /* LaunchScreen.storyboard */,
 				495B9D09249F5064009C5317 /* Main.storyboard */,
