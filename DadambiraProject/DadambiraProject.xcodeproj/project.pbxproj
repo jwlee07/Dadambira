@@ -56,13 +56,13 @@
 		495B9D02249F5064009C5317 /* DadambiraProject */ = {
 			isa = PBXGroup;
 			children = (
+				495B9D09249F5064009C5317 /* Main.storyboard */,
 				495B9D03249F5064009C5317 /* AppDelegate.swift */,
+				495B9D11249F5066009C5317 /* Info.plist */,
+				495B9D0E249F5066009C5317 /* LaunchScreen.storyboard */,
 				495B9D05249F5064009C5317 /* SceneDelegate.swift */,
 				495B9D07249F5064009C5317 /* ViewController.swift */,
-				495B9D09249F5064009C5317 /* Main.storyboard */,
 				495B9D0C249F5066009C5317 /* Assets.xcassets */,
-				495B9D0E249F5066009C5317 /* LaunchScreen.storyboard */,
-				495B9D11249F5066009C5317 /* Info.plist */,
 			);
 			path = DadambiraProject;
 			sourceTree = "<group>";
