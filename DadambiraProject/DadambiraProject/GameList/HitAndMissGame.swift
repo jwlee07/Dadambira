@@ -31,7 +31,7 @@ class HitAndMissGameViewController: UIViewController {
     let button = UIButton()
     button.setTitle("지정하기", for: .normal)
     button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-    button.layer.cornerRadius = 30
+    button.layer.cornerRadius = 15
     button.clipsToBounds = true
     button.setTitleColor(.white, for: .normal)
     button.backgroundColor = UIColor(red: 120/255, green: 110/255, blue: 200/255, alpha: 0.4)
@@ -148,7 +148,7 @@ class HitAndMissGameViewController: UIViewController {
           finalCompleteAlert.addAction(finalCompleteOk)
           present(finalCompleteAlert, animated: true)
         } else {
-          let finalFailAlert = UIAlertController(title: "틀렸어요!", message: "한번 더 해보세용!", preferredStyle: .alert)
+          let finalFailAlert = UIAlertController(title: "틀렸어요 !", message: "\(firstCheckIndexItenArr[0] + 1)번이었어요 ㅠ", preferredStyle: .alert)
           let finalFailOk = UIAlertAction (title: "넵 ㅠ", style: .default) {_ in
             firstCheckIndexItenArr.removeAll()
             secondCheckIndexItenArr.removeAll()
@@ -162,7 +162,7 @@ class HitAndMissGameViewController: UIViewController {
         }
       } else {
         let secondSelectNoAlert = UIAlertController (title: "잠깐만!", message: "카드를 선택해주세요^^", preferredStyle: .alert)
-        let secondSelectNoAlertAction = UIAlertAction (title: "넵~", style: .default)
+        let secondSelectNoAlertAction = UIAlertAction (title: "넵 ~", style: .default)
         secondSelectNoAlert.addAction(secondSelectNoAlertAction)
         present(secondSelectNoAlert, animated: true)
       }
