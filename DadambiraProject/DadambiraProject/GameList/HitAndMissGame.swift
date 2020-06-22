@@ -31,7 +31,7 @@ class HitAndMissGameViewController: UIViewController {
     let button = UIButton()
     button.setTitle("지정하기", for: .normal)
     button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-    button.layer.cornerRadius = 30
+    button.layer.cornerRadius = 15
     button.clipsToBounds = true
     button.setTitleColor(.white, for: .normal)
     button.backgroundColor = UIColor(red: 120/255, green: 110/255, blue: 200/255, alpha: 0.4)
@@ -50,7 +50,15 @@ class HitAndMissGameViewController: UIViewController {
     setupLabel()
     setupButton()
     setupNavigationBar()
-    
+  }
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(true)
+    UIView.animate(withDuration: 0.5) {
+      self.completeButton.center.x = -self.hitAndMissCollectionView.frame.width
+    }
+    UIView.animate(withDuration: 0.5, delay: 0.4, animations: {
+      self.infoLabel.center.x = -self.hitAndMissCollectionView.frame.width
+    })
   }
   
   // MARK: - Setup Layout
@@ -107,7 +115,7 @@ class HitAndMissGameViewController: UIViewController {
   @objc private func didTapSetUpButton(_ sender: UIButton) {
     if toggle {
       if firstCheckIndexItenArr.count > 0 {
-        let selectOkAlert = UIAlertController (title: "확인할께요 ~", message: "\(firstCheckIndexItenArr[0] + 1)번 선택할꺼에요 ?" , preferredStyle: .alert)
+        let selectOkAlert = UIAlertController (title: "마지막 확인 !", message: "\(firstCheckIndexItenArr[0] + 1)번 선택할까요 ?" , preferredStyle: .alert)
         let selectOkAlertAction = UIAlertAction (title: "넵 !", style: .default) {_ in
           self.infoLabel.text = "맞춰봐요 !"
           self.completeButton.setTitle("최종선택", for: .normal)
@@ -140,7 +148,7 @@ class HitAndMissGameViewController: UIViewController {
           finalCompleteAlert.addAction(finalCompleteOk)
           present(finalCompleteAlert, animated: true)
         } else {
-          let finalFailAlert = UIAlertController(title: "틀렸어요!", message: "한번 더 해보세용!", preferredStyle: .alert)
+          let finalFailAlert = UIAlertController(title: "틀렸어요 !", message: "\(firstCheckIndexItenArr[0] + 1)번이었어요 ㅠ", preferredStyle: .alert)
           let finalFailOk = UIAlertAction (title: "넵 ㅠ", style: .default) {_ in
             firstCheckIndexItenArr.removeAll()
             secondCheckIndexItenArr.removeAll()
@@ -154,7 +162,7 @@ class HitAndMissGameViewController: UIViewController {
         }
       } else {
         let secondSelectNoAlert = UIAlertController (title: "잠깐만!", message: "카드를 선택해주세요^^", preferredStyle: .alert)
-        let secondSelectNoAlertAction = UIAlertAction (title: "넵~", style: .default)
+        let secondSelectNoAlertAction = UIAlertAction (title: "넵 ~", style: .default)
         secondSelectNoAlert.addAction(secondSelectNoAlertAction)
         present(secondSelectNoAlert, animated: true)
       }
