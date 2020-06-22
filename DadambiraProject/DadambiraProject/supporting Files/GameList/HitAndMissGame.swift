@@ -9,8 +9,8 @@
 import UIKit
 
 class HitAndMissGameViewController: UIViewController {
+  
   override func viewDidLoad() {
-    super.viewDidLoad()
     
   }
 }
