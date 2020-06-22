@@ -15,6 +15,9 @@
 		495B9D10249F5066009C5317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495B9D0E249F5066009C5317 /* LaunchScreen.storyboard */; };
 		495B9D39249F68F7009C5317 /* TelepathyGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D38249F68F7009C5317 /* TelepathyGame.swift */; };
 		495B9D3B249F6969009C5317 /* HitAndMissGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D3A249F6969009C5317 /* HitAndMissGame.swift */; };
+		D322875B249FB10F00825706 /* TimeBombViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D322875A249FB10F00825706 /* TimeBombViewController.swift */; };
+		D322875D249FB21300825706 /* PickerTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D322875C249FB21300825706 /* PickerTimeView.swift */; };
+		D322875F249FB54E00825706 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D322875E249FB54E00825706 /* PickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		495B9D11249F5066009C5317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		495B9D38249F68F7009C5317 /* TelepathyGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyGame.swift; sourceTree = "<group>"; };
 		495B9D3A249F6969009C5317 /* HitAndMissGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitAndMissGame.swift; sourceTree = "<group>"; };
+		D322875A249FB10F00825706 /* TimeBombViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBombViewController.swift; sourceTree = "<group>"; };
+		D322875C249FB21300825706 /* PickerTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTimeView.swift; sourceTree = "<group>"; };
+		D322875E249FB54E00825706 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 				495B9D11249F5066009C5317 /* Info.plist */,
 				495B9D3E249F6A95009C5317 /* supporting Files */,
 				495B9D3D249F6A04009C5317 /* jwlee07 */,
+				D3228759249FB0F000825706 /* ejdgudl */,
 			);
 			path = DadambiraProject;
 			sourceTree = "<group>";
@@ -87,6 +94,16 @@
 				495B9D0C249F5066009C5317 /* Assets.xcassets */,
 			);
 			path = "supporting Files";
+			sourceTree = "<group>";
+		};
+		D3228759249FB0F000825706 /* ejdgudl */ = {
+			isa = PBXGroup;
+			children = (
+				D322875E249FB54E00825706 /* PickerView.swift */,
+				D322875C249FB21300825706 /* PickerTimeView.swift */,
+				D322875A249FB10F00825706 /* TimeBombViewController.swift */,
+			);
+			path = ejdgudl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,9 +178,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				495B9D39249F68F7009C5317 /* TelepathyGame.swift in Sources */,
+				D322875B249FB10F00825706 /* TimeBombViewController.swift in Sources */,
 				495B9D08249F5064009C5317 /* ViewController.swift in Sources */,
 				495B9D04249F5064009C5317 /* AppDelegate.swift in Sources */,
+				D322875F249FB54E00825706 /* PickerView.swift in Sources */,
 				495B9D06249F5064009C5317 /* SceneDelegate.swift in Sources */,
+				D322875D249FB21300825706 /* PickerTimeView.swift in Sources */,
 				495B9D3B249F6969009C5317 /* HitAndMissGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
