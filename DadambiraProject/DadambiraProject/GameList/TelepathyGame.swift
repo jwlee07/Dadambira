@@ -10,4 +10,8 @@ import UIKit
 
 class TelepathyGameViewController: UIViewController {
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+  }
 }
