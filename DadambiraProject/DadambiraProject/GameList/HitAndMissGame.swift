@@ -43,6 +43,7 @@ class HitAndMissGameViewController: UIViewController {
   // MARK: - LifeCycle
   
   override func viewDidLoad() {
+    title = "HitAndMiss"
     super .viewDidLoad()
     setupCollectionView()
     setupLabel()
@@ -107,7 +108,7 @@ class HitAndMissGameViewController: UIViewController {
       if firstCheckIndexItenArr.count > 0 {
         let selectOkAlert = UIAlertController (title: "확인할께요 ~", message: "\(firstCheckIndexItenArr[0] + 1)번 선택할꺼에요 ?" , preferredStyle: .alert)
         let selectOkAlertAction = UIAlertAction (title: "넵!", style: .default) {_ in
-          self.infoLabel.text = "아자아자 !"
+          self.infoLabel.text = "맞춰봐요 !"
           self.completeButton.setTitle("최종선택", for: .normal)
           self.hitAndMissCollectionView.reloadData()
           self.toggle = !self.toggle
@@ -150,6 +151,11 @@ class HitAndMissGameViewController: UIViewController {
           finalFailAlert.addAction(finalFailOk)
           present(finalFailAlert, animated: true)
         }
+      } else {
+        let secondSelectNoAlert = UIAlertController (title: "잠깐만!", message: "카드를 선택해주세요^^", preferredStyle: .alert)
+        let secondSelectNoAlertAction = UIAlertAction (title: "넵~", style: .default)
+        secondSelectNoAlert.addAction(secondSelectNoAlertAction)
+        present(secondSelectNoAlert, animated: true)
       }
     }
   }
