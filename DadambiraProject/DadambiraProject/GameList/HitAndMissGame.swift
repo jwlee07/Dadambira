@@ -50,7 +50,15 @@ class HitAndMissGameViewController: UIViewController {
     setupLabel()
     setupButton()
     setupNavigationBar()
-    
+  }
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(true)
+    UIView.animate(withDuration: 0.5) {
+      self.completeButton.center.x = -self.hitAndMissCollectionView.frame.width
+    }
+    UIView.animate(withDuration: 0.5, delay: 0.4, animations: {
+      self.infoLabel.center.x = -self.hitAndMissCollectionView.frame.width
+    })
   }
   
   // MARK: - Setup Layout
@@ -107,7 +115,7 @@ class HitAndMissGameViewController: UIViewController {
   @objc private func didTapSetUpButton(_ sender: UIButton) {
     if toggle {
       if firstCheckIndexItenArr.count > 0 {
-        let selectOkAlert = UIAlertController (title: "확인할께요 ~", message: "\(firstCheckIndexItenArr[0] + 1)번 선택할꺼에요 ?" , preferredStyle: .alert)
+        let selectOkAlert = UIAlertController (title: "마지막 확인 !", message: "\(firstCheckIndexItenArr[0] + 1)번 선택할까요 ?" , preferredStyle: .alert)
         let selectOkAlertAction = UIAlertAction (title: "넵 !", style: .default) {_ in
           self.infoLabel.text = "맞춰봐요 !"
           self.completeButton.setTitle("최종선택", for: .normal)

@@ -37,7 +37,7 @@ class CustomCell: UICollectionViewCell {
     clipsToBounds = true
     
     NSLayoutConstraint.activate([
-      custimMiniImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: -contentView.frame.width / 1.3),
+      custimMiniImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: -contentView.frame.width / 1.4),
       custimMiniImageView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: contentView.frame.width / 1.5),
       custimMiniImageView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor),
       custimMiniImageView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor)
