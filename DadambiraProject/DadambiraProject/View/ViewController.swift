@@ -1,5 +1,5 @@
 //
-//  HitAndMissGame.swift
+//  ViewController.swift
 //  DadambiraProject
 //
 //  Created by 이진욱 on 2020/06/21.
@@ -8,6 +8,10 @@
 
 import UIKit
 
-class HitAndMissGameViewController: UIViewController {
-  
+class ViewController: UIViewController {
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
 }
+

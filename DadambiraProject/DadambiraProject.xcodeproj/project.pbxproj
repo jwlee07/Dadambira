@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492822DF24A097EF00D3ACB0 /* jwleeDATA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492822DE24A097EF00D3ACB0 /* jwleeDATA.swift */; };
+		492822E324A0A04000D3ACB0 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492822E224A0A04000D3ACB0 /* CustomCell.swift */; };
 		495B9D04249F5064009C5317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D03249F5064009C5317 /* AppDelegate.swift */; };
 		495B9D06249F5064009C5317 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D05249F5064009C5317 /* SceneDelegate.swift */; };
 		495B9D08249F5064009C5317 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D07249F5064009C5317 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		492822DE24A097EF00D3ACB0 /* jwleeDATA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jwleeDATA.swift; sourceTree = "<group>"; };
+		492822E224A0A04000D3ACB0 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		495B9D00249F5064009C5317 /* DadambiraProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DadambiraProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		495B9D03249F5064009C5317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		495B9D05249F5064009C5317 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,33 +64,43 @@
 		495B9D02249F5064009C5317 /* DadambiraProject */ = {
 			isa = PBXGroup;
 			children = (
+				495B9D03249F5064009C5317 /* AppDelegate.swift */,
+				495B9D05249F5064009C5317 /* SceneDelegate.swift */,
 				495B9D11249F5066009C5317 /* Info.plist */,
+				495B9D4124A040F4009C5317 /* GameList */,
+				49ACBA9524A04AB7004C2D88 /* View */,
 				495B9D3E249F6A95009C5317 /* supporting Files */,
-				495B9D3D249F6A04009C5317 /* jwlee07 */,
 			);
 			path = DadambiraProject;
-			sourceTree = "<group>";
-		};
-		495B9D3D249F6A04009C5317 /* jwlee07 */ = {
-			isa = PBXGroup;
-			children = (
-				495B9D3A249F6969009C5317 /* HitAndMissGame.swift */,
-				495B9D38249F68F7009C5317 /* TelepathyGame.swift */,
-			);
-			path = jwlee07;
 			sourceTree = "<group>";
 		};
 		495B9D3E249F6A95009C5317 /* supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				495B9D03249F5064009C5317 /* AppDelegate.swift */,
-				495B9D05249F5064009C5317 /* SceneDelegate.swift */,
-				495B9D07249F5064009C5317 /* ViewController.swift */,
 				495B9D0E249F5066009C5317 /* LaunchScreen.storyboard */,
 				495B9D09249F5064009C5317 /* Main.storyboard */,
 				495B9D0C249F5066009C5317 /* Assets.xcassets */,
 			);
 			path = "supporting Files";
+			sourceTree = "<group>";
+		};
+		495B9D4124A040F4009C5317 /* GameList */ = {
+			isa = PBXGroup;
+			children = (
+				495B9D3A249F6969009C5317 /* HitAndMissGame.swift */,
+				495B9D38249F68F7009C5317 /* TelepathyGame.swift */,
+				492822E224A0A04000D3ACB0 /* CustomCell.swift */,
+				492822DE24A097EF00D3ACB0 /* jwleeDATA.swift */,
+			);
+			path = GameList;
+			sourceTree = "<group>";
+		};
+		49ACBA9524A04AB7004C2D88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				495B9D07249F5064009C5317 /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +177,9 @@
 				495B9D39249F68F7009C5317 /* TelepathyGame.swift in Sources */,
 				495B9D08249F5064009C5317 /* ViewController.swift in Sources */,
 				495B9D04249F5064009C5317 /* AppDelegate.swift in Sources */,
+				492822DF24A097EF00D3ACB0 /* jwleeDATA.swift in Sources */,
 				495B9D06249F5064009C5317 /* SceneDelegate.swift in Sources */,
+				492822E324A0A04000D3ACB0 /* CustomCell.swift in Sources */,
 				495B9D3B249F6969009C5317 /* HitAndMissGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
