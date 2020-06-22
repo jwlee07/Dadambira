@@ -11,6 +11,7 @@ import UIKit
 class CustomCell: UICollectionViewCell {
   
   let customImageView = UIImageView()
+  let custimMiniImageView = UIImageView()
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -21,15 +22,27 @@ class CustomCell: UICollectionViewCell {
     setupImageView()
   }
   private func setupImageView() {
-    contentView.addSubview(customImageView)
-    customImageView.translatesAutoresizingMaskIntoConstraints = false
+    let imageViewArr: [UIImageView] = [customImageView, custimMiniImageView]
+    for indexImageView in imageViewArr {
+      contentView.addSubview(indexImageView)
+      indexImageView.translatesAutoresizingMaskIntoConstraints = false
+    }
     NSLayoutConstraint.activate([
-      customImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-      customImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-      customImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-      customImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+      customImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
+      customImageView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor),
+      customImageView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor),
+      customImageView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor)
     ])
     customImageView.contentMode = .scaleAspectFit
+    clipsToBounds = true
+    
+    NSLayoutConstraint.activate([
+      custimMiniImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: -contentView.frame.width / 1.3),
+      custimMiniImageView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: contentView.frame.width / 1.5),
+      custimMiniImageView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor),
+      custimMiniImageView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor)
+    ])
+    custimMiniImageView.contentMode = .scaleAspectFit
     clipsToBounds = true
   }
 }
