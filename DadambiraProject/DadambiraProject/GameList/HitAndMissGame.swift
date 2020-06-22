@@ -13,6 +13,7 @@ class HitAndMissGameViewController: UIViewController {
   // MARK: - ProPerty
   
   let numberImage = cardNumberImage
+  let checkImage = cardCheckImage
   let hitAndMissLayout = UICollectionViewFlowLayout()
   lazy var hitAndMissCollectionView = UICollectionView(frame: view.frame, collectionViewLayout: hitAndMissLayout)
   
@@ -33,7 +34,7 @@ class HitAndMissGameViewController: UIViewController {
     button.layer.cornerRadius = 30
     button.clipsToBounds = true
     button.setTitleColor(.white, for: .normal)
-    button.backgroundColor = UIColor(red: 66/255, green: 72/255, blue: 116/255, alpha: 0.4)
+    button.backgroundColor = UIColor(red: 120/255, green: 110/255, blue: 200/255, alpha: 0.4)
     button.addTarget(self, action: #selector(didTapSetUpButton), for: .touchUpInside)
     return button
   }()
@@ -43,8 +44,8 @@ class HitAndMissGameViewController: UIViewController {
   // MARK: - LifeCycle
   
   override func viewDidLoad() {
-    title = "HitAndMiss"
     super .viewDidLoad()
+    title = "HitAndMiss"
     setupCollectionView()
     setupLabel()
     setupButton()
@@ -107,7 +108,7 @@ class HitAndMissGameViewController: UIViewController {
     if toggle {
       if firstCheckIndexItenArr.count > 0 {
         let selectOkAlert = UIAlertController (title: "확인할께요 ~", message: "\(firstCheckIndexItenArr[0] + 1)번 선택할꺼에요 ?" , preferredStyle: .alert)
-        let selectOkAlertAction = UIAlertAction (title: "넵!", style: .default) {_ in
+        let selectOkAlertAction = UIAlertAction (title: "넵 !", style: .default) {_ in
           self.infoLabel.text = "맞춰봐요 !"
           self.completeButton.setTitle("최종선택", for: .normal)
           self.hitAndMissCollectionView.reloadData()
@@ -175,7 +176,9 @@ extension HitAndMissGameViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let hitAndImssCustomCell = hitAndMissCollectionView.dequeueReusableCell(withReuseIdentifier: "Custom", for: indexPath) as! CustomCell
     hitAndImssCustomCell.customImageView.alpha = 1
+    hitAndImssCustomCell.custimMiniImageView.alpha = 0
     hitAndImssCustomCell.customImageView.image = numberImage[indexPath.item].withTintColor(UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1), renderingMode: .alwaysOriginal)
+    hitAndImssCustomCell.custimMiniImageView.image = cardCheckImage.withTintColor(UIColor(red: 221/255, green: 182/255, blue: 198/255, alpha: 1), renderingMode: .alwaysOriginal)
     return hitAndImssCustomCell
   }
 }
@@ -184,14 +187,18 @@ extension HitAndMissGameViewController: UICollectionViewDelegate {
     if let checkDidIndexItem = hitAndMissCollectionView.cellForItem(at: indexPath) as? CustomCell {
       if toggle {
         if checkDidIndexItem.isSelected {
-          checkDidIndexItem.customImageView.alpha = 0.5
+          UIView.animate(withDuration: 0.5) {
+            checkDidIndexItem.custimMiniImageView.alpha = 1
+          }
           if !(firstCheckIndexItenArr.contains(indexPath.item)) {
             firstCheckIndexItenArr.append(indexPath.item)
           }
         }
       } else {
         if checkDidIndexItem.isSelected {
-          checkDidIndexItem.customImageView.alpha = 0.5
+          UIView.animate(withDuration: 0.5) {
+            checkDidIndexItem.custimMiniImageView.alpha = 1
+          }
           if !(secondCheckIndexItenArr.contains(indexPath.item)) {
             secondCheckIndexItenArr.append(indexPath.item)
           }
@@ -202,12 +209,16 @@ extension HitAndMissGameViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
     if let checkDidDeIndexItem = hitAndMissCollectionView.cellForItem(at: indexPath) as? CustomCell {
       if toggle {
-        checkDidDeIndexItem.customImageView.alpha = 1
+        UIView.animate(withDuration: 0.5) {
+          checkDidDeIndexItem.custimMiniImageView.alpha = 0
+        }
         if firstCheckIndexItenArr.contains(indexPath.item) {
           firstCheckIndexItenArr.remove(at: 0)
         }
       } else {
-        checkDidDeIndexItem.customImageView.alpha = 1
+        UIView.animate(withDuration: 0.5) {
+          checkDidDeIndexItem.custimMiniImageView.alpha = 0
+        }
         if secondCheckIndexItenArr.contains(indexPath.item) {
           secondCheckIndexItenArr.remove(at: 0)
         }

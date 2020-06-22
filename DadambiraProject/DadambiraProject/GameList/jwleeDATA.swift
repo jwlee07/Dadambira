@@ -14,6 +14,8 @@ let cardNumberImage: [UIImage] = [
   "3.square",
   "4.square"].compactMap(UIImage.init(systemName:))
 
+let cardCheckImage: UIImage = UIImage(systemName: "heart.fill")!
+
 var firstCheckIndexItenArr: [Int] = []
 var secondCheckIndexItenArr: [Int] = []
 
