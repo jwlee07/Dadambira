@@ -17,6 +17,9 @@
 		495B9D10249F5066009C5317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495B9D0E249F5066009C5317 /* LaunchScreen.storyboard */; };
 		495B9D39249F68F7009C5317 /* TelepathyGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D38249F68F7009C5317 /* TelepathyGame.swift */; };
 		495B9D3B249F6969009C5317 /* HitAndMissGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D3A249F6969009C5317 /* HitAndMissGame.swift */; };
+		D3488E7224A1F5AD001B44B4 /* TimeBomb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3488E7124A1F5AD001B44B4 /* TimeBomb.swift */; };
+		D3488E7424A1F5DC001B44B4 /* PickerTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3488E7324A1F5DC001B44B4 /* PickerTimeView.swift */; };
+		D3488E7624A1F5F5001B44B4 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3488E7524A1F5F5001B44B4 /* PickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,10 @@
 		495B9D11249F5066009C5317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		495B9D38249F68F7009C5317 /* TelepathyGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyGame.swift; sourceTree = "<group>"; };
 		495B9D3A249F6969009C5317 /* HitAndMissGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitAndMissGame.swift; sourceTree = "<group>"; };
+		D3488E7124A1F5AD001B44B4 /* TimeBomb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBomb.swift; sourceTree = "<group>"; };
+		D3488E7324A1F5DC001B44B4 /* PickerTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTimeView.swift; sourceTree = "<group>"; };
+		D3488E7524A1F5F5001B44B4 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		D3488E7A24A1F629001B44B4 /* 파돌리기송.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "파돌리기송.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +75,8 @@
 				495B9D05249F5064009C5317 /* SceneDelegate.swift */,
 				495B9D11249F5066009C5317 /* Info.plist */,
 				495B9D4124A040F4009C5317 /* GameList */,
+				D3488E7024A1F577001B44B4 /* GameList2 */,
+				D3488E7924A1F618001B44B4 /* MP3File */,
 				49ACBA9524A04AB7004C2D88 /* View */,
 				495B9D3E249F6A95009C5317 /* supporting Files */,
 			);
@@ -101,6 +110,24 @@
 				495B9D07249F5064009C5317 /* ViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D3488E7024A1F577001B44B4 /* GameList2 */ = {
+			isa = PBXGroup;
+			children = (
+				D3488E7124A1F5AD001B44B4 /* TimeBomb.swift */,
+				D3488E7324A1F5DC001B44B4 /* PickerTimeView.swift */,
+				D3488E7524A1F5F5001B44B4 /* PickerView.swift */,
+			);
+			path = GameList2;
+			sourceTree = "<group>";
+		};
+		D3488E7924A1F618001B44B4 /* MP3File */ = {
+			isa = PBXGroup;
+			children = (
+				D3488E7A24A1F629001B44B4 /* 파돌리기송.mp3 */,
+			);
+			path = MP3File;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,12 +201,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3488E7224A1F5AD001B44B4 /* TimeBomb.swift in Sources */,
 				495B9D39249F68F7009C5317 /* TelepathyGame.swift in Sources */,
 				495B9D08249F5064009C5317 /* ViewController.swift in Sources */,
 				495B9D04249F5064009C5317 /* AppDelegate.swift in Sources */,
+				D3488E7424A1F5DC001B44B4 /* PickerTimeView.swift in Sources */,
 				492822DF24A097EF00D3ACB0 /* jwleeDATA.swift in Sources */,
 				495B9D06249F5064009C5317 /* SceneDelegate.swift in Sources */,
 				492822E324A0A04000D3ACB0 /* CustomCell.swift in Sources */,
+				D3488E7624A1F5F5001B44B4 /* PickerView.swift in Sources */,
 				495B9D3B249F6969009C5317 /* HitAndMissGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
