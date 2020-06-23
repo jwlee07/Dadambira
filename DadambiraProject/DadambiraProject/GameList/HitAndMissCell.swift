@@ -1,5 +1,5 @@
 //
-//  CustomCell.swift
+//  HitAndMissCell.swift
 //  DadambiraProject
 //
 //  Created by 이진욱 on 2020/06/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomCell: UICollectionViewCell {
+class HitAndMissCell: UICollectionViewCell {
   
   let customImageView = UIImageView()
   let custimMiniImageView = UIImageView()
