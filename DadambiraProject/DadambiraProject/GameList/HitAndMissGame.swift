@@ -45,7 +45,7 @@ class HitAndMissGameViewController: UIViewController {
   
   override func viewDidLoad() {
     super .viewDidLoad()
-    title = "HitAndMiss"
+    title = "날 맞춰봐잉"
     setupCollectionView()
     setupLabel()
     setupButton()
