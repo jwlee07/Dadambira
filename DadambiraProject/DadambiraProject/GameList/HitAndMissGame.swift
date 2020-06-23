@@ -23,7 +23,7 @@ class HitAndMissGameViewController: UIViewController {
     let label = UILabel()
     label.text = "신중한 선택 !"
     label.font = UIFont.boldSystemFont(ofSize: 50)
-    label.textColor = UIColor(red: 221/255, green: 182/255, blue: 198/255, alpha: 1)
+    label.textColor = UIColor(red: 2621/255, green: 182/255, blue: 198/255, alpha: 1)
     return label
   }()
   
@@ -77,7 +77,7 @@ class HitAndMissGameViewController: UIViewController {
     hitAndMissCollectionView.delegate = self
     hitAndMissCollectionView.dataSource = self
     hitAndMissCollectionView.backgroundColor = UIColor(red: 244/255, green: 238/255, blue: 255/255, alpha: 1)
-    hitAndMissCollectionView.register(CustomCell.self, forCellWithReuseIdentifier: "Custom")
+    hitAndMissCollectionView.register(HitAndMissCell.self, forCellWithReuseIdentifier: "Custom")
   }
   
   func setupLabel() {
@@ -182,17 +182,17 @@ extension HitAndMissGameViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let hitAndImssCustomCell = hitAndMissCollectionView.dequeueReusableCell(withReuseIdentifier: "Custom", for: indexPath) as! CustomCell
-    hitAndImssCustomCell.customImageView.alpha = 1
-    hitAndImssCustomCell.custimMiniImageView.alpha = 0
-    hitAndImssCustomCell.customImageView.image = numberImage[indexPath.item].withTintColor(UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1), renderingMode: .alwaysOriginal)
-    hitAndImssCustomCell.custimMiniImageView.image = cardCheckImage.withTintColor(UIColor(red: 221/255, green: 182/255, blue: 198/255, alpha: 1), renderingMode: .alwaysOriginal)
-    return hitAndImssCustomCell
+    let hitAndImssHitAndMissCell = hitAndMissCollectionView.dequeueReusableCell(withReuseIdentifier: "Custom", for: indexPath) as! HitAndMissCell
+    hitAndImssHitAndMissCell.customImageView.alpha = 1
+    hitAndImssHitAndMissCell.custimMiniImageView.alpha = 0
+    hitAndImssHitAndMissCell.customImageView.image = numberImage[indexPath.item].withTintColor(UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1), renderingMode: .alwaysOriginal)
+    hitAndImssHitAndMissCell.custimMiniImageView.image = cardCheckImage.withTintColor(UIColor(red: 221/255, green: 182/255, blue: 198/255, alpha: 1), renderingMode: .alwaysOriginal)
+    return hitAndImssHitAndMissCell
   }
 }
 extension HitAndMissGameViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    if let checkDidIndexItem = hitAndMissCollectionView.cellForItem(at: indexPath) as? CustomCell {
+    if let checkDidIndexItem = hitAndMissCollectionView.cellForItem(at: indexPath) as? HitAndMissCell {
       if toggle {
         if checkDidIndexItem.isSelected {
           UIView.animate(withDuration: 0.5) {
@@ -215,7 +215,7 @@ extension HitAndMissGameViewController: UICollectionViewDelegate {
     }
   }
   func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-    if let checkDidDeIndexItem = hitAndMissCollectionView.cellForItem(at: indexPath) as? CustomCell {
+    if let checkDidDeIndexItem = hitAndMissCollectionView.cellForItem(at: indexPath) as? HitAndMissCell {
       if toggle {
         UIView.animate(withDuration: 0.5) {
           checkDidDeIndexItem.custimMiniImageView.alpha = 0

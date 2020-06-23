@@ -19,3 +19,7 @@ let cardCheckImage: UIImage = UIImage(systemName: "heart.fill")!
 var firstCheckIndexItenArr: [Int] = []
 var secondCheckIndexItenArr: [Int] = []
 
+var checkPersonNumberString: String = ""
+var checkPersonNumberInt: Int = Int(checkPersonNumberString)!
+
+

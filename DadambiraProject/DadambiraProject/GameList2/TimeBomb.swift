@@ -132,7 +132,7 @@ class TimeBombViewController: UIViewController {
     private func configureViewComponents() {
         view.addSubview(myLabel)
         
-        view.backgroundColor = UIColor(rgb: 0x484c7f)
+//        view.backgroundColor = UIColor(rgb: 0x484c7f)
         
         view.addSubview(choiceTime)
         choiceTime.translatesAutoresizingMaskIntoConstraints = false

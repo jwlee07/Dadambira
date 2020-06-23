@@ -45,7 +45,7 @@ class PickerTimeView: UIView {
     
     // MARK: Configure View Components
     private func configureViewComponents() {
-        backgroundColor = UIColor(rgb: 0x484c7f)
+//        backgroundColor = UIColor(rgb: 0x484c7f)
         transform = CGAffineTransform.identity
         
         addSubview(nextButton)
