@@ -23,13 +23,14 @@ class TelepathyInfoGameViewController: UIViewController {
   
   let personNumberTextfield: UITextField = {
     let textfield = UITextField()
-    textfield.placeholder = "5명까지 가능해요."
+    textfield.placeholder = "4명까지 가능해요."
     textfield.font = UIFont.boldSystemFont(ofSize: 25)
     textfield.layer.cornerRadius = 30
     textfield.textAlignment = .center
     textfield.clipsToBounds = true
+    textfield.textColor = UIColor(red: 66/255, green: 72/255, blue: 116/255, alpha: 1.0)
     textfield.borderStyle = .roundedRect
-    textfield.keyboardType = .asciiCapableNumberPad
+    textfield.keyboardType = .numberPad
     return textfield
   }()
   
@@ -133,13 +134,14 @@ class TelepathyInfoGameViewController: UIViewController {
   }
   
   @objc func didTapInfoButton(_ sender: UIButton) {
+    print ("checkPersonNumberString : ", checkPersonNumberString)
     if checkPersonNumberString != "" {
-      if Int(checkPersonNumberString)! < 6 {
+      if Int(checkPersonNumberString)! < 5 {
         let telepathyGameVC = TelepathyGameViewController()
         telepathyGameVC.view.backgroundColor = .systemBackground
         navigationController?.pushViewController(telepathyGameVC, animated: true)
       } else {
-        let numberCheckCountError = UIAlertController (title: "잠깐만요 !", message: "5명 이하로 입력해주세용", preferredStyle: .alert)
+        let numberCheckCountError = UIAlertController (title: "잠깐만요 !", message: "4명 이하로 입력해주세용", preferredStyle: .alert)
         let numberCheckCountEorroOk = UIAlertAction (title: "넵 !", style: .default)
         numberCheckCountError.addAction(numberCheckCountEorroOk)
         present(numberCheckCountError, animated: true)

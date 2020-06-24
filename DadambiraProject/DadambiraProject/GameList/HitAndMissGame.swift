@@ -23,7 +23,7 @@ class HitAndMissGameViewController: UIViewController {
     let label = UILabel()
     label.text = "신중한 선택 !"
     label.font = UIFont.boldSystemFont(ofSize: 50)
-    label.textColor = UIColor(red: 2621/255, green: 182/255, blue: 198/255, alpha: 1)
+    label.textColor = UIColor(red: 215/255, green: 184/255, blue: 236/255, alpha: 1)
     return label
   }()
   
@@ -45,7 +45,7 @@ class HitAndMissGameViewController: UIViewController {
   
   override func viewDidLoad() {
     super .viewDidLoad()
-    title = "날 맞춰봐잉"
+    title = "텔레파시"
     setupCollectionView()
     setupLabel()
     setupButton()

@@ -19,7 +19,11 @@ class TelepathyGameViewController: UIViewController {
     return tableView
   }()
   
+  let test = UIView()
+  
   let marge: CGFloat = 50
+  
+  var toggle = false
   
   
   // MARK: - LifeCycle
@@ -30,6 +34,7 @@ class TelepathyGameViewController: UIViewController {
     setupNavigationBar()
     
   }
+  
   // MARK: - setup Layout
   func setupTableView() {
     view.addSubview(telepathyTableView)
@@ -47,28 +52,41 @@ class TelepathyGameViewController: UIViewController {
   }
   func setupNavigationBar() {
     let leftDismissButton = UIBarButtonItem (image: UIImage(systemName: "arrowshape.turn.up.left.fill"), style: .plain, target: self, action: #selector(didTapDismissButton))
+    let rightCompleteButton = UIBarButtonItem (image: UIImage(systemName: "checkmark"), style: .plain, target: self, action: #selector(didTapCompleteButton))
+    
+    rightCompleteButton.tintColor = UIColor(red: 66/255, green: 72/255, blue: 166/255, alpha: 1.0)
     leftDismissButton.tintColor = UIColor(red: 66/255, green: 72/255, blue: 166/255, alpha: 1.0)
     
     title = "제비뽑기"
     navigationItem.leftBarButtonItem = leftDismissButton
+    navigationItem.rightBarButtonItem = rightCompleteButton
+    
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     navigationController?.navigationBar.shadowImage = UIImage()
     navigationController?.navigationBar.backgroundColor = UIColor()
   }
   @objc func didTapDismissButton() {
     navigationController?.popViewController(animated: true)
-    telepathyTableView.reloadData()
+    self.telepathyTableView.reloadData()
   }
+  
+  @objc func didTapCompleteButton() {
+    
+    
+  }
+  
 }
 extension TelepathyGameViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return checkPersonNumberInt
+    return Int(checkPersonNumberString)!
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let telepathyCell = telepathyTableView.dequeueReusableCell(withIdentifier: "TelepathyCustom", for: indexPath) as! TelepathyCell
     telepathyCell.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1)
-    telepathyCell.imageView?.image = telepathyCell.telepathCellImage[indexPath.row]
+    telepathyCell.imageView?.image = telepathCellImage[indexPath.row].withTintColor(UIColor(red: 66/255, green: 72/255, blue: 116/255, alpha: 1.0), renderingMode: .alwaysOriginal)
+    telepathyCell.telepathCellTextfield.alpha = 1
+    
     return telepathyCell
   }
 }

@@ -10,31 +10,26 @@ import UIKit
 
 class TelepathyCell: UITableViewCell {
   
-  let telepathCellImage: [UIImage] = ["1.circle", "2.circle", "3.circle" ,"4.circle" ,"5.circle"].compactMap(UIImage.init(systemName:))
+  // MARK: - ProPerty
   
   let telepathCellTextfield: UITextField = {
     let textfield = UITextField()
-    textfield.font = UIFont.boldSystemFont(ofSize: 10)
-    textfield.layer.cornerRadius = 5
+    textfield.backgroundColor = .systemBlue
+    textfield.placeholder = "입력"
+    textfield.font = UIFont.boldSystemFont(ofSize: 30)
+    textfield.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1)
+    textfield.textColor = UIColor(red: 66/255, green: 72/255, blue: 116/255, alpha: 1.0)
     textfield.textAlignment = .left
     textfield.clipsToBounds = true
-    textfield.borderStyle = .roundedRect
+    textfield.borderStyle = .none
     return textfield
   }()
   
-  let telepathCellButton: UIButton = {
-    let button = UIButton()
-    button.setTitle("입력완료", for: .normal)
-    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 10)
-    button.layer.cornerRadius = 5
-    button.clipsToBounds = true
-    button.setTitleColor(.white, for: .normal)
-    button.backgroundColor = UIColor(red: 66/255, green: 72/255, blue: 116/255, alpha: 1.0)
-    return button
-  }()
+  let leadingMargin: CGFloat = 75
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
+    setupContentViewLayout()
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -44,8 +39,17 @@ class TelepathyCell: UITableViewCell {
     super.layoutSubviews()
   }
   
+  // MARK: -  setup Layout
+  
   func setupContentViewLayout() {
-    
+    contentView.addSubview(telepathCellTextfield)
+    telepathCellTextfield.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      telepathCellTextfield.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
+      telepathCellTextfield.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: leadingMargin),
+      telepathCellTextfield.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor),
+      telepathCellTextfield.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor)
+    ])
   }
 }
 
