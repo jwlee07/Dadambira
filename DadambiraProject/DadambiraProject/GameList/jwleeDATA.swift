@@ -25,7 +25,9 @@ var checkPersonNumberString: String = ""
 
 var checkTextfieldKeyword: [String] = []
 
-var userList: [String] = []
+var textList: [String] = []
+var randomTexList = textList.shuffled()
+
 
 
 

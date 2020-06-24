@@ -10,21 +10,33 @@ import UIKit
 
 class TelepathyChoiceViewController: UIViewController {
   
-  let telepathyChoiceTableView = UITableView()
+  // MARK: - Property
+  let telepathyChoicecollectionViewLayout = UICollectionViewFlowLayout()
+  lazy var telepathyChoicecollectionView = UICollectionView (frame: view.frame, collectionViewLayout: telepathyChoicecollectionViewLayout)
   
+  let insetMargin: CGFloat = 20
+  let SpacingMargin: CGFloat = 20
+  let widthPadding: CGFloat = 15
+  
+  // MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupTableView()
+    setupCollectionView()
     setupNavigationBar()
   }
-  func setupTableView() {
-    view.addSubview(telepathyChoiceTableView)
-    telepathyChoiceTableView.frame = view.frame
-    telepathyChoiceTableView.rowHeight = 100
-    telepathyChoiceTableView.delegate = self
-    telepathyChoiceTableView.dataSource = self
-    telepathyChoiceTableView.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 0.7)
-    telepathyChoiceTableView.register(TelepathyChoiceCell.self, forCellReuseIdentifier: "ChoiceCustom")
+  // MARK: - setup Layout
+  
+  func setupCollectionView() {
+    telepathyChoicecollectionViewLayout.itemSize = CGSize (width: view.frame.width - (widthPadding * 2), height: view.frame.height / 7)
+    telepathyChoicecollectionViewLayout.minimumLineSpacing = 10
+    telepathyChoicecollectionViewLayout.minimumInteritemSpacing = SpacingMargin
+    telepathyChoicecollectionViewLayout.sectionInset = UIEdgeInsets(top: insetMargin, left: insetMargin, bottom: insetMargin, right: insetMargin)
+    
+    view.addSubview(telepathyChoicecollectionView)
+    telepathyChoicecollectionView.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 0.7)
+    telepathyChoicecollectionView.dataSource = self
+    telepathyChoicecollectionView.delegate = self
+    telepathyChoicecollectionView.register(TelepathyChoiceCollectionCell.self, forCellWithReuseIdentifier: "ChoiceCustom")
   }
   
   func setupNavigationBar() {
@@ -41,23 +53,29 @@ class TelepathyChoiceViewController: UIViewController {
     navigationController?.popViewController(animated: true)
   }
 }
-extension TelepathyChoiceViewController: UITableViewDataSource {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    userList.count
+// MARK: - UICollectionViewDataSource
+extension TelepathyChoiceViewController: UICollectionViewDataSource {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    textList.count
   }
   
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let telepathyChCell = telepathyChoiceTableView.dequeueReusableCell(withIdentifier: "ChoiceCustom", for: indexPath) as! TelepathyChoiceCell
-    telepathyChCell.telepathyChoiceLabel.text = userList[indexPath.row]
-    telepathyChCell.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1)
-    return telepathyChCell
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let telepathyChoicecollectionCell = telepathyChoicecollectionView.dequeueReusableCell(withReuseIdentifier: "ChoiceCustom", for: indexPath) as! TelepathyChoiceCollectionCell
+    telepathyChoicecollectionCell.telepathyChoiceLabel.text = randomTexList[indexPath.item]
+    telepathyChoicecollectionCell.backgroundColor = UIColor(red: 66/255, green: 72/255, blue: 116/255, alpha: 1.0)
+    telepathyChoicecollectionCell.layer.cornerRadius = 20
+    telepathyChoicecollectionCell.clipsToBounds = true
+    return telepathyChoicecollectionCell
   }
 }
 
-extension TelepathyChoiceViewController: UITableViewDelegate {
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let telepathyChCell = telepathyChoiceTableView.dequeueReusableCell(withIdentifier: "ChoiceCustom", for: indexPath) as! TelepathyChoiceCell
-    telepathyChCell.telepathyChoiceLabel.alpha = 1
+// MARK: - UICollectionViewDelegate
+
+extension TelepathyChoiceViewController: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    if let checkIndex = telepathyChoicecollectionView.cellForItem(at: indexPath) as? TelepathyChoiceCollectionCell {
+      checkIndex.telepathyChoiceLabel.isHidden = false
+    }
   }
 }
 

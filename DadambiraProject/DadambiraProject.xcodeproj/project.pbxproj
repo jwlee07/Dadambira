@@ -19,8 +19,8 @@
 		495B9D10249F5066009C5317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495B9D0E249F5066009C5317 /* LaunchScreen.storyboard */; };
 		495B9D39249F68F7009C5317 /* TelepathyInfoGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D38249F68F7009C5317 /* TelepathyInfoGame.swift */; };
 		495B9D3B249F6969009C5317 /* HitAndMissGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D3A249F6969009C5317 /* HitAndMissGame.swift */; };
+		49903F6124A3B38F0027845B /* TelepathyChoiceCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49903F6024A3B38F0027845B /* TelepathyChoiceCollectionCell.swift */; };
 		49B5AD4424A387720008E7D2 /* TelepathyChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5AD4324A387720008E7D2 /* TelepathyChoice.swift */; };
-		49B5AD4624A388A90008E7D2 /* TelepathyChoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5AD4524A388A90008E7D2 /* TelepathyChoiceCell.swift */; };
 		D3488E7224A1F5AD001B44B4 /* TimeBomb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3488E7124A1F5AD001B44B4 /* TimeBomb.swift */; };
 		D3488E7424A1F5DC001B44B4 /* PickerTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3488E7324A1F5DC001B44B4 /* PickerTimeView.swift */; };
 		D3488E7624A1F5F5001B44B4 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3488E7524A1F5F5001B44B4 /* PickerView.swift */; };
@@ -41,8 +41,8 @@
 		495B9D11249F5066009C5317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		495B9D38249F68F7009C5317 /* TelepathyInfoGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyInfoGame.swift; sourceTree = "<group>"; };
 		495B9D3A249F6969009C5317 /* HitAndMissGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitAndMissGame.swift; sourceTree = "<group>"; };
+		49903F6024A3B38F0027845B /* TelepathyChoiceCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyChoiceCollectionCell.swift; sourceTree = "<group>"; };
 		49B5AD4324A387720008E7D2 /* TelepathyChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyChoice.swift; sourceTree = "<group>"; };
-		49B5AD4524A388A90008E7D2 /* TelepathyChoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyChoiceCell.swift; sourceTree = "<group>"; };
 		D3488E7124A1F5AD001B44B4 /* TimeBomb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBomb.swift; sourceTree = "<group>"; };
 		D3488E7324A1F5DC001B44B4 /* PickerTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTimeView.swift; sourceTree = "<group>"; };
 		D3488E7524A1F5F5001B44B4 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 				49B5AD4324A387720008E7D2 /* TelepathyChoice.swift */,
 				492822E224A0A04000D3ACB0 /* HitAndMissCell.swift */,
 				492822E624A235BD00D3ACB0 /* TelepathyCell.swift */,
-				49B5AD4524A388A90008E7D2 /* TelepathyChoiceCell.swift */,
+				49903F6024A3B38F0027845B /* TelepathyChoiceCollectionCell.swift */,
 				492822DE24A097EF00D3ACB0 /* jwleeDATA.swift */,
 			);
 			path = GameList;
@@ -217,6 +217,7 @@
 				D3488E7224A1F5AD001B44B4 /* TimeBomb.swift in Sources */,
 				495B9D39249F68F7009C5317 /* TelepathyInfoGame.swift in Sources */,
 				495B9D08249F5064009C5317 /* ViewController.swift in Sources */,
+				49903F6124A3B38F0027845B /* TelepathyChoiceCollectionCell.swift in Sources */,
 				495B9D04249F5064009C5317 /* AppDelegate.swift in Sources */,
 				D3488E7424A1F5DC001B44B4 /* PickerTimeView.swift in Sources */,
 				492822DF24A097EF00D3ACB0 /* jwleeDATA.swift in Sources */,
@@ -224,7 +225,6 @@
 				492822E524A21E4700D3ACB0 /* TelepathyGame.swift in Sources */,
 				495B9D06249F5064009C5317 /* SceneDelegate.swift in Sources */,
 				492822E324A0A04000D3ACB0 /* HitAndMissCell.swift in Sources */,
-				49B5AD4624A388A90008E7D2 /* TelepathyChoiceCell.swift in Sources */,
 				D3488E7624A1F5F5001B44B4 /* PickerView.swift in Sources */,
 				495B9D3B249F6969009C5317 /* HitAndMissGame.swift in Sources */,
 			);

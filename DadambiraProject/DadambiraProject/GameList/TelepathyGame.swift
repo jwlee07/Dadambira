@@ -37,7 +37,7 @@ class TelepathyGameViewController: UIViewController, UITableViewDelegate {
   func setupData() {
     guard let count = Int(checkPersonNumberString) else { return }
     for _ in 1...count {
-      userList.append("")
+      textList.append("")
     }
   }
   
@@ -79,7 +79,7 @@ class TelepathyGameViewController: UIViewController, UITableViewDelegate {
   }
   
   @objc func didTapPushButton() {
-    if !(userList.contains("")) {
+    if !(textList.contains("")) {
       let TelepathyChoiceVC = TelepathyChoiceViewController()
       TelepathyChoiceVC.view.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 0.7)
       navigationController?.pushViewController(TelepathyChoiceVC, animated: true)
@@ -95,7 +95,7 @@ class TelepathyGameViewController: UIViewController, UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension TelepathyGameViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return userList.count
+    return textList.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -104,7 +104,7 @@ extension TelepathyGameViewController: UITableViewDataSource {
     telepathyCell.telepathCellTextfield.tag = indexPath.row
     telepathyCell.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1)
     telepathyCell.telepathCellLabel.text = "\(indexPath.row + 1)"
-    telepathyCell.telepathCellTextfield.text = userList[indexPath.row]
+    telepathyCell.telepathCellTextfield.text = textList[indexPath.row]
     return telepathyCell
   }
 }
@@ -112,6 +112,6 @@ extension TelepathyGameViewController: UITableViewDataSource {
 // MARK: - TelepathyCellDelegate
 extension TelepathyGameViewController: TelepathyCellDelegate {
   func inputText(_ text: String, tag: Int) {
-    userList[tag] = text
+    textList[tag] = text
   }
 }

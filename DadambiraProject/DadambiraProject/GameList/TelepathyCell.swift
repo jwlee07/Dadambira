@@ -53,7 +53,6 @@ class TelepathyCell: UITableViewCell {
   
   override func prepareForReuse() {
     super.prepareForReuse()
-    
   }
   
   // MARK: -  setup Layout
