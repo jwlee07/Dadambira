@@ -14,6 +14,14 @@ class PickerTimeView: UIView {
     
     var checkBool = false
     
+    private var backButton: UIButton = {
+        let backButton = UIButton()
+        backButton.setTitle("뒤로가기", for: .normal)
+        backButton.setTitleColor(UIColor.white, for: .normal)
+        backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
+        return backButton
+    }()
+    
     private var pickerView: PickerView = {
         let pickerView = PickerView()
         return pickerView
@@ -57,6 +65,11 @@ class PickerTimeView: UIView {
         pickerView.translatesAutoresizingMaskIntoConstraints = false
         pickerView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 250).isActive = true
         pickerView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        
+        addSubview(backButton)
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        backButton.topAnchor.constraint(equalTo: topAnchor, constant: 25).isActive = true
+        backButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 30).isActive = true
     }
     
     
@@ -64,17 +77,21 @@ class PickerTimeView: UIView {
     @objc func didTapButton() {
         if checkBool == false {
             checkBool = true
-        UIView.animate(withDuration: 1.7, animations: {
-            self.alpha = 0
-            self.transform = CGAffineTransform(scaleX: -50, y: -50)
-        })
+            /// 시간 설정후 PickerTimeView.alph = 0
+            UIView.animate(withDuration: 1.7, animations: {
+                self.alpha = 0
+                self.transform = CGAffineTransform(scaleX: -50, y: -50)
+            })
         }else {
             checkBool = false
             UIView.animate(withDuration: 1.7, animations: {
                 self.alpha = 1
                 self.transform = CGAffineTransform.identity
-                print("?")
             })
         }
+    }
+    
+    @objc private func didTapBackButton() {
+        
     }
 }
