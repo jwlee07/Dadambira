@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let scene = (scene as? UIWindowScene) else { return }
     let navigationHitAndMissVC = UINavigationController(rootViewController: HitAndMissGameViewController())
     let navigationTeleparthyVC = UINavigationController(rootViewController: TelepathyInfoGameViewController())
+    let telepathyVC = TelepathyGameViewController()
     window = UIWindow(windowScene: scene)
     window?.backgroundColor = .systemBackground
     window?.rootViewController = navigationTeleparthyVC
