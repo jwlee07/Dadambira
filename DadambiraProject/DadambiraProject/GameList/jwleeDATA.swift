@@ -16,6 +16,15 @@ let cardNumberImage: [UIImage] = [
 
 let cardCheckImage: UIImage = UIImage(systemName: "heart.fill")!
 
+let telepathCellImage: [UIImage] = ["1.circle", "2.circle", "3.circle" ,"4.circle"].compactMap(UIImage.init(systemName:))
+
 var firstCheckIndexItenArr: [Int] = []
 var secondCheckIndexItenArr: [Int] = []
+
+var checkPersonNumberString: String = ""
+
+var checkTextfieldKeyword: [String] = []
+
+
+
 

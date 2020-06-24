@@ -37,7 +37,7 @@ class PickerView: UIPickerView {
     
     // MARK: Configure View Components
     func ConfigureViewComponents() {
-        backgroundColor = UIColor(rgb: 0xac8daf)
+//        backgroundColor = UIColor(rgb: 0xac8daf)
         layer.cornerRadius = 10
         tintColor = .white
     }
