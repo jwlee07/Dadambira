@@ -21,6 +21,15 @@
 		495B9D3B249F6969009C5317 /* HitAndMissGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D3A249F6969009C5317 /* HitAndMissGame.swift */; };
 		49903F6124A3B38F0027845B /* TelepathyChoiceCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49903F6024A3B38F0027845B /* TelepathyChoiceCollectionCell.swift */; };
 		49B5AD4424A387720008E7D2 /* TelepathyChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5AD4324A387720008E7D2 /* TelepathyChoice.swift */; };
+		7302494D24A496E8002AAA65 /* LaunchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302494C24A496E8002AAA65 /* LaunchAnimation.swift */; };
+		7302494F24A4978F002AAA65 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302494E24A4978F002AAA65 /* data.swift */; };
+		7302495124A497A6002AAA65 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302495024A497A6002AAA65 /* StartViewController.swift */; };
+		7302495324A497BA002AAA65 /* StartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302495224A497BA002AAA65 /* StartTableViewCell.swift */; };
+		7302495524A497CF002AAA65 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302495424A497CF002AAA65 /* MainViewController.swift */; };
+		7302495724A497EB002AAA65 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302495624A497EB002AAA65 /* MainCollectionViewCell.swift */; };
+		7302495A24A49829002AAA65 /* Cre쿨재즈M체.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7302495824A49828002AAA65 /* Cre쿨재즈M체.ttf */; };
+		7302495B24A49829002AAA65 /* Cre쿨재즈L.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7302495924A49829002AAA65 /* Cre쿨재즈L.ttf */; };
+		7302495D24A49A2A002AAA65 /* BombImage.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7302495C24A49A2A002AAA65 /* BombImage.pdf */; };
 		D3488E7224A1F5AD001B44B4 /* TimeBomb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3488E7124A1F5AD001B44B4 /* TimeBomb.swift */; };
 		D3488E7424A1F5DC001B44B4 /* PickerTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3488E7324A1F5DC001B44B4 /* PickerTimeView.swift */; };
 		D3488E7624A1F5F5001B44B4 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3488E7524A1F5F5001B44B4 /* PickerView.swift */; };
@@ -46,6 +55,15 @@
 		495B9D3A249F6969009C5317 /* HitAndMissGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitAndMissGame.swift; sourceTree = "<group>"; };
 		49903F6024A3B38F0027845B /* TelepathyChoiceCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyChoiceCollectionCell.swift; sourceTree = "<group>"; };
 		49B5AD4324A387720008E7D2 /* TelepathyChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyChoice.swift; sourceTree = "<group>"; };
+		7302494C24A496E8002AAA65 /* LaunchAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimation.swift; sourceTree = "<group>"; };
+		7302494E24A4978F002AAA65 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
+		7302495024A497A6002AAA65 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		7302495224A497BA002AAA65 /* StartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTableViewCell.swift; sourceTree = "<group>"; };
+		7302495424A497CF002AAA65 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7302495624A497EB002AAA65 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		7302495824A49828002AAA65 /* Cre쿨재즈M체.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cre쿨재즈M체.ttf"; sourceTree = "<group>"; };
+		7302495924A49829002AAA65 /* Cre쿨재즈L.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cre쿨재즈L.ttf"; sourceTree = "<group>"; };
+		7302495C24A49A2A002AAA65 /* BombImage.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = BombImage.pdf; path = ../../../BombImage.pdf; sourceTree = "<group>"; };
 		D3488E7124A1F5AD001B44B4 /* TimeBomb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBomb.swift; sourceTree = "<group>"; };
 		D3488E7324A1F5DC001B44B4 /* PickerTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTimeView.swift; sourceTree = "<group>"; };
 		D3488E7524A1F5F5001B44B4 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
@@ -125,6 +143,14 @@
 			isa = PBXGroup;
 			children = (
 				495B9D07249F5064009C5317 /* ViewController.swift */,
+				7302494C24A496E8002AAA65 /* LaunchAnimation.swift */,
+				7302494E24A4978F002AAA65 /* data.swift */,
+				7302495024A497A6002AAA65 /* StartViewController.swift */,
+				7302495224A497BA002AAA65 /* StartTableViewCell.swift */,
+				7302495424A497CF002AAA65 /* MainViewController.swift */,
+				7302495624A497EB002AAA65 /* MainCollectionViewCell.swift */,
+				7302495924A49829002AAA65 /* Cre쿨재즈L.ttf */,
+				7302495824A49828002AAA65 /* Cre쿨재즈M체.ttf */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -136,6 +162,7 @@
 				D3488E7324A1F5DC001B44B4 /* PickerTimeView.swift */,
 				D3488E7524A1F5F5001B44B4 /* PickerView.swift */,
 				D3876B3524A313D100C48CB3 /* Extension.swift */,
+				7302495C24A49A2A002AAA65 /* BombImage.pdf */,
 			);
 			path = GameList2;
 			sourceTree = "<group>";
@@ -208,10 +235,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3876B3324A3138B00C48CB3 /* 파돌리기송.mp3 in Resources */,
+				7302495B24A49829002AAA65 /* Cre쿨재즈L.ttf in Resources */,
 				495B9D10249F5066009C5317 /* LaunchScreen.storyboard in Resources */,
 				D3876B3424A3138B00C48CB3 /* BOOM.mp3 in Resources */,
 				495B9D0D249F5066009C5317 /* Assets.xcassets in Resources */,
 				495B9D0B249F5064009C5317 /* Main.storyboard in Resources */,
+				7302495A24A49829002AAA65 /* Cre쿨재즈M체.ttf in Resources */,
+				7302495D24A49A2A002AAA65 /* BombImage.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,20 +253,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B5AD4424A387720008E7D2 /* TelepathyChoice.swift in Sources */,
+				7302495324A497BA002AAA65 /* StartTableViewCell.swift in Sources */,
 				D3488E7224A1F5AD001B44B4 /* TimeBomb.swift in Sources */,
 				495B9D39249F68F7009C5317 /* TelepathyInfoGame.swift in Sources */,
 				495B9D08249F5064009C5317 /* ViewController.swift in Sources */,
 				49903F6124A3B38F0027845B /* TelepathyChoiceCollectionCell.swift in Sources */,
+				7302495124A497A6002AAA65 /* StartViewController.swift in Sources */,
+				7302495724A497EB002AAA65 /* MainCollectionViewCell.swift in Sources */,
 				495B9D04249F5064009C5317 /* AppDelegate.swift in Sources */,
 				D3488E7424A1F5DC001B44B4 /* PickerTimeView.swift in Sources */,
 				492822DF24A097EF00D3ACB0 /* jwleeDATA.swift in Sources */,
 				492822E724A235BE00D3ACB0 /* TelepathyCell.swift in Sources */,
 				492822E524A21E4700D3ACB0 /* TelepathyGame.swift in Sources */,
 				495B9D06249F5064009C5317 /* SceneDelegate.swift in Sources */,
+				7302494F24A4978F002AAA65 /* data.swift in Sources */,
+				7302494D24A496E8002AAA65 /* LaunchAnimation.swift in Sources */,
 				D3876B3624A313D100C48CB3 /* Extension.swift in Sources */,
 				492822E324A0A04000D3ACB0 /* HitAndMissCell.swift in Sources */,
 				D3488E7624A1F5F5001B44B4 /* PickerView.swift in Sources */,
 				495B9D3B249F6969009C5317 /* HitAndMissGame.swift in Sources */,
+				7302495524A497CF002AAA65 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
