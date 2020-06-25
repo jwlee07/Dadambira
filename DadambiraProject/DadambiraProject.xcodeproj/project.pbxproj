@@ -128,10 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				495B9D3A249F6969009C5317 /* HitAndMissGame.swift */,
+				492822E224A0A04000D3ACB0 /* HitAndMissCell.swift */,
 				495B9D38249F68F7009C5317 /* TelepathyInfoGame.swift */,
 				492822E424A21E4700D3ACB0 /* TelepathyGame.swift */,
 				49B5AD4324A387720008E7D2 /* TelepathyChoice.swift */,
-				492822E224A0A04000D3ACB0 /* HitAndMissCell.swift */,
 				492822E624A235BD00D3ACB0 /* TelepathyCell.swift */,
 				49903F6024A3B38F0027845B /* TelepathyChoiceCollectionCell.swift */,
 				492822DE24A097EF00D3ACB0 /* jwleeDATA.swift */,
@@ -426,7 +426,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.DadambiraProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -444,7 +444,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.DadambiraProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

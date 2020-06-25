@@ -18,15 +18,22 @@ class TelepathyChoiceViewController: UIViewController {
   let SpacingMargin: CGFloat = 20
   let widthPadding: CGFloat = 15
   
+  var randomTexList: [String] = []
+  
   // MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
     setupCollectionView()
     setupNavigationBar()
   }
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    view.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1)
+  }
   // MARK: - setup Layout
   
   func setupCollectionView() {
+    
     telepathyChoicecollectionViewLayout.itemSize = CGSize (width: view.frame.width - (widthPadding * 2), height: view.frame.height / 7)
     telepathyChoicecollectionViewLayout.minimumLineSpacing = 10
     telepathyChoicecollectionViewLayout.minimumInteritemSpacing = SpacingMargin
@@ -37,6 +44,8 @@ class TelepathyChoiceViewController: UIViewController {
     telepathyChoicecollectionView.dataSource = self
     telepathyChoicecollectionView.delegate = self
     telepathyChoicecollectionView.register(TelepathyChoiceCollectionCell.self, forCellWithReuseIdentifier: "ChoiceCustom")
+    
+    randomTexList = textList.shuffled()
   }
   
   func setupNavigationBar() {
@@ -50,7 +59,12 @@ class TelepathyChoiceViewController: UIViewController {
   }
   
   @objc func didTapDismissButton(_ sender: UIBarButtonItem) {
-    navigationController?.popViewController(animated: true)
+    navigationController?.popToRootViewController(animated: true)
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+      self.telepathyChoicecollectionView.reloadData()
+      textList.removeAll()
+      self.randomTexList.removeAll()
+    }
   }
 }
 // MARK: - UICollectionViewDataSource

@@ -135,7 +135,8 @@ class TelepathyInfoGameViewController: UIViewController {
   @objc func didTapInfoButton(_ sender: UIButton) {
     if checkPersonNumberString != "" {
       let telepathyGameVC = TelepathyGameViewController()
-      telepathyGameVC.view.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 0.7)
+      telepathyGameVC.view.backgroundColor = .systemBackground
+//      telepathyGameVC.view.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 0.7)
       navigationController?.pushViewController(telepathyGameVC, animated: true)
     } else {
       let numberCheckError = UIAlertController (title: "잠깐만요 !", message: "숫자를 입력해주세용", preferredStyle: .alert)
