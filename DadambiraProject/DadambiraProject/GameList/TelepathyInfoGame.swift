@@ -69,7 +69,10 @@ class TelepathyInfoGameViewController: UIViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(true)
+    super.viewWillAppear(animated)
+    UIView.animate(withDuration: 0.5) {
+      self.personNumberInfoLabel.center.x = -self.view.frame.width
+    }
     personNumberTextfield.becomeFirstResponder()
     
   }

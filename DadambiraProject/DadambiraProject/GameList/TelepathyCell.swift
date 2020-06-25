@@ -77,10 +77,9 @@ class TelepathyCell: UITableViewCell {
       telepathCellTextfield.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor),
     ])
     telepathCellTextfield.delegate = self
-    
   }
 }
-  // MARK: - UITextFieldDelegate
+// MARK: - UITextFieldDelegate
 
 extension TelepathyCell: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
@@ -90,15 +89,18 @@ extension TelepathyCell: UITextFieldDelegate {
     guard let text = textField.text else { return }
     if text.count > 10 { textField.text?.removeLast() }
     delegate?.inputText(text, tag: textField.tag)
-  }
-  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    return true
+    UIView.animate(withDuration: 1, delay: 0, options: .repeat, animations: {
+      self.telepathCellLabel.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
+    })
   }
   func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
     checkTextfieldKeyword.append(textField.text!)
+    UIView.animate(withDuration: 0.5) {
+      self.telepathCellLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
+    }
   }
 }
-
 protocol TelepathyCellDelegate: class {
   func inputText(_ text: String, tag: Int)
 }
+

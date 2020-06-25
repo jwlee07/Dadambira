@@ -76,6 +76,7 @@ extension TelepathyChoiceViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let telepathyChoicecollectionCell = telepathyChoicecollectionView.dequeueReusableCell(withReuseIdentifier: "ChoiceCustom", for: indexPath) as! TelepathyChoiceCollectionCell
     telepathyChoicecollectionCell.telepathyChoiceLabel.text = randomTexList[indexPath.item]
+    telepathyChoicecollectionCell.telepathyChoiceDefaultLabel.text = "\(indexPath.item + 1)"
     telepathyChoicecollectionCell.backgroundColor = UIColor(red: 66/255, green: 72/255, blue: 116/255, alpha: 1.0)
     telepathyChoicecollectionCell.layer.cornerRadius = 20
     telepathyChoicecollectionCell.clipsToBounds = true
@@ -89,6 +90,7 @@ extension TelepathyChoiceViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if let checkIndex = telepathyChoicecollectionView.cellForItem(at: indexPath) as? TelepathyChoiceCollectionCell {
       checkIndex.telepathyChoiceLabel.isHidden = false
+      checkIndex.telepathyChoiceDefaultLabel.isHidden = true
     }
   }
 }
