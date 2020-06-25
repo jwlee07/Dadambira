@@ -29,7 +29,7 @@ class TelepathyChoiceCollectionCell: UICollectionViewCell {
     return label
   }()
   
-  let margin: CGFloat = 20
+  let margin: CGFloat = 30
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")

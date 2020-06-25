@@ -11,6 +11,7 @@
 		492822E324A0A04000D3ACB0 /* HitAndMissCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492822E224A0A04000D3ACB0 /* HitAndMissCell.swift */; };
 		492822E524A21E4700D3ACB0 /* TelepathyGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492822E424A21E4700D3ACB0 /* TelepathyGame.swift */; };
 		492822E724A235BE00D3ACB0 /* TelepathyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492822E624A235BD00D3ACB0 /* TelepathyCell.swift */; };
+		492C8A6E24A503B500C9AD73 /* HitAndMissCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492C8A6D24A503B500C9AD73 /* HitAndMissCustomView.swift */; };
 		495B9D04249F5064009C5317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D03249F5064009C5317 /* AppDelegate.swift */; };
 		495B9D06249F5064009C5317 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D05249F5064009C5317 /* SceneDelegate.swift */; };
 		495B9D08249F5064009C5317 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D07249F5064009C5317 /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 		492822E224A0A04000D3ACB0 /* HitAndMissCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitAndMissCell.swift; sourceTree = "<group>"; };
 		492822E424A21E4700D3ACB0 /* TelepathyGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyGame.swift; sourceTree = "<group>"; };
 		492822E624A235BD00D3ACB0 /* TelepathyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyCell.swift; sourceTree = "<group>"; };
+		492C8A6D24A503B500C9AD73 /* HitAndMissCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitAndMissCustomView.swift; sourceTree = "<group>"; };
 		495B9D00249F5064009C5317 /* DadambiraProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DadambiraProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		495B9D03249F5064009C5317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		495B9D05249F5064009C5317 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				495B9D3A249F6969009C5317 /* HitAndMissGame.swift */,
 				492822E224A0A04000D3ACB0 /* HitAndMissCell.swift */,
+				492C8A6D24A503B500C9AD73 /* HitAndMissCustomView.swift */,
 				495B9D38249F68F7009C5317 /* TelepathyInfoGame.swift */,
 				492822E424A21E4700D3ACB0 /* TelepathyGame.swift */,
 				49B5AD4324A387720008E7D2 /* TelepathyChoice.swift */,
@@ -267,6 +270,7 @@
 				492822E524A21E4700D3ACB0 /* TelepathyGame.swift in Sources */,
 				495B9D06249F5064009C5317 /* SceneDelegate.swift in Sources */,
 				7302494F24A4978F002AAA65 /* data.swift in Sources */,
+				492C8A6E24A503B500C9AD73 /* HitAndMissCustomView.swift in Sources */,
 				7302494D24A496E8002AAA65 /* LaunchAnimation.swift in Sources */,
 				D3876B3624A313D100C48CB3 /* Extension.swift in Sources */,
 				492822E324A0A04000D3ACB0 /* HitAndMissCell.swift in Sources */,

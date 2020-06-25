@@ -36,7 +36,7 @@ class TelepathyCell: UITableViewCell {
   }()
   
   let leadingMargin: CGFloat = 75
-  let minMargin: CGFloat = 30
+  let minMargin: CGFloat = 15
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -72,7 +72,7 @@ class TelepathyCell: UITableViewCell {
       telepathCellLabel.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -minMargin),
       
       telepathCellTextfield.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
-      telepathCellTextfield.leadingAnchor.constraint(equalTo: telepathCellLabel.safeAreaLayoutGuide.trailingAnchor),
+      telepathCellTextfield.leadingAnchor.constraint(equalTo: telepathCellLabel.safeAreaLayoutGuide.trailingAnchor, constant: minMargin),
       telepathCellTextfield.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor),
       telepathCellTextfield.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor),
     ])
