@@ -47,6 +47,7 @@ class TelepathyChoiceCollectionCell: UICollectionViewCell {
     }
     
     NSLayoutConstraint.activate([
+      
       telepathyChoiceLabel.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
       telepathyChoiceLabel.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor),
       telepathyChoiceLabel.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor),

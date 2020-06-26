@@ -40,6 +40,7 @@ class GoogleViewController: UIViewController {
     lazy var timeLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
+        
         label.text = "\(time)"
         return label
     }()
@@ -71,11 +72,17 @@ class GoogleViewController: UIViewController {
         return imageView
     }()
     
+    let fishingRod2: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "FishingRod2")
+        return imageView
+    }()
+    
     let gameStartButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("게임 시작", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 50)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.cyan, for: .normal)
         button.addTarget(self, action: #selector(didTapGameStartButton), for: .touchUpInside)
         return button
     }()
@@ -84,7 +91,7 @@ class GoogleViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("한번 더", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 50)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.cyan, for: .normal)
         button.addTarget(self, action: #selector(didTapReStartButton), for: .touchUpInside)
         button.alpha = 0
         return button
@@ -140,6 +147,7 @@ class GoogleViewController: UIViewController {
         configureViewComponents()
         
     }
+    var myTouchPoint: CGPoint?
     
     // MARK: Helpers
     func castingButtonEffect() {
@@ -169,7 +177,7 @@ class GoogleViewController: UIViewController {
     // MARK: Configure
     func configure() {
         title = "Shoreline Lake Park"
-        
+        navigationController?.navigationBar.isHidden = false
     }
     
     // MARK: Configure View Components
@@ -201,7 +209,15 @@ class GoogleViewController: UIViewController {
         fishingRod.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -130).isActive = true
         fishingRod.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 130).isActive = true
         fishingRod.transform = CGAffineTransform(scaleX: 0.055, y: 0.055)
-        fishingRod.transform = fishingRod.transform.rotated(by: CGFloat(M_PI_2)*7.40)
+        fishingRod.transform = fishingRod.transform.rotated(by: CGFloat(Double.pi / 2)*7.40)
+        
+        view.addSubview(fishingRod2)
+        fishingRod2.translatesAutoresizingMaskIntoConstraints = false
+        fishingRod2.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -130).isActive = true
+        fishingRod2.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 130).isActive = true
+        fishingRod2.transform = CGAffineTransform(scaleX: 0.055, y: 0.055)
+        fishingRod2.transform = fishingRod.transform.rotated(by: CGFloat(Double.pi / 2)*7.40)
+        fishingRod2.alpha = 0
         
         view.addSubview(castingButton)
         castingButton.translatesAutoresizingMaskIntoConstraints = false
@@ -255,20 +271,20 @@ class GoogleViewController: UIViewController {
         
         fish1.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200).isActive = true
         fish1.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20).isActive = true
-        fish1.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        fish1.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        fish1.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        fish1.heightAnchor.constraint(equalToConstant: 80).isActive = true
         fish1.alpha = 0
         
         fish2.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 190).isActive = true
         fish2.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 350).isActive = true
-        fish2.widthAnchor.constraint(equalToConstant: 85).isActive = true
-        fish2.heightAnchor.constraint(equalToConstant: 85).isActive = true
+        fish2.widthAnchor.constraint(equalToConstant: 95).isActive = true
+        fish2.heightAnchor.constraint(equalToConstant: 95).isActive = true
         fish2.alpha = 0
         
         fish3.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200).isActive = true
         fish3.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        fish3.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        fish3.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        fish3.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        fish3.heightAnchor.constraint(equalToConstant: 80).isActive = true
         fish3.alpha = 0
         
         fish4.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 230).isActive = true
@@ -281,8 +297,8 @@ class GoogleViewController: UIViewController {
         trash.translatesAutoresizingMaskIntoConstraints = false
         trash.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 230).isActive = true
         trash.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 80).isActive = true
-        trash.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        trash.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        trash.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        trash.heightAnchor.constraint(equalToConstant: 70).isActive = true
         trash.alpha = 0
         
     }
@@ -290,8 +306,8 @@ class GoogleViewController: UIViewController {
     // MARK: @Objc
     @objc func DidTapCastingButton() {
         
-        var myIndex = array.randomElement()
-        var choiceFish = fishes[myIndex!]
+        let myIndex = array.randomElement()
+        let choiceFish = fishes[myIndex!]
         
         if checkBool == false {
             self.checkBool = true
@@ -309,17 +325,17 @@ class GoogleViewController: UIViewController {
                 self.score += 1
                 self.scoreLabel.text = "\(score)"
                 self.fish1CheckBool = true
-                    UIView.animate(withDuration: 0.8, animations: {
-                        self.fish1.alpha = 1
-                        self.fish1.center.x = self.fish1.center.x - 130
-                        self.fish1.center.y = self.fish1.center.y - 130
-                        self.fish1.transform = self.fish1.transform.rotated(by: CGFloat(3.14))
-                        self.fish1.alpha = 0
-                    }) { (_) in
-                        self.fish1.transform = self.fish1.transform.rotated(by: CGFloat(-3.14))
-                        self.fish1.center.x = self.fish1.center.x + 130
-                        self.fish1.center.y = self.fish1.center.y + 130
-                    }
+                UIView.animate(withDuration: 0.6, animations: {
+                    self.fish1.alpha = 1
+                    self.fish1.center.x = self.fish1.center.x - 130
+                    self.fish1.center.y = self.fish1.center.y - 130
+                    self.fish1.transform = self.fish1.transform.rotated(by: CGFloat(3.14))
+                    self.fish1.alpha = 0
+                }) { (_) in
+                    self.fish1.transform = self.fish1.transform.rotated(by: CGFloat(-3.14))
+                    self.fish1.center.x = self.fish1.center.x + 130
+                    self.fish1.center.y = self.fish1.center.y + 130
+                }
                 self.fish1CheckBool = false
             }
             
@@ -328,17 +344,17 @@ class GoogleViewController: UIViewController {
                 self.score += 1
                 self.scoreLabel.text = "\(score)"
                 self.fish2CheckBool = true
-                    UIView.animate(withDuration: 0.5, animations: {
-                        self.fish2.alpha = 1
-                        self.fish2.center.x = self.fish2.center.x + 130
-                        self.fish2.center.y = self.fish2.center.y - 130
-                        self.fish2.transform = self.fish2.transform.rotated(by: CGFloat(-3.14))
-                        self.fish2.alpha = 0
-                    }) { (_) in
-                        self.fish2.transform = self.fish2.transform.rotated(by: CGFloat(3.14))
-                        self.fish2.center.x = self.fish2.center.x - 130
-                        self.fish2.center.y = self.fish2.center.y + 130
-                    }
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.fish2.alpha = 1
+                    self.fish2.center.x = self.fish2.center.x + 130
+                    self.fish2.center.y = self.fish2.center.y - 130
+                    self.fish2.transform = self.fish2.transform.rotated(by: CGFloat(-3.14))
+                    self.fish2.alpha = 0
+                }) { (_) in
+                    self.fish2.transform = self.fish2.transform.rotated(by: CGFloat(3.14))
+                    self.fish2.center.x = self.fish2.center.x - 130
+                    self.fish2.center.y = self.fish2.center.y + 130
+                }
                 self.fish2CheckBool = false
             }
             
@@ -347,17 +363,17 @@ class GoogleViewController: UIViewController {
                 self.score += 1
                 self.scoreLabel.text = "\(score)"
                 self.fish3CheckBool = true
-                    UIView.animate(withDuration: 0.7, animations: {
-                        self.fish3.alpha = 1
-                        self.fish3.center.x = self.fish3.center.x + 40
-                        self.fish3.center.y = self.fish3.center.y - 250
-                        self.fish3.transform = self.fish3.transform.rotated(by: CGFloat(-3.14))
-                        self.fish3.alpha = 0
-                    }) { (_) in
-                        self.fish3.transform = self.fish3.transform.rotated(by: CGFloat(3.14))
-                        self.fish3.center.x = self.fish3.center.x - 40
-                        self.fish3.center.y = self.fish3.center.y + 250
-                    }
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.fish3.alpha = 1
+                    self.fish3.center.x = self.fish3.center.x + 40
+                    self.fish3.center.y = self.fish3.center.y - 250
+                    self.fish3.transform = self.fish3.transform.rotated(by: CGFloat(-3.14))
+                    self.fish3.alpha = 0
+                }) { (_) in
+                    self.fish3.transform = self.fish3.transform.rotated(by: CGFloat(3.14))
+                    self.fish3.center.x = self.fish3.center.x - 40
+                    self.fish3.center.y = self.fish3.center.y + 250
+                }
                 self.fish3CheckBool = false
             }
             
@@ -366,17 +382,17 @@ class GoogleViewController: UIViewController {
                 self.score += 1
                 self.scoreLabel.text = "\(score)"
                 self.fish4CheckBool = true
-                    UIView.animate(withDuration: 0.7, animations: {
-                        self.fish4.alpha = 1
-                        self.fish4.center.x = self.fish4.center.x - 70
-                        self.fish4.center.y = self.fish4.center.y - 250
-                        self.fish4.transform = self.fish4.transform.rotated(by: CGFloat(-3.14))
-                        self.fish4.alpha = 0
-                    }) { (_) in
-                        self.fish4.transform = self.fish4.transform.rotated(by: CGFloat(3.14))
-                        self.fish4.center.x = self.fish4.center.x + 70
-                        self.fish4.center.y = self.fish4.center.y + 250
-                    }
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.fish4.alpha = 1
+                    self.fish4.center.x = self.fish4.center.x - 70
+                    self.fish4.center.y = self.fish4.center.y - 250
+                    self.fish4.transform = self.fish4.transform.rotated(by: CGFloat(-3.14))
+                    self.fish4.alpha = 0
+                }) { (_) in
+                    self.fish4.transform = self.fish4.transform.rotated(by: CGFloat(3.14))
+                    self.fish4.center.x = self.fish4.center.x + 70
+                    self.fish4.center.y = self.fish4.center.y + 250
+                }
                 self.fish4CheckBool = false
             }
             
@@ -385,17 +401,17 @@ class GoogleViewController: UIViewController {
                 self.score -= 2
                 self.scoreLabel.text = "\(score)"
                 self.trashCheckBool = true
-                    UIView.animate(withDuration: 0.7, animations: {
-                        self.trash.alpha = 1
-                        self.trash.center.x = self.trash.center.x - 70
-                        self.trash.center.y = self.trash.center.y - 250
-                        self.trash.transform = self.trash.transform.rotated(by: CGFloat(-3.14))
-                        self.trash.alpha = 0
-                    }) { (_) in
-                        self.trash.transform = self.trash.transform.rotated(by: CGFloat(3.14))
-                        self.trash.center.x = self.trash.center.x + 70
-                        self.trash.center.y = self.trash.center.y + 250
-                    }
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.trash.alpha = 1
+                    self.trash.center.x = self.trash.center.x - 70
+                    self.trash.center.y = self.trash.center.y - 250
+                    self.trash.transform = self.trash.transform.rotated(by: CGFloat(-3.14))
+                    self.trash.alpha = 0
+                }) { (_) in
+                    self.trash.transform = self.trash.transform.rotated(by: CGFloat(3.14))
+                    self.trash.center.x = self.trash.center.x + 70
+                    self.trash.center.y = self.trash.center.y + 250
+                }
                 self.trashCheckBool = false
             }
             
@@ -410,7 +426,7 @@ class GoogleViewController: UIViewController {
             timeLabel.text = "\(time)"
             print(time)
             if time == 0 {
-//                vibrate()
+                //                vibrate()
                 print("끝")
                 secretButton.isEnabled = false
                 vibrate()
