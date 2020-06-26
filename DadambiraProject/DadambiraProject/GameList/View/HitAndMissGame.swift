@@ -206,6 +206,7 @@ extension HitAndMissGameViewController: UICollectionViewDelegate {
       if toggle {
         if checkDidIndexItem.isSelected {
           UIView.animate(withDuration: 0.5) {
+            checkDidIndexItem.custimMiniImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
             checkDidIndexItem.custimMiniImageView.alpha = 1
           }
           if !(firstCheckIndexItenArr.contains(indexPath.item)) {
@@ -215,6 +216,7 @@ extension HitAndMissGameViewController: UICollectionViewDelegate {
       } else {
         if checkDidIndexItem.isSelected {
           UIView.animate(withDuration: 0.5) {
+            checkDidIndexItem.custimMiniImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
             checkDidIndexItem.custimMiniImageView.alpha = 1
           }
           if !(secondCheckIndexItenArr.contains(indexPath.item)) {
@@ -227,7 +229,8 @@ extension HitAndMissGameViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
     if let checkDidDeIndexItem = hitAndMissCollectionView.cellForItem(at: indexPath) as? HitAndMissCell {
       if toggle {
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 1) {
+          checkDidDeIndexItem.custimMiniImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
           checkDidDeIndexItem.custimMiniImageView.alpha = 0
         }
         if firstCheckIndexItenArr.contains(indexPath.item) {
@@ -235,6 +238,7 @@ extension HitAndMissGameViewController: UICollectionViewDelegate {
         }
       } else {
         UIView.animate(withDuration: 0.5) {
+          checkDidDeIndexItem.custimMiniImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
           checkDidDeIndexItem.custimMiniImageView.alpha = 0
         }
         if secondCheckIndexItenArr.contains(indexPath.item) {

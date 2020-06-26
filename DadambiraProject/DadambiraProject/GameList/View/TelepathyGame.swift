@@ -28,6 +28,7 @@ class TelepathyGameViewController: UIViewController, UITableViewDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = "복볼복"
     setupTableView()
     setupNavigationBar()
     setupData()

@@ -45,8 +45,7 @@ class HitAndMissCell: UICollectionViewCell {
     custimMiniImageView.contentMode = .scaleAspectFit
     clipsToBounds = true
     
-    UIView.animate(withDuration: 0.5, delay: 0, options: .repeat, animations: {
-      self.custimMiniImageView.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-    })
+    custimMiniImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+    
   }
 }

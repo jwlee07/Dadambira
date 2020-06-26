@@ -23,12 +23,9 @@ class TelepathyChoiceViewController: UIViewController {
   // MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = "복볼복"
     setupCollectionView()
     setupNavigationBar()
-  }
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    view.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1)
   }
   // MARK: - setup Layout
   
@@ -40,7 +37,7 @@ class TelepathyChoiceViewController: UIViewController {
     telepathyChoicecollectionViewLayout.sectionInset = UIEdgeInsets(top: insetMargin, left: insetMargin, bottom: insetMargin, right: insetMargin)
     
     view.addSubview(telepathyChoicecollectionView)
-    telepathyChoicecollectionView.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 0.7)
+    telepathyChoicecollectionView.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1)
     telepathyChoicecollectionView.dataSource = self
     telepathyChoicecollectionView.delegate = self
     telepathyChoicecollectionView.register(TelepathyChoiceCollectionCell.self, forCellWithReuseIdentifier: "ChoiceCustom")

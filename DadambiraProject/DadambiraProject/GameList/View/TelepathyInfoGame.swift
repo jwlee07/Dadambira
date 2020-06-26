@@ -63,7 +63,7 @@ class TelepathyInfoGameViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "제비뽑기"
+    title = "복볼복"
     setupViewLayout()
     setupNavigationBar()
   }
