@@ -25,12 +25,9 @@ class MainViewController: UIViewController {
   }()
   
   lazy var collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layour)
-  
   let layour = UICollectionViewFlowLayout()
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     navigationClear()
     setupLongPressDestureRecignizer()
     setupCollectionView()

@@ -229,7 +229,7 @@ extension HitAndMissGameViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
     if let checkDidDeIndexItem = hitAndMissCollectionView.cellForItem(at: indexPath) as? HitAndMissCell {
       if toggle {
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.5) {
           checkDidDeIndexItem.custimMiniImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
           checkDidDeIndexItem.custimMiniImageView.alpha = 0
         }
