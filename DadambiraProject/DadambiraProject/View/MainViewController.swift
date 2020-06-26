@@ -129,11 +129,7 @@ extension MainViewController: UICollectionViewDelegate {
     print(indexPath.item)
     
     selectIndexPathArray.append(indexPath)
-<<<<<<< HEAD
-        
-=======
-    
->>>>>>> 1afa1c3eb706fb77c8aeb9bb5a0d1bcb84620041
+
     switch titleData[indexPath.item] {
     case "텔레파시" :
       let vc = HitAndMissGameViewController()
