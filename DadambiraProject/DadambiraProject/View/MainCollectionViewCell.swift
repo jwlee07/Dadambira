@@ -15,6 +15,7 @@ class MainCollectionViewCell: UICollectionViewCell {
   let mainImageView = UIImageView()
   let mainTitleImage = UIImageView()
   let titlteLable = UILabel()
+  var isAnimated = false
 
   
   required init?(coder aDecoder: NSCoder) {
@@ -27,7 +28,6 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     setupView()
     setupConstraints()
-    mainAnimation()
   }
   
   
@@ -84,32 +84,13 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     
     titlteLable.topAnchor.constraint(equalTo: mainTitleImage.topAnchor, constant: 130).isActive = true
-    titlteLable.leadingAnchor.constraint(equalTo: mainTitleImage.leadingAnchor).isActive = true
+    titlteLable.leadingAnchor.constraint(equalTo: mainTitleImage.leadingAnchor, constant: 10).isActive = true
     titlteLable.trailingAnchor.constraint(equalTo: mainTitleImage.trailingAnchor).isActive = true
     titlteLable.bottomAnchor.constraint(equalTo: mainTitleImage.bottomAnchor).isActive = true
 
     
   }
   
-  func mainAnimation(){
-      UIView.animateKeyframes(
-        withDuration: 1,
-        delay: 0,
-        animations: {
-          UIView.addKeyframe(withRelativeStartTime: 0.0,
-                             relativeDuration: 0.25
-          ){
-       // self.contentView.alpha = 10
-           self.titlteLable.center.x += 50.0
-        //   self.titlteLable.center.y += 20.0
-          }
-      }
-
-      ){ _ in
-      }
-  }
-  
-
   
   func configure(image: UIImage?, title: String){
     mainImageView.image = image

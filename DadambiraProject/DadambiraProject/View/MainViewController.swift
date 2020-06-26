@@ -29,24 +29,7 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationClear()
-    setupLongPressDestureRecignizer()
     setupCollectionView()
-    
-    let viewVC = ViewController()
-    viewVC.modalPresentationStyle = .fullScreen
-    present(viewVC, animated: false)
-    
-    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-      viewVC.dismiss(animated: false) {
-        let startVC = StartViewController()
-        startVC.modalPresentationStyle = .fullScreen
-        self.present(startVC, animated: true)
-      }
-    }
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
     
   }
   
@@ -55,41 +38,6 @@ class MainViewController: UIViewController {
     navigationController?.navigationBar.shadowImage = UIImage()
     navigationController?.navigationBar.backgroundColor = UIColor.clear
   }
-  
-  //Start화면 한번만 띄우기
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    
-    
-    if push == true {
-     // let vc = StartViewController()
-      print(push)
-     // vc.modalPresentationStyle = .fullScreen
-     // present(vc, animated: true)
-      push = false
-    } else {
-      print(push)
-    }
-    
-  }
-  
-  func mainAnimation(){
-    UIView.animateKeyframes(
-      withDuration: 100,
-      delay: 0,
-      animations: {
-        UIView.addKeyframe(withRelativeStartTime: 0.0,
-                           relativeDuration: 0.25
-        ){
-          self.collectionView.alpha = 10
-          // self.collectionView.center.x += 50.0
-          //  self.collectionView.center.y += 20.0
-        }
-    }
-    ){ _ in
-    }
-  }
-  
   
   
   func setupCollectionView() {
@@ -121,10 +69,6 @@ class MainViewController: UIViewController {
     view.addSubview(mainTitle)
     
     
-    //셀 뒤 아이콘
-    cellBehind.text = "👾"
-    cellBehind.isHidden = true
-    
     
     //레이아웃
     collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -150,41 +94,8 @@ class MainViewController: UIViewController {
     
   }
   
-  
-  // MARK: Setup Gesture
-  // 셀 제스처
-  func setupLongPressDestureRecignizer(){
-    let gesture = UILongPressGestureRecognizer(target: self, action: #selector(reorderCollectionViewItem(_:))
-    )
-    collectionView.addGestureRecognizer(gesture)
-  }
-  
-  @objc private func reorderCollectionViewItem(_ sender: UILongPressGestureRecognizer) {
-    print(sender)
-    let location = sender.location(in: collectionView)
-    guard let indexPath = collectionView.indexPathForItem(at: location) else { return }
-    
-    let cell =  collectionView.cellForItem(at: indexPath)!
-    UIView.animate(withDuration: 0.5) {
-      cell.alpha = 0
-      self.cellBehind.isHidden = false
-    }
-    
-    switch sender.state {
-    case .began:
-      guard let indexPath = collectionView.indexPathForItem(at: location) else { break }
-      collectionView.beginInteractiveMovementForItem(at: indexPath)
-    case .changed:
-      collectionView.updateInteractiveMovementTargetPosition(location)
-    case .cancelled:
-      collectionView.cancelInteractiveMovement()
-    case .ended:
-      collectionView.endInteractiveMovement()
-    default:
-      break
-    }
-  }
 }
+
 
 // MARK: UICollectionViewDataSource
 
@@ -200,12 +111,26 @@ extension MainViewController: UICollectionViewDataSource {
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! MainCollectionViewCell
     
+    if !cell.isAnimated {
+      
+      UIView.animate(withDuration: 0.5, delay: 0.5 * Double(indexPath.row), usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: indexPath.row % 2 == 0 ? .transitionFlipFromLeft : .transitionFlipFromRight, animations: {
+        
+        if indexPath.row % 2 == 0 {
+          AnimationUtility.viewSlideInFromLeft(toRight: cell)
+        }
+        else {
+          AnimationUtility.viewSlideInFromRight(toLeft: cell)
+        }
+        
+      }, completion: { (done) in
+        cell.isAnimated = true
+      })
+    }
     
     cell.backgroundColor = .clear
     cell.mainImageView.image = UIImage(named: images[indexPath.item])
     cell.mainTitleImage.image = UIImage(named: "cardShadow")
     cell.titlteLable.text = titleData[indexPath.item]
-    
     
     return cell
   }
@@ -219,6 +144,9 @@ extension MainViewController: UICollectionViewDataSource {
   }
   
 }
+
+
+
 //MARK: -UICollectionViewDelegate
 extension MainViewController: UICollectionViewDelegate {
   
@@ -238,13 +166,13 @@ extension MainViewController: UICollectionViewDelegate {
       navigationController?.pushViewController(vc, animated: true)
       //present(vc, animated: true)
       
-    case "제비뽑기" :
+    case "복불복" :
       let vc = TelepathyInfoGameViewController()
       vc.modalPresentationStyle = .fullScreen
       navigationController?.pushViewController(vc, animated: true)
       
       
-    case "폭탄던지기" :
+    case "받아라 폭탄" :
       let vc = TimeBombViewController()
       vc.modalPresentationStyle = .fullScreen
       navigationController?.pushViewController(vc, animated: true)
@@ -257,8 +185,5 @@ extension MainViewController: UICollectionViewDelegate {
       print("잘못된 접근")
     }
     
-    
   }
 }
-
-
