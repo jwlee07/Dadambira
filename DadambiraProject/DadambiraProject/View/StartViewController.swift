@@ -136,7 +136,7 @@ extension StartViewController: UITableViewDelegate {
     
     //게임레이블
     CustomCell.gameLable.frame = CGRect(
-      x: cell.frame.width - 230, y: 40,
+      x: cell.frame.width/2.8, y: 40,
       width: cell.frame.width/1.8, height: cell.frame.height/1.5)
     CustomCell.gameLable.lineBreakMode = .byClipping
     CustomCell.gameLable.numberOfLines = 5
@@ -146,7 +146,7 @@ extension StartViewController: UITableViewDelegate {
     
     
     //게임제목
-    CustomCell.gameTitle.frame = CGRect(x: cell.frame.width - 230, y: 10, width: cell.frame.width/1.8, height: cell.frame.height/4.5)
+    CustomCell.gameTitle.frame = CGRect(x: cell.frame.width/2.8, y: 10, width: cell.frame.width/1.8, height: cell.frame.height/4.5)
     CustomCell.gameTitle.textColor = UIColor(red: 220/255, green: 214/255, blue: 247/255, alpha: 1)
     CustomCell.gameTitle.font = UIFont.boldSystemFont(ofSize: 17)
     CustomCell.gameTitle.backgroundColor = .clear

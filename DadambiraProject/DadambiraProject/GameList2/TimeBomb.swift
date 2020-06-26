@@ -39,12 +39,13 @@ class TimeBombViewController: UIViewController {
   var myLabel: UILabel = {
     let myLabel = UILabel()
     myLabel.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+    myLabel.alpha = 0
     return myLabel
   }()
   
   var choiceTime: UILabel = {
     var choiceTime = UILabel()
-    choiceTime.text = "3"
+    choiceTime.text = "30"
     choiceTime.textColor = .white
     choiceTime.font = UIFont.boldSystemFont(ofSize: 100)
     return choiceTime
@@ -57,7 +58,8 @@ class TimeBombViewController: UIViewController {
   
   private var gameStratButton: UIButton = {
     let gameStratButton = UIButton()
-    gameStratButton.setTitle("레쓰 기릿", for: .normal)
+    gameStratButton.setTitle("게임시작", for: .normal)
+    gameStratButton.titleLabel?.font =  UIFont(name: "CreCjaL", size: 40)
     gameStratButton.setTitleColor(UIColor.white, for: .normal)
     gameStratButton.addTarget(self, action: #selector(didTapStartButton), for: .touchUpInside)
     return gameStratButton
@@ -77,11 +79,16 @@ class TimeBombViewController: UIViewController {
     configure()
     configureViewComponents()
     setupNavigationBar()
+    
   }
+  
   func setupNavigationBar() {
+    //166, 177, 225
+
     
     let leftDismissButton = UIBarButtonItem (image: UIImage(systemName: "arrowshape.turn.up.left.fill"), style: .plain, target: self, action: #selector(didTapDismissButton))
-    leftDismissButton.tintColor = UIColor(red: 66/255, green: 72/255, blue: 166/255, alpha: 1)
+    
+    leftDismissButton.tintColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1)
     navigationItem.leftBarButtonItem = leftDismissButton
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     navigationController?.navigationBar.shadowImage = UIImage()
@@ -90,6 +97,7 @@ class TimeBombViewController: UIViewController {
   
   @objc private func didTapDismissButton(_ sender: UIBarButtonItem) {
     navigationController?.popViewController(animated: true)
+    soundEffect?.stop()
   }
   
   // MARK: Helpers

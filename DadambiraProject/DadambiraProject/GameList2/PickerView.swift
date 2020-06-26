@@ -11,7 +11,7 @@ import UIKit
 class PickerView: UIPickerView {
     
     // MARK: Properties
-    private let values: [String] = ["3","30","60","90","120","150","180","210","240","270","300",]
+    private let values: [String] = ["30","60","90","120","150","160"]
     
     private var choiceValue = ""
     
