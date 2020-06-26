@@ -42,10 +42,10 @@ class MainViewController: UIViewController {
   
   func setupCollectionView() {
     
-    layour.itemSize = CGSize(width: 164 , height: 300)
+    layour.itemSize = CGSize(width: 176 , height: 300)
     layour.minimumLineSpacing = 16
-    layour.minimumInteritemSpacing = 0
-    layour.sectionInset = UIEdgeInsets(top: 26, left: 16, bottom: 30, right: 16)
+    layour.minimumInteritemSpacing = 8
+    layour.sectionInset = UIEdgeInsets(top: 26, left: 20, bottom: 30, right: 20)
     
     
     //컬렉션뷰
@@ -80,19 +80,18 @@ class MainViewController: UIViewController {
     cellBehind.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 100).isActive = true
     cellBehind.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -525).isActive = true
     
-    collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant:  80).isActive = true
-    collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-    collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant:  80).isActive = true
+    collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+    collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+    collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     
     
     mainTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
     mainTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     mainTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     mainTitle.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -725).isActive = true
-    
-    
   }
+  
   
 }
 
