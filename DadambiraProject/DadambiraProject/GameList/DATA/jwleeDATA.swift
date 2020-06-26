@@ -12,7 +12,9 @@ let cardNumberImage: [UIImage] = [
   "1.square",
   "2.square",
   "3.square",
-  "4.square"].compactMap(UIImage.init(systemName:))
+  "4.square",].compactMap(UIImage.init(systemName:))
+
+let notCardChoice = UIImage(systemName: "multiply.square")
 
 let cardCheckImage: UIImage = UIImage(systemName: "heart.fill")!
 
@@ -26,7 +28,6 @@ var checkPersonNumberString: String = ""
 var checkTextfieldKeyword: [String] = []
 
 var textList: [String] = []
-var randomTexList = textList.shuffled()
 
 
 

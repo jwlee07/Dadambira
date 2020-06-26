@@ -14,6 +14,7 @@ class HitAndMissGameViewController: UIViewController {
   
   let numberImage = cardNumberImage
   let checkImage = cardCheckImage
+  let alertCustomView = HitAndMissCustomView()
   let hitAndMissLayout = UICollectionViewFlowLayout()
   lazy var hitAndMissCollectionView = UICollectionView(frame: view.frame, collectionViewLayout: hitAndMissLayout)
   
@@ -115,7 +116,7 @@ class HitAndMissGameViewController: UIViewController {
   @objc private func didTapSetUpButton(_ sender: UIButton) {
     if toggle {
       if firstCheckIndexItenArr.count > 0 {
-        let selectOkAlert = UIAlertController (title: "마지막 확인 !", message: "\(firstCheckIndexItenArr[0] + 1)번 선택할까요 ?" , preferredStyle: .alert)
+        let selectOkAlert = UIAlertController (title: nil, message: "선택할까요 ?" , preferredStyle: .alert)
         let selectOkAlertAction = UIAlertAction (title: "넵 !", style: .default) {_ in
           self.infoLabel.text = "맞춰봐요 !"
           self.completeButton.setTitle("최종선택", for: .normal)
@@ -125,17 +126,21 @@ class HitAndMissGameViewController: UIViewController {
         let selectOkCancelAlertAction = UIAlertAction (title: "다시 !", style: .cancel)
         selectOkAlert.addAction(selectOkCancelAlertAction)
         selectOkAlert.addAction(selectOkAlertAction)
+        alertCustomView.alertImageView.image = cardNumberImage[firstCheckIndexItenArr[0]].withTintColor(UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1), renderingMode: .alwaysOriginal)
+        selectOkAlert.setValue(alertCustomView, forKey: "contentViewController")
         present(selectOkAlert, animated: true)
       } else {
-        let selectNoAlert = UIAlertController (title: "잠깐만!", message: "카드를 선택해주세요^^", preferredStyle: .alert)
+        let selectNoAlert = UIAlertController (title: nil, message: "카드를 선택해주세요.", preferredStyle: .alert)
         let selectNoAlertAction = UIAlertAction (title: "넵~", style: .default)
         selectNoAlert.addAction(selectNoAlertAction)
+        alertCustomView.alertImageView.image = notCardChoice!.withTintColor(UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1), renderingMode: .alwaysOriginal)
+        selectNoAlert.setValue(alertCustomView, forKey: "contentViewController")
         present(selectNoAlert, animated: true)
       }
     } else {
       if firstCheckIndexItenArr.count > 0, secondCheckIndexItenArr.count > 0 {
         if firstCheckIndexItenArr[0] == secondCheckIndexItenArr[0] {
-          let finalCompleteAlert = UIAlertController(title: "맞췄어요!", message: "축하드립니다 !", preferredStyle: .alert)
+          let finalCompleteAlert = UIAlertController(title: nil, message: "맞췄어요 ! \n 정답.", preferredStyle: .alert)
           let finalCompleteOk = UIAlertAction(title: "넵 !", style: .default) {_ in
             firstCheckIndexItenArr.removeAll()
             secondCheckIndexItenArr.removeAll()
@@ -143,12 +148,13 @@ class HitAndMissGameViewController: UIViewController {
             self.toggle = !self.toggle
             self.completeButton.setTitle("지정하기", for: .normal)
             self.infoLabel.text = "신중한 선택!"
-            
           }
           finalCompleteAlert.addAction(finalCompleteOk)
+          alertCustomView.alertImageView.image = cardNumberImage[firstCheckIndexItenArr[0]].withTintColor(UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1), renderingMode: .alwaysOriginal)
+          finalCompleteAlert.setValue(alertCustomView, forKey: "contentViewController")
           present(finalCompleteAlert, animated: true)
         } else {
-          let finalFailAlert = UIAlertController(title: "틀렸어요 !", message: "\(firstCheckIndexItenArr[0] + 1)번이었어요 ㅠ", preferredStyle: .alert)
+          let finalFailAlert = UIAlertController(title: nil, message: "틀렸어요 ㅠ \n 정답.", preferredStyle: .alert)
           let finalFailOk = UIAlertAction (title: "넵 ㅠ", style: .default) {_ in
             firstCheckIndexItenArr.removeAll()
             secondCheckIndexItenArr.removeAll()
@@ -158,12 +164,16 @@ class HitAndMissGameViewController: UIViewController {
             self.infoLabel.text = "신중한 선택!"
           }
           finalFailAlert.addAction(finalFailOk)
+          alertCustomView.alertImageView.image = cardNumberImage[firstCheckIndexItenArr[0]].withTintColor(UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1), renderingMode: .alwaysOriginal)
+          finalFailAlert.setValue(alertCustomView, forKey: "contentViewController")
           present(finalFailAlert, animated: true)
         }
       } else {
-        let secondSelectNoAlert = UIAlertController (title: "잠깐만!", message: "카드를 선택해주세요^^", preferredStyle: .alert)
+        let secondSelectNoAlert = UIAlertController (title: nil, message: "카드를 선택해주세요.", preferredStyle: .alert)
         let secondSelectNoAlertAction = UIAlertAction (title: "넵 ~", style: .default)
         secondSelectNoAlert.addAction(secondSelectNoAlertAction)
+        alertCustomView.alertImageView.image = notCardChoice!.withTintColor(UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1), renderingMode: .alwaysOriginal)
+        secondSelectNoAlert.setValue(alertCustomView, forKey: "contentViewController")
         present(secondSelectNoAlert, animated: true)
       }
     }
@@ -196,6 +206,7 @@ extension HitAndMissGameViewController: UICollectionViewDelegate {
       if toggle {
         if checkDidIndexItem.isSelected {
           UIView.animate(withDuration: 0.5) {
+            checkDidIndexItem.custimMiniImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
             checkDidIndexItem.custimMiniImageView.alpha = 1
           }
           if !(firstCheckIndexItenArr.contains(indexPath.item)) {
@@ -205,6 +216,7 @@ extension HitAndMissGameViewController: UICollectionViewDelegate {
       } else {
         if checkDidIndexItem.isSelected {
           UIView.animate(withDuration: 0.5) {
+            checkDidIndexItem.custimMiniImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
             checkDidIndexItem.custimMiniImageView.alpha = 1
           }
           if !(secondCheckIndexItenArr.contains(indexPath.item)) {
@@ -218,6 +230,7 @@ extension HitAndMissGameViewController: UICollectionViewDelegate {
     if let checkDidDeIndexItem = hitAndMissCollectionView.cellForItem(at: indexPath) as? HitAndMissCell {
       if toggle {
         UIView.animate(withDuration: 0.5) {
+          checkDidDeIndexItem.custimMiniImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
           checkDidDeIndexItem.custimMiniImageView.alpha = 0
         }
         if firstCheckIndexItenArr.contains(indexPath.item) {
@@ -225,6 +238,7 @@ extension HitAndMissGameViewController: UICollectionViewDelegate {
         }
       } else {
         UIView.animate(withDuration: 0.5) {
+          checkDidDeIndexItem.custimMiniImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
           checkDidDeIndexItem.custimMiniImageView.alpha = 0
         }
         if secondCheckIndexItenArr.contains(indexPath.item) {

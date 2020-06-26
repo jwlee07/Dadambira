@@ -25,12 +25,9 @@ class MainViewController: UIViewController {
   }()
   
   lazy var collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layour)
-  
   let layour = UICollectionViewFlowLayout()
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     navigationClear()
     setupCollectionView()
     
@@ -179,6 +176,11 @@ extension MainViewController: UICollectionViewDelegate {
       let vc = TimeBombViewController()
       vc.modalPresentationStyle = .fullScreen
       navigationController?.pushViewController(vc, animated: true)
+        
+    case "낚시게임" :
+        let fishVC = LetsFishingViewController()
+        fishVC.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(fishVC, animated: true)
     default:
       print("잘못된 접근")
     }

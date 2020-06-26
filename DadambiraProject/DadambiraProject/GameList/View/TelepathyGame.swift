@@ -28,12 +28,18 @@ class TelepathyGameViewController: UIViewController, UITableViewDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = "복볼복"
     setupTableView()
     setupNavigationBar()
     setupData()
   }
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    view.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1)
+  }
   
   // MARK: - setup Layout
+  
   func setupData() {
     guard let count = Int(checkPersonNumberString) else { return }
     for _ in 1...count {
@@ -55,9 +61,8 @@ class TelepathyGameViewController: UIViewController, UITableViewDelegate {
       telepathyTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
       telepathyTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -view.frame.height / 3)
     ])
-    
-    
   }
+
   func setupNavigationBar() {
     let leftDismissButton = UIBarButtonItem (image: UIImage(systemName: "arrowshape.turn.up.left.fill"), style: .plain, target: self, action: #selector(didTapDismissButton))
     let rightPushButton = UIBarButtonItem (image: UIImage(systemName: "checkmark"), style: .plain, target: self, action: #selector(didTapPushButton))
@@ -75,13 +80,16 @@ class TelepathyGameViewController: UIViewController, UITableViewDelegate {
   
   @objc func didTapDismissButton() {
     navigationController?.popViewController(animated: true)
-    self.telepathyTableView.reloadData()
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+      self.telepathyTableView.reloadData()
+      textList.removeAll()
+    }
   }
   
   @objc func didTapPushButton() {
     if !(textList.contains("")) {
       let TelepathyChoiceVC = TelepathyChoiceViewController()
-      TelepathyChoiceVC.view.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 0.7)
+      TelepathyChoiceVC.view.backgroundColor = .systemBackground
       navigationController?.pushViewController(TelepathyChoiceVC, animated: true)
     } else {
       let checkTextAlert = UIAlertController (title: "잠깐만요 !", message: "모두 입력해주세요 !", preferredStyle: .alert)
@@ -105,6 +113,10 @@ extension TelepathyGameViewController: UITableViewDataSource {
     telepathyCell.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1)
     telepathyCell.telepathCellLabel.text = "\(indexPath.row + 1)"
     telepathyCell.telepathCellTextfield.text = textList[indexPath.row]
+    if indexPath.row == 0 {
+      telepathyCell.telepathCellTextfield.keyboardType = .webSearch
+      telepathyCell.telepathCellTextfield.becomeFirstResponder()
+    }
     return telepathyCell
   }
 }

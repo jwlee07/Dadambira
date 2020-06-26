@@ -11,6 +11,7 @@
 		492822E324A0A04000D3ACB0 /* HitAndMissCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492822E224A0A04000D3ACB0 /* HitAndMissCell.swift */; };
 		492822E524A21E4700D3ACB0 /* TelepathyGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492822E424A21E4700D3ACB0 /* TelepathyGame.swift */; };
 		492822E724A235BE00D3ACB0 /* TelepathyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492822E624A235BD00D3ACB0 /* TelepathyCell.swift */; };
+		492C8A6E24A503B500C9AD73 /* HitAndMissCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492C8A6D24A503B500C9AD73 /* HitAndMissCustomView.swift */; };
 		495B9D04249F5064009C5317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D03249F5064009C5317 /* AppDelegate.swift */; };
 		495B9D06249F5064009C5317 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D05249F5064009C5317 /* SceneDelegate.swift */; };
 		495B9D08249F5064009C5317 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D07249F5064009C5317 /* ViewController.swift */; };
@@ -37,6 +38,11 @@
 		D3876B3324A3138B00C48CB3 /* 파돌리기송.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3876B3124A3138B00C48CB3 /* 파돌리기송.mp3 */; };
 		D3876B3424A3138B00C48CB3 /* BOOM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3876B3224A3138B00C48CB3 /* BOOM.mp3 */; };
 		D3876B3624A313D100C48CB3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3876B3524A313D100C48CB3 /* Extension.swift */; };
+		D3A78F2624A5ACF000FCE80E /* LetsFishingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A78F2524A5ACF000FCE80E /* LetsFishingViewController.swift */; };
+		D3A78F2824A5AD0600FCE80E /* ArtWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A78F2724A5AD0600FCE80E /* ArtWork.swift */; };
+		D3A78F2A24A5AD1200FCE80E /* DookSumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A78F2924A5AD1200FCE80E /* DookSumViewController.swift */; };
+		D3A78F2C24A5AD2000FCE80E /* IncheonAirport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A78F2B24A5AD2000FCE80E /* IncheonAirport.swift */; };
+		D3A78F2E24A5AD2B00FCE80E /* GoogleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A78F2D24A5AD2B00FCE80E /* GoogleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +50,7 @@
 		492822E224A0A04000D3ACB0 /* HitAndMissCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitAndMissCell.swift; sourceTree = "<group>"; };
 		492822E424A21E4700D3ACB0 /* TelepathyGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyGame.swift; sourceTree = "<group>"; };
 		492822E624A235BD00D3ACB0 /* TelepathyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyCell.swift; sourceTree = "<group>"; };
+		492C8A6D24A503B500C9AD73 /* HitAndMissCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitAndMissCustomView.swift; sourceTree = "<group>"; };
 		495B9D00249F5064009C5317 /* DadambiraProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DadambiraProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		495B9D03249F5064009C5317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		495B9D05249F5064009C5317 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +79,11 @@
 		D3876B3124A3138B00C48CB3 /* 파돌리기송.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "파돌리기송.mp3"; path = "../../../파돌리기송.mp3"; sourceTree = "<group>"; };
 		D3876B3224A3138B00C48CB3 /* BOOM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BOOM.mp3; path = ../../../BOOM.mp3; sourceTree = "<group>"; };
 		D3876B3524A313D100C48CB3 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		D3A78F2524A5ACF000FCE80E /* LetsFishingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsFishingViewController.swift; sourceTree = "<group>"; };
+		D3A78F2724A5AD0600FCE80E /* ArtWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWork.swift; sourceTree = "<group>"; };
+		D3A78F2924A5AD1200FCE80E /* DookSumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DookSumViewController.swift; sourceTree = "<group>"; };
+		D3A78F2B24A5AD2000FCE80E /* IncheonAirport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncheonAirport.swift; sourceTree = "<group>"; };
+		D3A78F2D24A5AD2B00FCE80E /* GoogleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,14 +141,9 @@
 		495B9D4124A040F4009C5317 /* GameList */ = {
 			isa = PBXGroup;
 			children = (
-				495B9D3A249F6969009C5317 /* HitAndMissGame.swift */,
-				495B9D38249F68F7009C5317 /* TelepathyInfoGame.swift */,
-				492822E424A21E4700D3ACB0 /* TelepathyGame.swift */,
-				49B5AD4324A387720008E7D2 /* TelepathyChoice.swift */,
-				492822E224A0A04000D3ACB0 /* HitAndMissCell.swift */,
-				492822E624A235BD00D3ACB0 /* TelepathyCell.swift */,
-				49903F6024A3B38F0027845B /* TelepathyChoiceCollectionCell.swift */,
-				492822DE24A097EF00D3ACB0 /* jwleeDATA.swift */,
+				49BA2D6824A5A36F00363EF7 /* View */,
+				49BA2D6924A5A38700363EF7 /* Custom */,
+				49BA2D6A24A5A3A400363EF7 /* DATA */,
 			);
 			path = GameList;
 			sourceTree = "<group>";
@@ -158,6 +165,36 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		49BA2D6824A5A36F00363EF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				495B9D3A249F6969009C5317 /* HitAndMissGame.swift */,
+				495B9D38249F68F7009C5317 /* TelepathyInfoGame.swift */,
+				492822E424A21E4700D3ACB0 /* TelepathyGame.swift */,
+				49B5AD4324A387720008E7D2 /* TelepathyChoice.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49BA2D6924A5A38700363EF7 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				492822E224A0A04000D3ACB0 /* HitAndMissCell.swift */,
+				492C8A6D24A503B500C9AD73 /* HitAndMissCustomView.swift */,
+				492822E624A235BD00D3ACB0 /* TelepathyCell.swift */,
+				49903F6024A3B38F0027845B /* TelepathyChoiceCollectionCell.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		49BA2D6A24A5A3A400363EF7 /* DATA */ = {
+			isa = PBXGroup;
+			children = (
+				492822DE24A097EF00D3ACB0 /* jwleeDATA.swift */,
+			);
+			path = DATA;
+			sourceTree = "<group>";
+		};
 		D3488E7024A1F577001B44B4 /* GameList2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +203,11 @@
 				D3488E7524A1F5F5001B44B4 /* PickerView.swift */,
 				D3876B3524A313D100C48CB3 /* Extension.swift */,
 				7302495C24A49A2A002AAA65 /* BombImage.pdf */,
+				D3A78F2524A5ACF000FCE80E /* LetsFishingViewController.swift */,
+				D3A78F2724A5AD0600FCE80E /* ArtWork.swift */,
+				D3A78F2924A5AD1200FCE80E /* DookSumViewController.swift */,
+				D3A78F2B24A5AD2000FCE80E /* IncheonAirport.swift */,
+				D3A78F2D24A5AD2B00FCE80E /* GoogleViewController.swift */,
 			);
 			path = GameList2;
 			sourceTree = "<group>";
@@ -255,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A78F2C24A5AD2000FCE80E /* IncheonAirport.swift in Sources */,
 				49B5AD4424A387720008E7D2 /* TelepathyChoice.swift in Sources */,
 				7302495324A497BA002AAA65 /* StartTableViewCell.swift in Sources */,
 				D3488E7224A1F5AD001B44B4 /* TimeBomb.swift in Sources */,
@@ -265,15 +308,20 @@
 				7302495724A497EB002AAA65 /* MainCollectionViewCell.swift in Sources */,
 				495B9D04249F5064009C5317 /* AppDelegate.swift in Sources */,
 				D3488E7424A1F5DC001B44B4 /* PickerTimeView.swift in Sources */,
+				D3A78F2E24A5AD2B00FCE80E /* GoogleViewController.swift in Sources */,
+				D3A78F2824A5AD0600FCE80E /* ArtWork.swift in Sources */,
 				492822DF24A097EF00D3ACB0 /* jwleeDATA.swift in Sources */,
 				735A7B7E24A58AA3004303F0 /* AnimationUtility.swift in Sources */,
 				492822E724A235BE00D3ACB0 /* TelepathyCell.swift in Sources */,
 				492822E524A21E4700D3ACB0 /* TelepathyGame.swift in Sources */,
 				495B9D06249F5064009C5317 /* SceneDelegate.swift in Sources */,
 				7302494F24A4978F002AAA65 /* data.swift in Sources */,
+				492C8A6E24A503B500C9AD73 /* HitAndMissCustomView.swift in Sources */,
 				7302494D24A496E8002AAA65 /* LaunchAnimation.swift in Sources */,
+				D3A78F2624A5ACF000FCE80E /* LetsFishingViewController.swift in Sources */,
 				D3876B3624A313D100C48CB3 /* Extension.swift in Sources */,
 				492822E324A0A04000D3ACB0 /* HitAndMissCell.swift in Sources */,
+				D3A78F2A24A5AD1200FCE80E /* DookSumViewController.swift in Sources */,
 				D3488E7624A1F5F5001B44B4 /* PickerView.swift in Sources */,
 				495B9D3B249F6969009C5317 /* HitAndMissGame.swift in Sources */,
 				7302495524A497CF002AAA65 /* MainViewController.swift in Sources */,
@@ -421,16 +469,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 25WA95NQNW;
+				DEVELOPMENT_TEAM = LVLY4QRGC9;
 				INFOPLIST_FILE = DadambiraProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.DadambiraProject;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.ejdgudl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -439,16 +487,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 25WA95NQNW;
+				DEVELOPMENT_TEAM = LVLY4QRGC9;
 				INFOPLIST_FILE = DadambiraProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.DadambiraProject;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.ejdgudl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

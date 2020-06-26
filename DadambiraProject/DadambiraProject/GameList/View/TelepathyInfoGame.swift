@@ -15,9 +15,10 @@ class TelepathyInfoGameViewController: UIViewController {
   let personNumberInfoLabel: UILabel = {
     let label = UILabel()
     label.text = "몇명에서 할꺼에요 ?"
-    label.font = UIFont.boldSystemFont(ofSize: 35)
+    label.font = UIFont.boldSystemFont(ofSize: 32)
     label.textColor = UIColor(red: 66/255, green: 72/255, blue: 116/255, alpha: 1.0)
     label.textAlignment = .center
+    label.contentMode = .scaleToFill
     return label
   }()
   
@@ -62,13 +63,16 @@ class TelepathyInfoGameViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "제비뽑기"
+    title = "복볼복"
     setupViewLayout()
     setupNavigationBar()
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(true)
+    super.viewWillAppear(animated)
+    UIView.animate(withDuration: 0.5) {
+      self.personNumberInfoLabel.center.x = -self.view.frame.width
+    }
     personNumberTextfield.becomeFirstResponder()
     
   }
@@ -111,8 +115,8 @@ class TelepathyInfoGameViewController: UIViewController {
     
     NSLayoutConstraint.activate([
       personNumberInfoSetupButton.topAnchor.constraint(equalTo: personNumberTextfield.safeAreaLayoutGuide.bottomAnchor, constant: margin),
-      personNumberInfoSetupButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: buttonMargin * 2),
-      personNumberInfoSetupButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -buttonMargin * 2),
+      personNumberInfoSetupButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: buttonMargin * 1.8),
+      personNumberInfoSetupButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -buttonMargin * 1.8),
       personNumberInfoSetupButton.heightAnchor.constraint(equalToConstant: buttonMargin)
     ])
   }
@@ -135,7 +139,7 @@ class TelepathyInfoGameViewController: UIViewController {
   @objc func didTapInfoButton(_ sender: UIButton) {
     if checkPersonNumberString != "" {
       let telepathyGameVC = TelepathyGameViewController()
-      telepathyGameVC.view.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 0.7)
+      telepathyGameVC.view.backgroundColor = .systemBackground
       navigationController?.pushViewController(telepathyGameVC, animated: true)
     } else {
       let numberCheckError = UIAlertController (title: "잠깐만요 !", message: "숫자를 입력해주세용", preferredStyle: .alert)
