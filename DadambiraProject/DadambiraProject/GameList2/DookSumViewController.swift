@@ -11,9 +11,9 @@ import UIKit
 class DookSumViewController: UIViewController {
     
     // MARK: Propertise
-    let imageView: UIImageView = {
+    let copImageView: UIImageView = {
        let imageView = UIImageView()
-        imageView.image = UIImage(named: "DookSumBG")
+        imageView.image = UIImage(named: "Cop")
         return imageView
     }()
     
@@ -25,23 +25,31 @@ class DookSumViewController: UIViewController {
     }
     
     // MARK: Helpers
-    
+    func alert() {
+        let alert = UIAlertController(title: "철컹", message: "🚨이곳은 낚시 금지구역입니다🚨", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default) { (_) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        present(alert, animated: true)
+        alert.addAction(ok)
+    }
     
     // MARK: Configure
     func configure() {
-        
+        alert()
+        navigationController?.navigationBar.isHidden = true
     }
     
     // MARK: Configure View Components
     func configureViewComponents() {
         view.backgroundColor = .systemBackground
         
-        view.addSubview(imageView)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        imageView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        imageView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        view.addSubview(copImageView)
+        copImageView.translatesAutoresizingMaskIntoConstraints = false
+        copImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        copImageView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        copImageView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        copImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
 }
 

@@ -10,18 +10,52 @@ import UIKit
 
 class IncheonAirportViewController: UIViewController {
   
-  let label: UILabel = {
-    let label = UILabel()
-    label.text = "IncheonAirport"
-    label.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
-    return label
-  }()
-  
+  // MARK: Properties
+    let imageView: UIImageView = {
+       let imageView = UIImageView()
+        imageView.image = UIImage(named: "Gas")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+  // MARK: Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .green
-    view.addSubview(label)
+    configure()
+    configureViewComponents()
+    
   }
+    
+    // MARK: Helpers
+    func alert() {
+        let alert = UIAlertController(title: "Warning", message: "✖︎Covid19✖︎", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default) { (_) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        present(alert, animated: true)
+        alert.addAction(ok)
+    }
+    
+
+    // MARK: Configure
+    func configure() {
+        alert()
+        view.backgroundColor = .systemBackground
+        view.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        imageView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        imageView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    // MARK: Configure View Components
+    func configureViewComponents() {
+        
+    }
+    
   
 }
 
