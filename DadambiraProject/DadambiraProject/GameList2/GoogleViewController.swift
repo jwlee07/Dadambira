@@ -201,7 +201,7 @@ class GoogleViewController: UIViewController {
         fishingRod.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -130).isActive = true
         fishingRod.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 130).isActive = true
         fishingRod.transform = CGAffineTransform(scaleX: 0.055, y: 0.055)
-        fishingRod.transform = fishingRod.transform.rotated(by: CGFloat(M_PI_2)*7.40)
+        fishingRod.transform = fishingRod.transform.rotated(by: CGFloat(Double.pi / 2)*7.40)
         
         view.addSubview(castingButton)
         castingButton.translatesAutoresizingMaskIntoConstraints = false
@@ -290,8 +290,8 @@ class GoogleViewController: UIViewController {
     // MARK: @Objc
     @objc func DidTapCastingButton() {
         
-        var myIndex = array.randomElement()
-        var choiceFish = fishes[myIndex!]
+        let myIndex = array.randomElement()
+        let choiceFish = fishes[myIndex!]
         
         if checkBool == false {
             self.checkBool = true

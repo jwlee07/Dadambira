@@ -15,6 +15,7 @@ class TelepathyChoiceViewController: UIViewController {
   lazy var telepathyChoicecollectionView = UICollectionView (frame: view.frame, collectionViewLayout: telepathyChoicecollectionViewLayout)
   
   let insetMargin: CGFloat = 20
+  let LineSpacing: CGFloat = 10
   let SpacingMargin: CGFloat = 20
   let widthPadding: CGFloat = 15
   
@@ -24,15 +25,15 @@ class TelepathyChoiceViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "복볼복"
-    setupCollectionView()
+    setupView()
     setupNavigationBar()
   }
   // MARK: - setup Layout
   
-  func setupCollectionView() {
+  func setupView() {
     
     telepathyChoicecollectionViewLayout.itemSize = CGSize (width: view.frame.width - (widthPadding * 2), height: view.frame.height / 7)
-    telepathyChoicecollectionViewLayout.minimumLineSpacing = 10
+    telepathyChoicecollectionViewLayout.minimumLineSpacing = LineSpacing
     telepathyChoicecollectionViewLayout.minimumInteritemSpacing = SpacingMargin
     telepathyChoicecollectionViewLayout.sectionInset = UIEdgeInsets(top: insetMargin, left: insetMargin, bottom: insetMargin, right: insetMargin)
     
@@ -41,7 +42,7 @@ class TelepathyChoiceViewController: UIViewController {
     telepathyChoicecollectionView.dataSource = self
     telepathyChoicecollectionView.delegate = self
     telepathyChoicecollectionView.register(TelepathyChoiceCollectionCell.self, forCellWithReuseIdentifier: "ChoiceCustom")
-    
+        
     randomTexList = textList.shuffled()
   }
   
@@ -79,8 +80,31 @@ extension TelepathyChoiceViewController: UICollectionViewDataSource {
     telepathyChoicecollectionCell.clipsToBounds = true
     return telepathyChoicecollectionCell
   }
+  // MARK: - Motion
+  
+  override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+    if motion == .motionShake {
+      UIView.animateKeyframes(
+        withDuration: 1,
+        delay: 0,
+        options: .repeat,
+        animations:  {
+          UIView.addKeyframe(
+            withRelativeStartTime: 0,
+            relativeDuration: 0.5) {
+              self.telepathyChoicecollectionView.backgroundColor = UIColor(red: 92/255, green: 42/255, blue: 157/255, alpha: 1)
+              self.view.layoutIfNeeded()
+          }
+          UIView.addKeyframe(
+            withRelativeStartTime: 0.5,
+            relativeDuration: 0.5) {
+              self.telepathyChoicecollectionView.backgroundColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1)
+              self.view.layoutIfNeeded()
+          }
+      })
+    }
+  }
 }
-
 // MARK: - UICollectionViewDelegate
 
 extension TelepathyChoiceViewController: UICollectionViewDelegate {

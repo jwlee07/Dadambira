@@ -155,8 +155,6 @@ extension MainViewController: UICollectionViewDelegate {
     
     selectIndexPathArray.append(indexPath)
     
-    let cell = collectionView.cellForItem(at: indexPath) as! MainCollectionViewCell
-    
     switch titleData[indexPath.item] {
     case "텔레파시" :
       let vc = HitAndMissGameViewController()
