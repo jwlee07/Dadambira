@@ -251,6 +251,11 @@ extension MainViewController: UICollectionViewDelegate {
       let vc = TimeBombViewController()
       vc.modalPresentationStyle = .fullScreen
       navigationController?.pushViewController(vc, animated: true)
+        
+    case "낚시게임" :
+        let fishVC = LetsFishingViewController()
+        fishVC.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(fishVC, animated: true)
     default:
       print("잘못된 접근")
     }
