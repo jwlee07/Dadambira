@@ -37,6 +37,11 @@
 		D3876B3324A3138B00C48CB3 /* 파돌리기송.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3876B3124A3138B00C48CB3 /* 파돌리기송.mp3 */; };
 		D3876B3424A3138B00C48CB3 /* BOOM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3876B3224A3138B00C48CB3 /* BOOM.mp3 */; };
 		D3876B3624A313D100C48CB3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3876B3524A313D100C48CB3 /* Extension.swift */; };
+		D3A78F2624A5ACF000FCE80E /* LetsFishingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A78F2524A5ACF000FCE80E /* LetsFishingViewController.swift */; };
+		D3A78F2824A5AD0600FCE80E /* ArtWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A78F2724A5AD0600FCE80E /* ArtWork.swift */; };
+		D3A78F2A24A5AD1200FCE80E /* DookSumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A78F2924A5AD1200FCE80E /* DookSumViewController.swift */; };
+		D3A78F2C24A5AD2000FCE80E /* IncheonAirport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A78F2B24A5AD2000FCE80E /* IncheonAirport.swift */; };
+		D3A78F2E24A5AD2B00FCE80E /* GoogleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A78F2D24A5AD2B00FCE80E /* GoogleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +77,11 @@
 		D3876B3124A3138B00C48CB3 /* 파돌리기송.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "파돌리기송.mp3"; path = "../../../파돌리기송.mp3"; sourceTree = "<group>"; };
 		D3876B3224A3138B00C48CB3 /* BOOM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BOOM.mp3; path = ../../../BOOM.mp3; sourceTree = "<group>"; };
 		D3876B3524A313D100C48CB3 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		D3A78F2524A5ACF000FCE80E /* LetsFishingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsFishingViewController.swift; sourceTree = "<group>"; };
+		D3A78F2724A5AD0600FCE80E /* ArtWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWork.swift; sourceTree = "<group>"; };
+		D3A78F2924A5AD1200FCE80E /* DookSumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DookSumViewController.swift; sourceTree = "<group>"; };
+		D3A78F2B24A5AD2000FCE80E /* IncheonAirport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncheonAirport.swift; sourceTree = "<group>"; };
+		D3A78F2D24A5AD2B00FCE80E /* GoogleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +200,11 @@
 				D3488E7524A1F5F5001B44B4 /* PickerView.swift */,
 				D3876B3524A313D100C48CB3 /* Extension.swift */,
 				7302495C24A49A2A002AAA65 /* BombImage.pdf */,
+				D3A78F2524A5ACF000FCE80E /* LetsFishingViewController.swift */,
+				D3A78F2724A5AD0600FCE80E /* ArtWork.swift */,
+				D3A78F2924A5AD1200FCE80E /* DookSumViewController.swift */,
+				D3A78F2B24A5AD2000FCE80E /* IncheonAirport.swift */,
+				D3A78F2D24A5AD2B00FCE80E /* GoogleViewController.swift */,
 			);
 			path = GameList2;
 			sourceTree = "<group>";
@@ -279,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A78F2C24A5AD2000FCE80E /* IncheonAirport.swift in Sources */,
 				49B5AD4424A387720008E7D2 /* TelepathyChoice.swift in Sources */,
 				7302495324A497BA002AAA65 /* StartTableViewCell.swift in Sources */,
 				D3488E7224A1F5AD001B44B4 /* TimeBomb.swift in Sources */,
@@ -289,6 +305,8 @@
 				7302495724A497EB002AAA65 /* MainCollectionViewCell.swift in Sources */,
 				495B9D04249F5064009C5317 /* AppDelegate.swift in Sources */,
 				D3488E7424A1F5DC001B44B4 /* PickerTimeView.swift in Sources */,
+				D3A78F2E24A5AD2B00FCE80E /* GoogleViewController.swift in Sources */,
+				D3A78F2824A5AD0600FCE80E /* ArtWork.swift in Sources */,
 				492822DF24A097EF00D3ACB0 /* jwleeDATA.swift in Sources */,
 				492822E724A235BE00D3ACB0 /* TelepathyCell.swift in Sources */,
 				492822E524A21E4700D3ACB0 /* TelepathyGame.swift in Sources */,
@@ -296,8 +314,10 @@
 				7302494F24A4978F002AAA65 /* data.swift in Sources */,
 				492C8A6E24A503B500C9AD73 /* HitAndMissCustomView.swift in Sources */,
 				7302494D24A496E8002AAA65 /* LaunchAnimation.swift in Sources */,
+				D3A78F2624A5ACF000FCE80E /* LetsFishingViewController.swift in Sources */,
 				D3876B3624A313D100C48CB3 /* Extension.swift in Sources */,
 				492822E324A0A04000D3ACB0 /* HitAndMissCell.swift in Sources */,
+				D3A78F2A24A5AD1200FCE80E /* DookSumViewController.swift in Sources */,
 				D3488E7624A1F5F5001B44B4 /* PickerView.swift in Sources */,
 				495B9D3B249F6969009C5317 /* HitAndMissGame.swift in Sources */,
 				7302495524A497CF002AAA65 /* MainViewController.swift in Sources */,
@@ -445,13 +465,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 25WA95NQNW;
+				DEVELOPMENT_TEAM = LVLY4QRGC9;
 				INFOPLIST_FILE = DadambiraProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.DadambiraProject;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.ejdgudl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -463,13 +483,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 25WA95NQNW;
+				DEVELOPMENT_TEAM = LVLY4QRGC9;
 				INFOPLIST_FILE = DadambiraProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.DadambiraProject;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.ejdgudl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
