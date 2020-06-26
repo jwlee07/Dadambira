@@ -8,13 +8,19 @@
 
 import UIKit
 
+protocol StartViewControllerDelegate: class {
+  func handleDismiss()
+}
+
 class StartViewController: UIViewController {
   
+  weak var delegate: StartViewControllerDelegate?
   
   let topView = UIView()
   let tableView = UITableView()
   let topTitle = UILabel()
   let cancelButton = UIButton()
+  var ani = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,8 +49,11 @@ class StartViewController: UIViewController {
   }
   
   @objc func setupButton(_ sender: UIButton){
-       dismiss(animated: true)
-    
+    dismiss(animated: false, completion: {
+      
+      self.delegate?.handleDismiss()
+    })
+
   }
   
   func setupTableView() {
@@ -131,14 +140,14 @@ extension StartViewController: UITableViewDelegate {
       width: cell.frame.width/1.8, height: cell.frame.height/1.5)
     CustomCell.gameLable.lineBreakMode = .byClipping
     CustomCell.gameLable.numberOfLines = 5
-    CustomCell.gameLable.textColor = UIColor(red: 220/255, green: 214/255, blue: 247/255, alpha: 0.3)
+    CustomCell.gameLable.textColor = UIColor(red: 220/255, green: 214/255, blue: 247/255, alpha: 0.8)
     CustomCell.gameLable.font = UIFont.systemFont(ofSize: 15, weight: .light)
     CustomCell.gameLable.backgroundColor = .clear
     
     
     //게임제목
     CustomCell.gameTitle.frame = CGRect(x: cell.frame.width - 230, y: 10, width: cell.frame.width/1.8, height: cell.frame.height/4.5)
-    CustomCell.gameTitle.textColor = UIColor(red: 220/255, green: 214/255, blue: 247/255, alpha: 0.5)
+    CustomCell.gameTitle.textColor = UIColor(red: 220/255, green: 214/255, blue: 247/255, alpha: 1)
     CustomCell.gameTitle.font = UIFont.boldSystemFont(ofSize: 17)
     CustomCell.gameTitle.backgroundColor = .clear
     
@@ -146,11 +155,6 @@ extension StartViewController: UITableViewDelegate {
     
     CustomCell.configure(image: UIImage(named: images[indexPath.row]), title: titleData[indexPath.row], lable: labelData[indexPath.row])
   }
-  
-  
-  
-  
-  
   
 }
 

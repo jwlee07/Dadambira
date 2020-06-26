@@ -20,33 +20,56 @@ class ViewController: UIViewController {
     view.backgroundColor = .white
     
     
-    marqueeView = HorizontalMarqueeView.init(frame: CGRect.init(x: UIScreen.main.bounds.size.width/10, y: 370, width: UIScreen.main.bounds.size.width/1.2, height: 5))
+    marqueeView = HorizontalMarqueeView.init(frame: CGRect.init(x: UIScreen.main.bounds.size.width/10, y: 400, width: UIScreen.main.bounds.size.width/1.2, height: 5))
     self.view.addSubview(marqueeView)
-    
-//    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//      let vc = MainViewController()
-//      vc.modalPresentationStyle = .fullScreen
-//      self.present(vc, animated: true)
-//    }
-    
+
+
+   DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+
+        let startVC = StartViewController()
+    startVC.delegate = self
+        startVC.modalPresentationStyle = .fullScreen
+        self.present(startVC, animated: true)
+
+   }
     marqueeView.initBar()
-    seelpCount()
+    setupLaunchImage()
+    navigationClear()
+  
   }
-  
-  
-  func seelpCount(){
+  func setupLaunchImage(){
     
-    //  dismiss(animated: true)
-    //    UIView.animate(withDuration: <#T##TimeInterval#>,
-    //                   delay: <#T##TimeInterval#>,
-    //                   options: <#T##UIView.AnimationOptions#>,
-    //                   animations: <#T##() -> Void#>,
-    //                   completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+    let launchImage = UIImageView()
+    launchImage.image = UIImage(named: "Dadam4")
+    
+    view.addSubview(launchImage)
+    
+    launchImage.translatesAutoresizingMaskIntoConstraints = false
+    
+    launchImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 210).isActive = true
+    launchImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: view.frame.width/3).isActive = true
+    launchImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -(view.frame.width/3)).isActive = true
+    launchImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -470).isActive = true
+
   }
   
-  
+  func navigationClear(){
+    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    navigationController?.navigationBar.shadowImage = UIImage()
+    navigationController?.navigationBar.backgroundColor = UIColor.clear
   
 }
 
+}
+
+extension ViewController: StartViewControllerDelegate {
+  func handleDismiss() {
+    let MainVC = MainViewController()
+    let navi = UINavigationController(rootViewController: MainVC)
+    navi.modalPresentationStyle = .fullScreen
+    self.present(navi, animated: false)
+  }
+  
+}
 
 

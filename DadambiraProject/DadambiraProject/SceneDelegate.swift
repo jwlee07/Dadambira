@@ -19,10 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let navigationTeleparthyVC = UINavigationController(rootViewController: TelepathyInfoGameViewController())
     let telepathyVC = TelepathyGameViewController()
     let navigationMainViewVC = UINavigationController (rootViewController: MainViewController())
+    let navigationViewControllVC = UINavigationController(rootViewController: ViewController())
    
     window = UIWindow(windowScene: scene)
     window?.backgroundColor = .systemBackground
-    window?.rootViewController = navigationMainViewVC
+    window?.rootViewController = navigationViewControllVC
     window?.makeKeyAndVisible()
   }
 

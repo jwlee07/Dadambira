@@ -30,6 +30,8 @@ class StartTableViewCell: UITableViewCell {
 
   func setupCell() {
     
+    self.selectionStyle = .none
+
     gameImage.clipsToBounds = true
     gameTitle.clipsToBounds = true
     gameLable.clipsToBounds = true

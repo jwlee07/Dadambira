@@ -30,6 +30,7 @@
 		7302495A24A49829002AAA65 /* Cre쿨재즈M체.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7302495824A49828002AAA65 /* Cre쿨재즈M체.ttf */; };
 		7302495B24A49829002AAA65 /* Cre쿨재즈L.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7302495924A49829002AAA65 /* Cre쿨재즈L.ttf */; };
 		7302495D24A49A2A002AAA65 /* BombImage.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7302495C24A49A2A002AAA65 /* BombImage.pdf */; };
+		735A7B7E24A58AA3004303F0 /* AnimationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735A7B7D24A58AA3004303F0 /* AnimationUtility.swift */; };
 		D3488E7224A1F5AD001B44B4 /* TimeBomb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3488E7124A1F5AD001B44B4 /* TimeBomb.swift */; };
 		D3488E7424A1F5DC001B44B4 /* PickerTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3488E7324A1F5DC001B44B4 /* PickerTimeView.swift */; };
 		D3488E7624A1F5F5001B44B4 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3488E7524A1F5F5001B44B4 /* PickerView.swift */; };
@@ -64,6 +65,7 @@
 		7302495824A49828002AAA65 /* Cre쿨재즈M체.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cre쿨재즈M체.ttf"; sourceTree = "<group>"; };
 		7302495924A49829002AAA65 /* Cre쿨재즈L.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cre쿨재즈L.ttf"; sourceTree = "<group>"; };
 		7302495C24A49A2A002AAA65 /* BombImage.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = BombImage.pdf; path = ../../../BombImage.pdf; sourceTree = "<group>"; };
+		735A7B7D24A58AA3004303F0 /* AnimationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUtility.swift; sourceTree = "<group>"; };
 		D3488E7124A1F5AD001B44B4 /* TimeBomb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBomb.swift; sourceTree = "<group>"; };
 		D3488E7324A1F5DC001B44B4 /* PickerTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTimeView.swift; sourceTree = "<group>"; };
 		D3488E7524A1F5F5001B44B4 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				7302495024A497A6002AAA65 /* StartViewController.swift */,
 				7302495224A497BA002AAA65 /* StartTableViewCell.swift */,
 				7302495424A497CF002AAA65 /* MainViewController.swift */,
+				735A7B7D24A58AA3004303F0 /* AnimationUtility.swift */,
 				7302495624A497EB002AAA65 /* MainCollectionViewCell.swift */,
 				7302495924A49829002AAA65 /* Cre쿨재즈L.ttf */,
 				7302495824A49828002AAA65 /* Cre쿨재즈M체.ttf */,
@@ -263,6 +266,7 @@
 				495B9D04249F5064009C5317 /* AppDelegate.swift in Sources */,
 				D3488E7424A1F5DC001B44B4 /* PickerTimeView.swift in Sources */,
 				492822DF24A097EF00D3ACB0 /* jwleeDATA.swift in Sources */,
+				735A7B7E24A58AA3004303F0 /* AnimationUtility.swift in Sources */,
 				492822E724A235BE00D3ACB0 /* TelepathyCell.swift in Sources */,
 				492822E524A21E4700D3ACB0 /* TelepathyGame.swift in Sources */,
 				495B9D06249F5064009C5317 /* SceneDelegate.swift in Sources */,
