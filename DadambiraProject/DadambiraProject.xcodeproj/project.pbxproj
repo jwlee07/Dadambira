@@ -129,15 +129,9 @@
 		495B9D4124A040F4009C5317 /* GameList */ = {
 			isa = PBXGroup;
 			children = (
-				495B9D3A249F6969009C5317 /* HitAndMissGame.swift */,
-				492822E224A0A04000D3ACB0 /* HitAndMissCell.swift */,
-				492C8A6D24A503B500C9AD73 /* HitAndMissCustomView.swift */,
-				495B9D38249F68F7009C5317 /* TelepathyInfoGame.swift */,
-				492822E424A21E4700D3ACB0 /* TelepathyGame.swift */,
-				49B5AD4324A387720008E7D2 /* TelepathyChoice.swift */,
-				492822E624A235BD00D3ACB0 /* TelepathyCell.swift */,
-				49903F6024A3B38F0027845B /* TelepathyChoiceCollectionCell.swift */,
-				492822DE24A097EF00D3ACB0 /* jwleeDATA.swift */,
+				49BA2D6824A5A36F00363EF7 /* View */,
+				49BA2D6924A5A38700363EF7 /* Custom */,
+				49BA2D6A24A5A3A400363EF7 /* DATA */,
 			);
 			path = GameList;
 			sourceTree = "<group>";
@@ -156,6 +150,36 @@
 				7302495824A49828002AAA65 /* Cre쿨재즈M체.ttf */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		49BA2D6824A5A36F00363EF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				495B9D38249F68F7009C5317 /* TelepathyInfoGame.swift */,
+				492822E424A21E4700D3ACB0 /* TelepathyGame.swift */,
+				49B5AD4324A387720008E7D2 /* TelepathyChoice.swift */,
+				495B9D3A249F6969009C5317 /* HitAndMissGame.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49BA2D6924A5A38700363EF7 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				492822E624A235BD00D3ACB0 /* TelepathyCell.swift */,
+				49903F6024A3B38F0027845B /* TelepathyChoiceCollectionCell.swift */,
+				492822E224A0A04000D3ACB0 /* HitAndMissCell.swift */,
+				492C8A6D24A503B500C9AD73 /* HitAndMissCustomView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		49BA2D6A24A5A3A400363EF7 /* DATA */ = {
+			isa = PBXGroup;
+			children = (
+				492822DE24A097EF00D3ACB0 /* jwleeDATA.swift */,
+			);
+			path = DATA;
 			sourceTree = "<group>";
 		};
 		D3488E7024A1F577001B44B4 /* GameList2 */ = {
