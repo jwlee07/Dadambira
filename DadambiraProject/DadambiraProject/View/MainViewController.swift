@@ -11,7 +11,6 @@ import UIKit
 class MainViewController: UIViewController {
   
   let identifire = "MainViewController"
-  let cellBehind = UILabel()
   var push = true
   var selectIndexPathArray: IndexPath = []
   
@@ -34,9 +33,13 @@ class MainViewController: UIViewController {
   }
   
   func navigationClear(){
+    
+    title = "다댐비라"
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     navigationController?.navigationBar.shadowImage = UIImage()
     navigationController?.navigationBar.backgroundColor = UIColor.clear
+    self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 66/255, green: 72/255, blue: 116/255)]
+    self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "CreCjaL", size: 40)!]
   }
   
   
@@ -53,43 +56,19 @@ class MainViewController: UIViewController {
     collectionView.backgroundColor = .clear
     collectionView.dataSource = self
     collectionView.delegate = self
-    view.addSubview(cellBehind)
     view.addSubview(collectionView)
     
     collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "CollectionCell")
     
-    //다댐비라 레이블
-    let mainTitle = UILabel()
-    mainTitle.backgroundColor = UIColor(red: 244/255, green: 238/255, blue: 255/255, alpha: 1)
-    mainTitle.text = "다댐비라"
-    mainTitle.textAlignment = .center
-    mainTitle.textColor = UIColor(red: 66/255, green: 72/255, blue: 116/255, alpha: 1)
-    mainTitle.shadowColor = .black
-    mainTitle.font = UIFont(name: "CreCjaL", size: 40)
-    view.addSubview(mainTitle)
-    
-    
-    
+
     //레이아웃
     collectionView.translatesAutoresizingMaskIntoConstraints = false
-    mainTitle.translatesAutoresizingMaskIntoConstraints = false
-    cellBehind.translatesAutoresizingMaskIntoConstraints = false
     
-    cellBehind.topAnchor.constraint(equalTo: view.topAnchor, constant: 170).isActive = true
-    cellBehind.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 90).isActive = true
-    cellBehind.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 100).isActive = true
-    cellBehind.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -525).isActive = true
-    
-    collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant:  80).isActive = true
+    collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant:  20).isActive = true
     collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
     collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
     collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     
-    
-    mainTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-    mainTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-    mainTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    mainTitle.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -725).isActive = true
   }
   
   
@@ -105,9 +84,7 @@ extension MainViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
-    cellBehind.isHidden = true
-    
+        
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! MainCollectionViewCell
     
     if !cell.isAnimated {
@@ -139,7 +116,6 @@ extension MainViewController: UICollectionViewDataSource {
     let source = sourceIndexPath.item
     let destination = destinationIndexPath.item
     print("source: ", source, "dest: ", destination)
-    cellBehind.isHidden = true
   }
   
 }
@@ -151,10 +127,9 @@ extension MainViewController: UICollectionViewDelegate {
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     print(indexPath.item)
-    cellBehind.isHidden = true
     
     selectIndexPathArray.append(indexPath)
-    
+
     switch titleData[indexPath.item] {
     case "텔레파시" :
       let vc = HitAndMissGameViewController()

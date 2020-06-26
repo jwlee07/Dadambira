@@ -50,21 +50,14 @@ class StartTableViewCell: UITableViewCell {
     
  }
   
-  func startAnimation(){
-    
-  }
-  
-  
-  
+ 
   func configure(image: UIImage?, title: String, lable: String){
     gameImage.image = image
     gameTitle.text = title
     gameLable.text = lable
     
   }
-  
-
-  
+ 
   }
 
 

@@ -46,10 +46,10 @@ class ViewController: UIViewController {
     
     launchImage.translatesAutoresizingMaskIntoConstraints = false
     
-    launchImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 210).isActive = true
+    launchImage.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.width/2.8).isActive = true
     launchImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: view.frame.width/3).isActive = true
     launchImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -(view.frame.width/3)).isActive = true
-    launchImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -470).isActive = true
+    launchImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -(view.frame.width/0.7)).isActive = true
 
   }
   
