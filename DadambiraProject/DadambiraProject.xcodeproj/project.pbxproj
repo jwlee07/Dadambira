@@ -35,8 +35,6 @@
 		D3488E7224A1F5AD001B44B4 /* TimeBomb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3488E7124A1F5AD001B44B4 /* TimeBomb.swift */; };
 		D3488E7424A1F5DC001B44B4 /* PickerTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3488E7324A1F5DC001B44B4 /* PickerTimeView.swift */; };
 		D3488E7624A1F5F5001B44B4 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3488E7524A1F5F5001B44B4 /* PickerView.swift */; };
-		D3876B3324A3138B00C48CB3 /* 파돌리기송.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3876B3124A3138B00C48CB3 /* 파돌리기송.mp3 */; };
-		D3876B3424A3138B00C48CB3 /* BOOM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3876B3224A3138B00C48CB3 /* BOOM.mp3 */; };
 		D3876B3624A313D100C48CB3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3876B3524A313D100C48CB3 /* Extension.swift */; };
 		D3A78F2624A5ACF000FCE80E /* LetsFishingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A78F2524A5ACF000FCE80E /* LetsFishingViewController.swift */; };
 		D3A78F2824A5AD0600FCE80E /* ArtWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A78F2724A5AD0600FCE80E /* ArtWork.swift */; };
@@ -51,6 +49,8 @@
 		492822E424A21E4700D3ACB0 /* TelepathyGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyGame.swift; sourceTree = "<group>"; };
 		492822E624A235BD00D3ACB0 /* TelepathyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyCell.swift; sourceTree = "<group>"; };
 		492C8A6D24A503B500C9AD73 /* HitAndMissCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitAndMissCustomView.swift; sourceTree = "<group>"; };
+		4955506724A878F700DB0649 /* BOOM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BOOM.mp3; path = ../../../../../BOOM.mp3; sourceTree = "<group>"; };
+		4955506824A878F700DB0649 /* 파돌리기송.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "파돌리기송.mp3"; path = "../../../../../파돌리기송.mp3"; sourceTree = "<group>"; };
 		495B9D00249F5064009C5317 /* DadambiraProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DadambiraProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		495B9D03249F5064009C5317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		495B9D05249F5064009C5317 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,15 +69,13 @@
 		7302495224A497BA002AAA65 /* StartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTableViewCell.swift; sourceTree = "<group>"; };
 		7302495424A497CF002AAA65 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7302495624A497EB002AAA65 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
-		7302495824A49828002AAA65 /* Cre쿨재즈M체.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cre쿨재즈M체.ttf"; sourceTree = "<group>"; };
-		7302495924A49829002AAA65 /* Cre쿨재즈L.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cre쿨재즈L.ttf"; sourceTree = "<group>"; };
-		7302495C24A49A2A002AAA65 /* BombImage.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = BombImage.pdf; path = ../../../BombImage.pdf; sourceTree = "<group>"; };
+		7302495824A49828002AAA65 /* Cre쿨재즈M체.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cre쿨재즈M체.ttf"; path = "../View/Cre쿨재즈M체.ttf"; sourceTree = "<group>"; };
+		7302495924A49829002AAA65 /* Cre쿨재즈L.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cre쿨재즈L.ttf"; path = "../View/Cre쿨재즈L.ttf"; sourceTree = "<group>"; };
+		7302495C24A49A2A002AAA65 /* BombImage.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BombImage.pdf; sourceTree = "<group>"; };
 		735A7B7D24A58AA3004303F0 /* AnimationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUtility.swift; sourceTree = "<group>"; };
 		D3488E7124A1F5AD001B44B4 /* TimeBomb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBomb.swift; sourceTree = "<group>"; };
 		D3488E7324A1F5DC001B44B4 /* PickerTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTimeView.swift; sourceTree = "<group>"; };
 		D3488E7524A1F5F5001B44B4 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
-		D3876B3124A3138B00C48CB3 /* 파돌리기송.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "파돌리기송.mp3"; path = "../../../파돌리기송.mp3"; sourceTree = "<group>"; };
-		D3876B3224A3138B00C48CB3 /* BOOM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BOOM.mp3; path = ../../../BOOM.mp3; sourceTree = "<group>"; };
 		D3876B3524A313D100C48CB3 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		D3A78F2524A5ACF000FCE80E /* LetsFishingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsFishingViewController.swift; sourceTree = "<group>"; };
 		D3A78F2724A5AD0600FCE80E /* ArtWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWork.swift; sourceTree = "<group>"; };
@@ -97,6 +95,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4955506324A8785A00DB0649 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3A78F2524A5ACF000FCE80E /* LetsFishingViewController.swift */,
+				D3488E7524A1F5F5001B44B4 /* PickerView.swift */,
+				D3488E7324A1F5DC001B44B4 /* PickerTimeView.swift */,
+				D3488E7124A1F5AD001B44B4 /* TimeBomb.swift */,
+				D3A78F2D24A5AD2B00FCE80E /* GoogleViewController.swift */,
+				D3A78F2B24A5AD2000FCE80E /* IncheonAirport.swift */,
+				D3A78F2924A5AD1200FCE80E /* DookSumViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4955506424A8787700DB0649 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D3876B3524A313D100C48CB3 /* Extension.swift */,
+				D3A78F2724A5AD0600FCE80E /* ArtWork.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4955506624A878BF00DB0649 /* DATA */ = {
+			isa = PBXGroup;
+			children = (
+				7302494E24A4978F002AAA65 /* data.swift */,
+				7302495C24A49A2A002AAA65 /* BombImage.pdf */,
+				492822DE24A097EF00D3ACB0 /* jwleeDATA.swift */,
+				4955506824A878F700DB0649 /* 파돌리기송.mp3 */,
+				4955506724A878F700DB0649 /* BOOM.mp3 */,
+				7302495924A49829002AAA65 /* Cre쿨재즈L.ttf */,
+				7302495824A49828002AAA65 /* Cre쿨재즈M체.ttf */,
+			);
+			path = DATA;
+			sourceTree = "<group>";
+		};
+		4955506924A8799300DB0649 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7302495624A497EB002AAA65 /* MainCollectionViewCell.swift */,
+				7302495024A497A6002AAA65 /* StartViewController.swift */,
+				7302495224A497BA002AAA65 /* StartTableViewCell.swift */,
+				7302495424A497CF002AAA65 /* MainViewController.swift */,
+				495B9D07249F5064009C5317 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4955506A24A8799D00DB0649 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				735A7B7D24A58AA3004303F0 /* AnimationUtility.swift */,
+				7302494C24A496E8002AAA65 /* LaunchAnimation.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
 		495B9CF7249F5064009C5317 = {
 			isa = PBXGroup;
 			children = (
@@ -119,11 +175,11 @@
 				495B9D03249F5064009C5317 /* AppDelegate.swift */,
 				495B9D05249F5064009C5317 /* SceneDelegate.swift */,
 				495B9D11249F5066009C5317 /* Info.plist */,
+				495B9D3E249F6A95009C5317 /* supporting Files */,
 				495B9D4124A040F4009C5317 /* GameList */,
 				D3488E7024A1F577001B44B4 /* GameList2 */,
-				D3488E7924A1F618001B44B4 /* MP3File */,
-				49ACBA9524A04AB7004C2D88 /* View */,
-				495B9D3E249F6A95009C5317 /* supporting Files */,
+				49ACBA9524A04AB7004C2D88 /* StartVIew */,
+				4955506624A878BF00DB0649 /* DATA */,
 			);
 			path = DadambiraProject;
 			sourceTree = "<group>";
@@ -143,26 +199,17 @@
 			children = (
 				49BA2D6824A5A36F00363EF7 /* View */,
 				49BA2D6924A5A38700363EF7 /* Custom */,
-				49BA2D6A24A5A3A400363EF7 /* DATA */,
 			);
 			path = GameList;
 			sourceTree = "<group>";
 		};
-		49ACBA9524A04AB7004C2D88 /* View */ = {
+		49ACBA9524A04AB7004C2D88 /* StartVIew */ = {
 			isa = PBXGroup;
 			children = (
-				495B9D07249F5064009C5317 /* ViewController.swift */,
-				7302494C24A496E8002AAA65 /* LaunchAnimation.swift */,
-				7302494E24A4978F002AAA65 /* data.swift */,
-				7302495024A497A6002AAA65 /* StartViewController.swift */,
-				7302495224A497BA002AAA65 /* StartTableViewCell.swift */,
-				7302495424A497CF002AAA65 /* MainViewController.swift */,
-				735A7B7D24A58AA3004303F0 /* AnimationUtility.swift */,
-				7302495624A497EB002AAA65 /* MainCollectionViewCell.swift */,
-				7302495924A49829002AAA65 /* Cre쿨재즈L.ttf */,
-				7302495824A49828002AAA65 /* Cre쿨재즈M체.ttf */,
+				4955506A24A8799D00DB0649 /* Animation */,
+				4955506924A8799300DB0649 /* View */,
 			);
-			path = View;
+			path = StartVIew;
 			sourceTree = "<group>";
 		};
 		49BA2D6824A5A36F00363EF7 /* View */ = {
@@ -187,38 +234,13 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
-		49BA2D6A24A5A3A400363EF7 /* DATA */ = {
-			isa = PBXGroup;
-			children = (
-				492822DE24A097EF00D3ACB0 /* jwleeDATA.swift */,
-			);
-			path = DATA;
-			sourceTree = "<group>";
-		};
 		D3488E7024A1F577001B44B4 /* GameList2 */ = {
 			isa = PBXGroup;
 			children = (
-				D3488E7124A1F5AD001B44B4 /* TimeBomb.swift */,
-				D3488E7324A1F5DC001B44B4 /* PickerTimeView.swift */,
-				D3488E7524A1F5F5001B44B4 /* PickerView.swift */,
-				D3876B3524A313D100C48CB3 /* Extension.swift */,
-				7302495C24A49A2A002AAA65 /* BombImage.pdf */,
-				D3A78F2524A5ACF000FCE80E /* LetsFishingViewController.swift */,
-				D3A78F2724A5AD0600FCE80E /* ArtWork.swift */,
-				D3A78F2924A5AD1200FCE80E /* DookSumViewController.swift */,
-				D3A78F2B24A5AD2000FCE80E /* IncheonAirport.swift */,
-				D3A78F2D24A5AD2B00FCE80E /* GoogleViewController.swift */,
+				4955506424A8787700DB0649 /* Extension */,
+				4955506324A8785A00DB0649 /* View */,
 			);
 			path = GameList2;
-			sourceTree = "<group>";
-		};
-		D3488E7924A1F618001B44B4 /* MP3File */ = {
-			isa = PBXGroup;
-			children = (
-				D3876B3124A3138B00C48CB3 /* 파돌리기송.mp3 */,
-				D3876B3224A3138B00C48CB3 /* BOOM.mp3 */,
-			);
-			path = MP3File;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,10 +301,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3876B3324A3138B00C48CB3 /* 파돌리기송.mp3 in Resources */,
 				7302495B24A49829002AAA65 /* Cre쿨재즈L.ttf in Resources */,
 				495B9D10249F5066009C5317 /* LaunchScreen.storyboard in Resources */,
-				D3876B3424A3138B00C48CB3 /* BOOM.mp3 in Resources */,
 				495B9D0D249F5066009C5317 /* Assets.xcassets in Resources */,
 				495B9D0B249F5064009C5317 /* Main.storyboard in Resources */,
 				7302495A24A49829002AAA65 /* Cre쿨재즈M체.ttf in Resources */,
