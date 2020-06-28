@@ -9,7 +9,7 @@
 import UIKit
 
 class StartTableViewCell: UITableViewCell {
-
+  
   let identfire = "TableCell"
   
   let gameImage = UIImageView()
@@ -19,7 +19,7 @@ class StartTableViewCell: UITableViewCell {
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-  
+    
     setupCell()
   }
   
@@ -27,11 +27,11 @@ class StartTableViewCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
-
+  
   func setupCell() {
     
     self.selectionStyle = .none
-
+    
     gameImage.clipsToBounds = true
     gameTitle.clipsToBounds = true
     gameLable.clipsToBounds = true
@@ -47,18 +47,14 @@ class StartTableViewCell: UITableViewCell {
     //게임설명
     gameLable.contentMode = .left
     contentView.addSubview(gameLable)
-    
- }
+  }
   
- 
   func configure(image: UIImage?, title: String, lable: String){
     gameImage.image = image
     gameTitle.text = title
     gameLable.text = lable
-    
   }
- 
-  }
+}
 
 
 

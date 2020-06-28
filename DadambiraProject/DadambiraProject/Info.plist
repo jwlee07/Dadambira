@@ -23,10 +23,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Always and When In Use</string>
 	<key>UIAppFonts</key>
-	<array>
-		<string>Cre쿨재즈L.ttf</string>
-		<string>Cre쿨재즈M체.ttf</string>
-	</array>
+	<array/>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

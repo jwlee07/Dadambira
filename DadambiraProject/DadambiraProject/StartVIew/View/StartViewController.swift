@@ -50,10 +50,9 @@ class StartViewController: UIViewController {
   
   @objc func setupButton(_ sender: UIButton){
     dismiss(animated: false, completion: {
-      
       self.delegate?.handleDismiss()
     })
-
+    
   }
   
   func setupTableView() {
@@ -102,8 +101,8 @@ class StartViewController: UIViewController {
     cancelButton.trailingAnchor.constraint(equalTo: topView.trailingAnchor).isActive = true
     
   }
-
-
+  
+  
 }
 
 
@@ -151,11 +150,8 @@ extension StartViewController: UITableViewDelegate {
     CustomCell.gameTitle.font = UIFont.boldSystemFont(ofSize: 17)
     CustomCell.gameTitle.backgroundColor = .clear
     
-    
-    
     CustomCell.configure(image: UIImage(named: images[indexPath.row]), title: titleData[indexPath.row], lable: labelData[indexPath.row])
   }
-  
 }
 
 

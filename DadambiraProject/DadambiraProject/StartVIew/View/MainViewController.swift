@@ -39,7 +39,7 @@ class MainViewController: UIViewController {
     navigationController?.navigationBar.shadowImage = UIImage()
     navigationController?.navigationBar.backgroundColor = UIColor.clear
     self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 66/255, green: 72/255, blue: 116/255)]
-//    self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "CreCjaL", size: 40)!]
+    //    self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "CreCjaL", size: 40)!]
   }
   
   
@@ -60,7 +60,7 @@ class MainViewController: UIViewController {
     
     collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "CollectionCell")
     
-
+    
     //레이아웃
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     
@@ -84,7 +84,7 @@ extension MainViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+    
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! MainCollectionViewCell
     
     if !cell.isAnimated {
@@ -129,14 +129,12 @@ extension MainViewController: UICollectionViewDelegate {
     print(indexPath.item)
     
     selectIndexPathArray.append(indexPath)
-
+    
     switch titleData[indexPath.item] {
     case "텔레파시" :
       let vc = HitAndMissGameViewController()
-      //let nv = UINavigationController(rootViewController: vc)
       vc.modalPresentationStyle = .fullScreen
       navigationController?.pushViewController(vc, animated: true)
-      //present(vc, animated: true)
       
     case "복불복" :
       let vc = TelepathyInfoGameViewController()
@@ -148,11 +146,12 @@ extension MainViewController: UICollectionViewDelegate {
       let vc = TimeBombViewController()
       vc.modalPresentationStyle = .fullScreen
       navigationController?.pushViewController(vc, animated: true)
-        
+      
     case "낚시게임" :
-        let fishVC = LetsFishingViewController()
-        fishVC.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(fishVC, animated: true)
+      let fishVC = LetsFishingViewController()
+      fishVC.modalPresentationStyle = .fullScreen
+      navigationController?.pushViewController(fishVC, animated: true)
+      
     default:
       print("잘못된 접근")
     }

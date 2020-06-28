@@ -22,20 +22,20 @@ class ViewController: UIViewController {
     
     marqueeView = HorizontalMarqueeView.init(frame: CGRect.init(x: UIScreen.main.bounds.size.width/10, y: 400, width: UIScreen.main.bounds.size.width/1.2, height: 5))
     self.view.addSubview(marqueeView)
-
-
-   DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-
-        let startVC = StartViewController()
-    startVC.delegate = self
-        startVC.modalPresentationStyle = .fullScreen
-        self.present(startVC, animated: true)
-
-   }
+    
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+      
+      let startVC = StartViewController()
+      startVC.delegate = self
+      startVC.modalPresentationStyle = .fullScreen
+      self.present(startVC, animated: true)
+      
+    }
     marqueeView.initBar()
     setupLaunchImage()
     navigationClear()
-  
+    
   }
   func setupLaunchImage(){
     
@@ -51,16 +51,16 @@ class ViewController: UIViewController {
     launchImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: view.frame.width/3).isActive = true
     launchImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -(view.frame.width/3)).isActive = true
     launchImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -(view.frame.width/3)).isActive = true
-
+    
   }
   
   func navigationClear(){
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     navigationController?.navigationBar.shadowImage = UIImage()
     navigationController?.navigationBar.backgroundColor = UIColor.clear
+    
+  }
   
-}
-
 }
 
 extension ViewController: StartViewControllerDelegate {
