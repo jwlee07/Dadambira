@@ -21,7 +21,7 @@ import UIKit
 
 // MARK: - StartViewController
 
-var images = ["1","복불복_Main","3","4-2","5"]
+var images = ["1","2","3","4-2","5"]
 var titleData = ["텔레파시","복불복","받아라 폭탄","낚시게임","준비 중"]
 
 var labelData = [
