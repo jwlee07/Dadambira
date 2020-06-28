@@ -59,7 +59,7 @@ class TimeBombViewController: UIViewController {
   private var gameStratButton: UIButton = {
     let gameStratButton = UIButton()
     gameStratButton.setTitle("게임시작", for: .normal)
-    gameStratButton.titleLabel?.font =  UIFont(name: "CreCjaL", size: 40)
+//    gameStratButton.titleLabel?.font =  UIFont(name: "CreCjaL", size: 40)
     gameStratButton.setTitleColor(UIColor.white, for: .normal)
     gameStratButton.addTarget(self, action: #selector(didTapStartButton), for: .touchUpInside)
     return gameStratButton

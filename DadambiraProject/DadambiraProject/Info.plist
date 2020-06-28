@@ -25,7 +25,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Cre쿨재즈L.ttf</string>
-		<string>Cre쿨재즈M.ttf</string>
+		<string>Cre쿨재즈M체.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
