@@ -16,11 +16,10 @@ class MainCollectionViewCell: UICollectionViewCell {
   let mainTitleImage = UIImageView()
   let titlteLable = UILabel()
   var isAnimated = false
-
+  
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemnted")
-    
   }
   
   override init(frame: CGRect){
@@ -34,70 +33,55 @@ class MainCollectionViewCell: UICollectionViewCell {
   private func setupView(){
     mainImageView.clipsToBounds = true
     mainTitleImage.clipsToBounds = true
-    // layer.cornerRadius = 10
     
-    
-    //쉐도우
-    let shadowPath2 = UIBezierPath(rect: bounds)
-    layer.masksToBounds = false
-    layer.shadowColor = UIColor.black.cgColor
-    layer.shadowOffset = CGSize(width: CGFloat(2.0), height: CGFloat(3.0))
-    layer.shadowOpacity = 0.6
-    layer.shadowRadius = 4
-    layer.shadowPath = shadowPath2.cgPath
-    
-    
-    
-    //메인이미지
-    mainImageView.contentMode = .scaleAspectFill
-    contentView.addSubview(mainImageView)
-    //메인타이틀 이미지
-    mainTitleImage.contentMode = .scaleAspectFill
-    contentView.addSubview(mainTitleImage)
-    
-    //타이틀레이블
-    //244, 238, 255
-    titlteLable.textAlignment = .left
-    titlteLable.textColor = UIColor(red: 244/255, green: 238/255, blue: 255/255, alpha: 1)
-    // titlteLable.font = .preferredFont(forTextStlye: .headline)
-    contentView.addSubview(titlteLable)
-    
-    
+    // Shadow
+//    let shadowPath2 = UIBezierPath(rect: bounds)
+//    layer.masksToBounds = false
+//    layer.shadowColor = UIColor(red: 66/255, green: 72/255, blue: 116/255, alpha: 0.5).cgColor
+//    layer.shadowOffset = CGSize(width: CGFloat(2.0), height: CGFloat(3.0))
+//    layer.shadowOpacity = 0.6
+//    layer.shadowRadius = 4
+//    layer.shadowPath = shadowPath2.cgPath
   }
   
-  //레이아웃
+  // Layout
   func setupConstraints() {
     [mainImageView,mainTitleImage,titlteLable].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
+      contentView.addSubview($0)
     }
     
-    mainImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-    mainImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-    mainImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-    mainTitleImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+    let contentViewWidth = contentView.frame.width
+    let contetViewHeight = contentView.frame.height
+    let contentMargin: CGFloat = 10
     
-    
-    mainTitleImage.topAnchor.constraint(equalTo: mainImageView.topAnchor, constant: 120).isActive = true
-    mainTitleImage.leadingAnchor.constraint(equalTo: mainImageView.leadingAnchor).isActive = true
-    mainTitleImage.trailingAnchor.constraint(equalTo: mainImageView.trailingAnchor).isActive = true
-    mainTitleImage.bottomAnchor.constraint(equalTo: mainImageView.bottomAnchor).isActive = true
-    
-    
-    titlteLable.topAnchor.constraint(equalTo: mainTitleImage.topAnchor, constant: 130).isActive = true
-    titlteLable.leadingAnchor.constraint(equalTo: mainTitleImage.leadingAnchor, constant: 10).isActive = true
-    titlteLable.trailingAnchor.constraint(equalTo: mainTitleImage.trailingAnchor).isActive = true
-    titlteLable.bottomAnchor.constraint(equalTo: mainTitleImage.bottomAnchor).isActive = true
-
-    
+    NSLayoutConstraint.activate([
+      mainImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
+      mainImageView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor),
+      mainImageView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor),
+      mainTitleImage.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor),
+      
+      mainTitleImage.topAnchor.constraint(equalTo: mainImageView.safeAreaLayoutGuide.topAnchor),
+      mainTitleImage.leadingAnchor.constraint(equalTo: mainImageView.safeAreaLayoutGuide.leadingAnchor),
+      mainTitleImage.trailingAnchor.constraint(equalTo: mainImageView.safeAreaLayoutGuide.trailingAnchor),
+      mainTitleImage.bottomAnchor.constraint(equalTo: mainImageView.safeAreaLayoutGuide.bottomAnchor),
+      
+      titlteLable.topAnchor.constraint(equalTo: mainImageView.safeAreaLayoutGuide.topAnchor, constant: contetViewHeight / 1.1),
+      titlteLable.leadingAnchor.constraint(equalTo: mainTitleImage.leadingAnchor, constant: contentViewWidth / 4),
+      titlteLable.trailingAnchor.constraint(equalTo: mainTitleImage.trailingAnchor, constant: -(contentViewWidth / 4)),
+      titlteLable.bottomAnchor.constraint(equalTo: mainTitleImage.bottomAnchor, constant: -contentMargin),
+    ])
+    mainImageView.contentMode = .scaleAspectFill
+    mainTitleImage.contentMode = .scaleAspectFill
+    titlteLable.textAlignment = .center
+    titlteLable.textColor = UIColor(red: 244/255, green: 238/255, blue: 255/255, alpha: 1)
   }
-  
   
   func configure(image: UIImage?, title: String){
     mainImageView.image = image
     mainTitleImage.image = image
     titlteLable.text = title
   }
-  
 }
 
 

@@ -129,11 +129,11 @@
 		4955506924A8799300DB0649 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7302495624A497EB002AAA65 /* MainCollectionViewCell.swift */,
+				495B9D07249F5064009C5317 /* ViewController.swift */,
 				7302495024A497A6002AAA65 /* StartViewController.swift */,
 				7302495224A497BA002AAA65 /* StartTableViewCell.swift */,
+				7302495624A497EB002AAA65 /* MainCollectionViewCell.swift */,
 				7302495424A497CF002AAA65 /* MainViewController.swift */,
-				495B9D07249F5064009C5317 /* ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,11 +169,10 @@
 				495B9D03249F5064009C5317 /* AppDelegate.swift */,
 				495B9D05249F5064009C5317 /* SceneDelegate.swift */,
 				495B9D11249F5066009C5317 /* Info.plist */,
-				49BF943B24A88447000F3DB3 /* View */,
 				495B9D3E249F6A95009C5317 /* supporting Files */,
+				49ACBA9524A04AB7004C2D88 /* StartVIew */,
 				495B9D4124A040F4009C5317 /* GameList */,
 				D3488E7024A1F577001B44B4 /* GameList2 */,
-				49ACBA9524A04AB7004C2D88 /* StartVIew */,
 				4955506624A878BF00DB0649 /* DATA */,
 			);
 			path = DadambiraProject;
@@ -227,13 +226,6 @@
 				49903F6024A3B38F0027845B /* TelepathyChoiceCollectionCell.swift */,
 			);
 			path = Custom;
-			sourceTree = "<group>";
-		};
-		49BF943B24A88447000F3DB3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		D3488E7024A1F577001B44B4 /* GameList2 */ = {

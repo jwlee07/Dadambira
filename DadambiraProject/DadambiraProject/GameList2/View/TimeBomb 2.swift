@@ -16,8 +16,8 @@ var soundEffect: AVAudioPlayer?
 class TimeBombViewController: UIViewController {
   
   // MARK: Properties
-//  let url = Bundle.main.url(forResource: "파돌리기송", withExtension: "mp3")!
-//  let url2 = Bundle.main.url(forResource: "BOOM", withExtension: "mp3")!
+  let url = Bundle.main.url(forResource: "파돌리기송", withExtension: "mp3")!
+  let url2 = Bundle.main.url(forResource: "BOOM", withExtension: "mp3")!
   
   var timer = Timer()
   
@@ -101,27 +101,27 @@ class TimeBombViewController: UIViewController {
   }
   
   // MARK: Helpers
-//  private func playTheSong() {
-//    do {
-//      soundEffect = try AVAudioPlayer(contentsOf: url)
-//      guard let sound = soundEffect else { return }
-//      sound.prepareToPlay()
-//      sound.play()
-//    }catch let error {
-//      print(error.localizedDescription)
-//    }
-//  }
-//
-//  private func playTheSong2() {
-//    do {
-//      soundEffect = try AVAudioPlayer(contentsOf: url2)
-//      guard let sound = soundEffect else { return }
-//      sound.prepareToPlay()
-//      sound.play()
-//    }catch let error {
-//      print(error.localizedDescription)
-//    }
-//  }
+  private func playTheSong() {
+    do {
+      soundEffect = try AVAudioPlayer(contentsOf: url)
+      guard let sound = soundEffect else { return }
+      sound.prepareToPlay()
+      sound.play()
+    }catch let error {
+      print(error.localizedDescription)
+    }
+  }
+  
+  private func playTheSong2() {
+    do {
+      soundEffect = try AVAudioPlayer(contentsOf: url2)
+      guard let sound = soundEffect else { return }
+      sound.prepareToPlay()
+      sound.play()
+    }catch let error {
+      print(error.localizedDescription)
+    }
+  }
   
   
   
@@ -253,7 +253,7 @@ class TimeBombViewController: UIViewController {
   // MARK: @Objc
   @objc func didTapStartButton() {
     
-//    playTheSong()
+    playTheSong()
     gameStratButton.isEnabled = false
     
     UIView.animate(withDuration: 0.5) {
@@ -339,16 +339,16 @@ class TimeBombViewController: UIViewController {
       if time % 10 == 0 {
         UIView.animateKeyframes(withDuration: 0.3, delay: 0, animations: {
           UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.4, animations: {
-            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(Double.pi / 2))
+            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(M_PI_2))
           })
           UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
-            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(Double.pi / 2))
+            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(M_PI_2))
           })
           UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5, animations: {
-            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(Double.pi / 2))
+            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(M_PI_2))
           })
           UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.6, animations: {
-            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(Double.pi / 2))
+            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(M_PI_2))
           })
         })
       }
@@ -368,7 +368,7 @@ class TimeBombViewController: UIViewController {
         
         
         soundEffect?.stop()
-//        playTheSong2()
+        playTheSong2()
         timeLimitStop()
         UIView.animate(withDuration: 1.5) {
           self.imageView.alpha = 1

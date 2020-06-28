@@ -10,104 +10,123 @@ import UIKit
 
 class MainViewController: UIViewController {
   
+  // MARK: - Property
+  
   let identifire = "MainViewController"
   var push = true
   var selectIndexPathArray: IndexPath = []
   
-  let layout: UICollectionViewFlowLayout = {
-    let t = UICollectionViewFlowLayout()
-    t.itemSize = CGSize(width: 164 , height: 300)
-    t.minimumLineSpacing = 16
-    t.minimumInteritemSpacing = 0
-    t.sectionInset = UIEdgeInsets(top: 26, left: 16, bottom: 30, right: 16)
-    return t
+  let collectionMargin: CGFloat = 75
+  let titleMargin: CGFloat = 15
+  
+  let titleLabel: UILabel = {
+    let label = UILabel()
+    label.text = "게임목록"
+    label.textAlignment = .center
+    label.textColor = UIColor(red: 66/255, green: 72/255, blue: 116/255, alpha: 1)
+    label.font = UIFont.boldSystemFont(ofSize: 25)
+    return label
   }()
   
-  lazy var collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layour)
+  lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layour)
   let layour = UICollectionViewFlowLayout()
+  
+  // MARK: -  LifeCycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationClear()
     setupCollectionView()
-    
   }
+  
+  // MARK: - Setup Layout
   
   func navigationClear(){
     
-    title = "다댐비라"
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     navigationController?.navigationBar.shadowImage = UIImage()
     navigationController?.navigationBar.backgroundColor = UIColor.clear
     self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 66/255, green: 72/255, blue: 116/255)]
-    //    self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "CreCjaL", size: 40)!]
   }
-  
-  
+
   func setupCollectionView() {
+    let viewWidth = view.frame.width
+    let viewHeight = view.frame.height
+    let lineSpacingMargin: CGFloat = 15
+    let interItemSpacingMargin: CGFloat = 0
+    let InsetMargin: CGFloat = 15
     
-    layour.itemSize = CGSize(width: 176 , height: 300)
-    layour.minimumLineSpacing = 16
-    layour.minimumInteritemSpacing = 8
-    layour.sectionInset = UIEdgeInsets(top: 26, left: 20, bottom: 30, right: 20)
     
+    [collectionView, titleLabel].forEach {
+      view.addSubview($0)
+      $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    layour.itemSize = CGSize(width: viewWidth / 2.3  , height: viewHeight / 3)
+    layour.minimumLineSpacing = lineSpacingMargin
+    layour.minimumInteritemSpacing = interItemSpacingMargin
+    layour.sectionInset = UIEdgeInsets(top: InsetMargin, left: InsetMargin, bottom: InsetMargin, right: InsetMargin)
     
-    //컬렉션뷰
-    super.view.backgroundColor = UIColor(red: 244/255, green: 238/255, blue: 255/255, alpha: 1)
+    // CollectionView
+    // 220, 214, 247
+    super.view.backgroundColor = UIColor(red: 220/255, green: 214/255, blue: 247/255, alpha: 1)
     collectionView.backgroundColor = .clear
     collectionView.dataSource = self
     collectionView.delegate = self
-    view.addSubview(collectionView)
     
     collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "CollectionCell")
     
     
-    //레이아웃
-    collectionView.translatesAutoresizingMaskIntoConstraints = false
-    
-    collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant:  20).isActive = true
-    collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-    collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-    collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-    
+    // Layout
+    NSLayoutConstraint.activate([
+      titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: titleMargin),
+      titleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: viewWidth / 3),
+      titleLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -viewWidth / 3),
+      
+      collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant:  collectionMargin),
+      collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+      collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+      collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+    ])
   }
-  
-  
 }
 
 
-// MARK: UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 
 extension MainViewController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    4
+    images.count
   }
-  
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! MainCollectionViewCell
-    
     if !cell.isAnimated {
-      
-      UIView.animate(withDuration: 0.5, delay: 0.5 * Double(indexPath.row), usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: indexPath.row % 2 == 0 ? .transitionFlipFromLeft : .transitionFlipFromRight, animations: {
-        
+      UIView.animate(
+        withDuration: 0.5,
+        delay: 0.5 * Double(indexPath.row),
+        usingSpringWithDamping: 1,
+        initialSpringVelocity: 0.5,
+        options: indexPath.row % 2 == 0 ? .transitionFlipFromLeft : .transitionFlipFromRight,
+        animations: {
         if indexPath.row % 2 == 0 {
           AnimationUtility.viewSlideInFromLeft(toRight: cell)
         }
         else {
           AnimationUtility.viewSlideInFromRight(toLeft: cell)
         }
-        
       }, completion: { (done) in
         cell.isAnimated = true
       })
     }
-    
     cell.backgroundColor = .clear
     cell.mainImageView.image = UIImage(named: images[indexPath.item])
-    cell.mainTitleImage.image = UIImage(named: "cardShadow")
+    cell.mainImageView.contentMode = .scaleToFill
+    cell.mainTitleImage.image = UIImage(named: "cardShadow")?.withTintColor(UIColor(red: 32/255, green: 32/255, blue: 96/255, alpha: 0.7))
     cell.titlteLable.text = titleData[indexPath.item]
-    
+    cell.tintColor = UIColor(red: 66/255, green: 72/255, blue: 116/255, alpha: 1)
+    cell.layer.cornerRadius = 15
+    cell.layer.shadowRadius = 15
+    cell.clipsToBounds = true
     return cell
   }
   
@@ -117,40 +136,36 @@ extension MainViewController: UICollectionViewDataSource {
     let destination = destinationIndexPath.item
     print("source: ", source, "dest: ", destination)
   }
-  
 }
 
+//MARK: - UICollectionViewDelegate
 
-
-//MARK: -UICollectionViewDelegate
 extension MainViewController: UICollectionViewDelegate {
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    print(indexPath.item)
-    
     selectIndexPathArray.append(indexPath)
     
     switch titleData[indexPath.item] {
     case "텔레파시" :
-      let vc = HitAndMissGameViewController()
-      vc.modalPresentationStyle = .fullScreen
-      navigationController?.pushViewController(vc, animated: true)
+      let HitAndMissGameVC = HitAndMissGameViewController()
+      HitAndMissGameVC.modalPresentationStyle = .fullScreen
+      navigationController?.pushViewController(HitAndMissGameVC, animated: true)
       
     case "복불복" :
-      let vc = TelepathyInfoGameViewController()
-      vc.modalPresentationStyle = .fullScreen
-      navigationController?.pushViewController(vc, animated: true)
+      let TelepathyInfoGameVC = TelepathyInfoGameViewController()
+      TelepathyInfoGameVC.modalPresentationStyle = .fullScreen
+      navigationController?.pushViewController(TelepathyInfoGameVC, animated: true)
       
       
     case "받아라 폭탄" :
-      let vc = TimeBombViewController()
-      vc.modalPresentationStyle = .fullScreen
-      navigationController?.pushViewController(vc, animated: true)
+      let TimeBombVC = TimeBombViewController()
+      TimeBombVC.modalPresentationStyle = .fullScreen
+      navigationController?.pushViewController(TimeBombVC, animated: true)
       
     case "낚시게임" :
-      let fishVC = LetsFishingViewController()
-      fishVC.modalPresentationStyle = .fullScreen
-      navigationController?.pushViewController(fishVC, animated: true)
+      let LetsFishingVC = LetsFishingViewController()
+      LetsFishingVC.modalPresentationStyle = .fullScreen
+      navigationController?.pushViewController(LetsFishingVC, animated: true)
       
     default:
       print("잘못된 접근")
