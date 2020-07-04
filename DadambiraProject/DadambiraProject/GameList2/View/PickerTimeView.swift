@@ -22,7 +22,7 @@ class PickerTimeView: UIView {
     
     private var nextButton: UIButton = {
         let nextButton = UIButton()
-        nextButton.setTitle("Next", for: .normal)
+        nextButton.setTitle("다음", for: .normal)
         nextButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         return nextButton
     }()
@@ -46,7 +46,7 @@ class PickerTimeView: UIView {
     
     // MARK: Configure View Components
     private func configureViewComponents() {
-        backgroundColor = UIColor(rgb: 0x484c7f)
+        backgroundColor = UIColor(red: 158/255, green: 169/255, blue: 240/255, alpha: 1)
         transform = CGAffineTransform.identity
         
         addSubview(nextButton)
@@ -69,7 +69,7 @@ class PickerTimeView: UIView {
             /// 시간 설정후 PickerTimeView.alph = 0
             UIView.animate(withDuration: 1.7, animations: {
               
-                self.alpha = 0
+                self.alpha = 1
                 self.transform = CGAffineTransform(scaleX: -50, y: -50)
             })
         }else {

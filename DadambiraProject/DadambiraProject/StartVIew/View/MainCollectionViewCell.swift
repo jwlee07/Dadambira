@@ -34,14 +34,6 @@ class MainCollectionViewCell: UICollectionViewCell {
     mainImageView.clipsToBounds = true
     mainTitleImage.clipsToBounds = true
     
-    // Shadow
-//    let shadowPath2 = UIBezierPath(rect: bounds)
-//    layer.masksToBounds = false
-//    layer.shadowColor = UIColor(red: 66/255, green: 72/255, blue: 116/255, alpha: 0.5).cgColor
-//    layer.shadowOffset = CGSize(width: CGFloat(2.0), height: CGFloat(3.0))
-//    layer.shadowOpacity = 0.6
-//    layer.shadowRadius = 4
-//    layer.shadowPath = shadowPath2.cgPath
   }
   
   // Layout

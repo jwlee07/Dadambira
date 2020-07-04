@@ -68,6 +68,7 @@ class MainViewController: UIViewController {
     
     // CollectionView
     // 220, 214, 247
+    // UIColor(red: 158/255, green: 169/255, blue: 240/255, alpha: 1)
     super.view.backgroundColor = UIColor(red: 220/255, green: 214/255, blue: 247/255, alpha: 1)
     collectionView.backgroundColor = .clear
     collectionView.dataSource = self
@@ -158,9 +159,9 @@ extension MainViewController: UICollectionViewDelegate {
       
       
     case "받아라 폭탄" :
-      let TimeBombVC = TimeBombViewController()
-      TimeBombVC.modalPresentationStyle = .fullScreen
-      navigationController?.pushViewController(TimeBombVC, animated: true)
+      let TimeBombInfoVC = TimeBombInfoViewController()
+      TimeBombInfoVC.modalPresentationStyle = .fullScreen
+      navigationController?.pushViewController(TimeBombInfoVC, animated: true)
       
     case "낚시게임" :
       let LetsFishingVC = LetsFishingViewController()
