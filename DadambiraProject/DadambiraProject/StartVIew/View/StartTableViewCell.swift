@@ -17,6 +17,7 @@ class StartTableViewCell: UITableViewCell {
   let gameLable = UILabel()
   
   
+  
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     
@@ -30,23 +31,53 @@ class StartTableViewCell: UITableViewCell {
   
   func setupCell() {
     
+    let margin: CGFloat = 10
+    let contentViewWidth = contentView.frame.width
+    let contentViewHeight = contentView.frame.height
     self.selectionStyle = .none
     
-    gameImage.clipsToBounds = true
-    gameTitle.clipsToBounds = true
-    gameLable.clipsToBounds = true
+    [gameImage, gameTitle, gameLable].forEach {
+      $0.clipsToBounds = true
+      contentView.addSubview($0)
+      $0.translatesAutoresizingMaskIntoConstraints = false
+    }
     
-    //게임이미지
-    gameImage.contentMode = .scaleAspectFill
-    contentView.addSubview(gameImage)
+    NSLayoutConstraint.activate([
+      gameImage.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: margin),
+      gameImage.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: margin),
+      gameImage.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -(contentViewWidth / 1.25)),
+      gameImage.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -margin),
+      
+      gameTitle.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: margin),
+      gameTitle.leadingAnchor.constraint(equalTo: gameImage.safeAreaLayoutGuide.trailingAnchor, constant: margin),
+      gameTitle.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -margin),
+      gameTitle.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -(contentViewHeight * 2.4)),
+      
+      gameLable.topAnchor.constraint(equalTo: gameTitle.safeAreaLayoutGuide.bottomAnchor),
+      gameLable.leadingAnchor.constraint(equalTo: gameImage.safeAreaLayoutGuide.trailingAnchor, constant: margin),
+      gameLable.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -margin),
+      gameLable.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -margin)
+    ])
     
-    //게임이름
-    gameTitle.contentMode = .center
-    contentView.addSubview(gameTitle)
+    // gameImage
+    gameImage.contentMode = .scaleToFill
+    gameImage.layer.cornerRadius = 15
+
+    // gameTitle
+    gameTitle.contentMode = .top
+    gameTitle.textColor = .white
+    gameTitle.font = UIFont.boldSystemFont(ofSize: 15)
+    gameTitle.backgroundColor = .clear
+
     
-    //게임설명
+    // gameLable
     gameLable.contentMode = .left
-    contentView.addSubview(gameLable)
+    gameLable.lineBreakMode = .byClipping
+    gameLable.numberOfLines = 5
+    gameLable.textColor = .white
+    gameLable.font = UIFont.systemFont(ofSize: 15, weight: .light)
+    gameLable.backgroundColor = .clear
+
   }
   
   func configure(image: UIImage?, title: String, lable: String){

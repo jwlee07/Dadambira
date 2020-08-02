@@ -22,6 +22,7 @@
 		495B9D3B249F6969009C5317 /* HitAndMissGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9D3A249F6969009C5317 /* HitAndMissGame.swift */; };
 		49903F6124A3B38F0027845B /* TelepathyChoiceCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49903F6024A3B38F0027845B /* TelepathyChoiceCollectionCell.swift */; };
 		49B5AD4424A387720008E7D2 /* TelepathyChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5AD4324A387720008E7D2 /* TelepathyChoice.swift */; };
+		49B5B39524B0896300B29191 /* TimeBombInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5B39424B0896300B29191 /* TimeBombInfoViewController.swift */; };
 		7302494D24A496E8002AAA65 /* LaunchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302494C24A496E8002AAA65 /* LaunchAnimation.swift */; };
 		7302494F24A4978F002AAA65 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302494E24A4978F002AAA65 /* data.swift */; };
 		7302495124A497A6002AAA65 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302495024A497A6002AAA65 /* StartViewController.swift */; };
@@ -61,6 +62,7 @@
 		495B9D3A249F6969009C5317 /* HitAndMissGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitAndMissGame.swift; sourceTree = "<group>"; };
 		49903F6024A3B38F0027845B /* TelepathyChoiceCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyChoiceCollectionCell.swift; sourceTree = "<group>"; };
 		49B5AD4324A387720008E7D2 /* TelepathyChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelepathyChoice.swift; sourceTree = "<group>"; };
+		49B5B39424B0896300B29191 /* TimeBombInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBombInfoViewController.swift; sourceTree = "<group>"; };
 		7302494C24A496E8002AAA65 /* LaunchAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimation.swift; sourceTree = "<group>"; };
 		7302494E24A4978F002AAA65 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		7302495024A497A6002AAA65 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -94,10 +96,11 @@
 		4955506324A8785A00DB0649 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D3A78F2524A5ACF000FCE80E /* LetsFishingViewController.swift */,
+				49B5B39424B0896300B29191 /* TimeBombInfoViewController.swift */,
+				D3488E7124A1F5AD001B44B4 /* TimeBomb.swift */,
 				D3488E7524A1F5F5001B44B4 /* PickerView.swift */,
 				D3488E7324A1F5DC001B44B4 /* PickerTimeView.swift */,
-				D3488E7124A1F5AD001B44B4 /* TimeBomb.swift */,
+				D3A78F2524A5ACF000FCE80E /* LetsFishingViewController.swift */,
 				D3A78F2D24A5AD2B00FCE80E /* GoogleViewController.swift */,
 				D3A78F2B24A5AD2000FCE80E /* IncheonAirport.swift */,
 				D3A78F2924A5AD1200FCE80E /* DookSumViewController.swift */,
@@ -129,11 +132,11 @@
 		4955506924A8799300DB0649 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7302495624A497EB002AAA65 /* MainCollectionViewCell.swift */,
+				495B9D07249F5064009C5317 /* ViewController.swift */,
 				7302495024A497A6002AAA65 /* StartViewController.swift */,
 				7302495224A497BA002AAA65 /* StartTableViewCell.swift */,
+				7302495624A497EB002AAA65 /* MainCollectionViewCell.swift */,
 				7302495424A497CF002AAA65 /* MainViewController.swift */,
-				495B9D07249F5064009C5317 /* ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,11 +172,10 @@
 				495B9D03249F5064009C5317 /* AppDelegate.swift */,
 				495B9D05249F5064009C5317 /* SceneDelegate.swift */,
 				495B9D11249F5066009C5317 /* Info.plist */,
-				49BF943B24A88447000F3DB3 /* View */,
 				495B9D3E249F6A95009C5317 /* supporting Files */,
+				49ACBA9524A04AB7004C2D88 /* StartVIew */,
 				495B9D4124A040F4009C5317 /* GameList */,
 				D3488E7024A1F577001B44B4 /* GameList2 */,
-				49ACBA9524A04AB7004C2D88 /* StartVIew */,
 				4955506624A878BF00DB0649 /* DATA */,
 			);
 			path = DadambiraProject;
@@ -227,13 +229,6 @@
 				49903F6024A3B38F0027845B /* TelepathyChoiceCollectionCell.swift */,
 			);
 			path = Custom;
-			sourceTree = "<group>";
-		};
-		49BF943B24A88447000F3DB3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		D3488E7024A1F577001B44B4 /* GameList2 */ = {
@@ -322,6 +317,7 @@
 				7302495324A497BA002AAA65 /* StartTableViewCell.swift in Sources */,
 				D3488E7224A1F5AD001B44B4 /* TimeBomb.swift in Sources */,
 				495B9D39249F68F7009C5317 /* TelepathyInfoGame.swift in Sources */,
+				49B5B39524B0896300B29191 /* TimeBombInfoViewController.swift in Sources */,
 				495B9D08249F5064009C5317 /* ViewController.swift in Sources */,
 				49903F6124A3B38F0027845B /* TelepathyChoiceCollectionCell.swift in Sources */,
 				7302495124A497A6002AAA65 /* StartViewController.swift in Sources */,

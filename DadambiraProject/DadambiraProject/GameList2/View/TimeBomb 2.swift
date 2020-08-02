@@ -15,7 +15,9 @@ var soundEffect: AVAudioPlayer?
 
 class TimeBombViewController: UIViewController {
   
-  // MARK: - Property
+  // MARK: Properties
+  let url = Bundle.main.url(forResource: "파돌리기송", withExtension: "mp3")!
+  let url2 = Bundle.main.url(forResource: "BOOM", withExtension: "mp3")!
   
   var timer = Timer()
   
@@ -32,6 +34,8 @@ class TimeBombViewController: UIViewController {
     return image!
   }()
   
+  
+  
   var myLabel: UILabel = {
     let myLabel = UILabel()
     myLabel.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
@@ -41,9 +45,9 @@ class TimeBombViewController: UIViewController {
   
   var choiceTime: UILabel = {
     var choiceTime = UILabel()
-    choiceTime.text = ""
+    choiceTime.text = "30"
     choiceTime.textColor = .white
-    choiceTime.font = UIFont.boldSystemFont(ofSize: 75)
+    choiceTime.font = UIFont.boldSystemFont(ofSize: 100)
     return choiceTime
   }()
   
@@ -55,6 +59,7 @@ class TimeBombViewController: UIViewController {
   private var gameStratButton: UIButton = {
     let gameStratButton = UIButton()
     gameStratButton.setTitle("게임시작", for: .normal)
+//    gameStratButton.titleLabel?.font =  UIFont(name: "CreCjaL", size: 40)
     gameStratButton.setTitleColor(UIColor.white, for: .normal)
     gameStratButton.addTarget(self, action: #selector(didTapStartButton), for: .touchUpInside)
     return gameStratButton
@@ -62,7 +67,7 @@ class TimeBombViewController: UIViewController {
   
   private var reStratButton: UIButton = {
     let gameStratButton = UIButton()
-    gameStratButton.setTitle("한번 더", for: .normal)
+    gameStratButton.setTitle("한번 더ㅎㅎ", for: .normal)
     gameStratButton.setTitleColor(UIColor.white, for: .normal)
     gameStratButton.addTarget(self, action: #selector(didTapReStartButton), for: .touchUpInside)
     return gameStratButton
@@ -79,11 +84,11 @@ class TimeBombViewController: UIViewController {
   
   func setupNavigationBar() {
     //166, 177, 225
-    
+
     
     let leftDismissButton = UIBarButtonItem (image: UIImage(systemName: "arrowshape.turn.up.left.fill"), style: .plain, target: self, action: #selector(didTapDismissButton))
     
-    leftDismissButton.tintColor = UIColor(red: 66/255, green: 72/255, blue: 116/255, alpha: 1.0)
+    leftDismissButton.tintColor = UIColor(red: 166/255, green: 177/255, blue: 225/255, alpha: 1)
     navigationItem.leftBarButtonItem = leftDismissButton
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     navigationController?.navigationBar.shadowImage = UIImage()
@@ -94,6 +99,30 @@ class TimeBombViewController: UIViewController {
     navigationController?.popViewController(animated: true)
     soundEffect?.stop()
   }
+  
+  // MARK: Helpers
+  private func playTheSong() {
+    do {
+      soundEffect = try AVAudioPlayer(contentsOf: url)
+      guard let sound = soundEffect else { return }
+      sound.prepareToPlay()
+      sound.play()
+    }catch let error {
+      print(error.localizedDescription)
+    }
+  }
+  
+  private func playTheSong2() {
+    do {
+      soundEffect = try AVAudioPlayer(contentsOf: url2)
+      guard let sound = soundEffect else { return }
+      sound.prepareToPlay()
+      sound.play()
+    }catch let error {
+      print(error.localizedDescription)
+    }
+  }
+  
   
   
   private func timeLimitStart() {
@@ -183,8 +212,7 @@ class TimeBombViewController: UIViewController {
   private func configureViewComponents() {
     view.addSubview(myLabel)
     
-    // 158, 169, 240
-    view.backgroundColor = UIColor(red: 158/255, green: 169/255, blue: 240/255, alpha: 1)
+    view.backgroundColor = UIColor(rgb: 0x484c7f)
     
     view.addSubview(choiceTime)
     choiceTime.translatesAutoresizingMaskIntoConstraints = false
@@ -218,7 +246,6 @@ class TimeBombViewController: UIViewController {
     pickerTimeView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     pickerTimeView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
     pickerTimeView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
-    pickerTimeView.alpha = 0
     
     
   }
@@ -226,11 +253,14 @@ class TimeBombViewController: UIViewController {
   // MARK: @Objc
   @objc func didTapStartButton() {
     
-    //    playTheSong()
+    playTheSong()
     gameStratButton.isEnabled = false
+    
     UIView.animate(withDuration: 0.5) {
       self.view.backgroundColor = .black
+      
     }
+    
     UIView.animate(withDuration: 0.5) {
       self.choiceTime.alpha = 0
     }
@@ -244,6 +274,7 @@ class TimeBombViewController: UIViewController {
     
     
     UIView.animate(withDuration: 0.3) {
+      //            self.gameStratButton.center.y += 330
       self.gameStratButton.center.x += 330
     }
     
@@ -308,16 +339,16 @@ class TimeBombViewController: UIViewController {
       if time % 10 == 0 {
         UIView.animateKeyframes(withDuration: 0.3, delay: 0, animations: {
           UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.4, animations: {
-            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(Double.pi / 2))
+            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(M_PI_2))
           })
           UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
-            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(Double.pi / 2))
+            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(M_PI_2))
           })
           UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5, animations: {
-            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(Double.pi / 2))
+            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(M_PI_2))
           })
           UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.6, animations: {
-            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(Double.pi / 2))
+            self.imageView.transform = self.imageView.transform.rotated(by: CGFloat(M_PI_2))
           })
         })
       }
@@ -337,7 +368,7 @@ class TimeBombViewController: UIViewController {
         
         
         soundEffect?.stop()
-        //        playTheSong2()
+        playTheSong2()
         timeLimitStop()
         UIView.animate(withDuration: 1.5) {
           self.imageView.alpha = 1
@@ -369,5 +400,20 @@ class TimeBombViewController: UIViewController {
     }else {
       timeLimitStop()
     }
+  }
+}
+
+// MARK: Extension
+/// 16진수 사용을 위한 Extension
+extension UIView {
+  var parentViewController: UIViewController? {
+    var responder: UIResponder? = self
+    while let nextResponder = responder?.next {
+      responder = nextResponder
+      if let vc = nextResponder as? UIViewController {
+        return vc
+      }
+    }
+    return nil
   }
 }
