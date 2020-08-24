@@ -9,7 +9,7 @@
 
 ## 텔레파시
 
-<img src = "https://github.com/jwlee07/Dadambira/blob/develop/Images/%ED%85%94%EB%A0%88%ED%8C%8C%EC%8B%9C_1.png" width = "200" height = "400" />    <img src = "https://github.com/jwlee07/Dadambira/blob/develop/Images/%ED%85%94%EB%A0%88%ED%8C%8C%EC%8B%9C_2.png" width = "200" height = "400" />    <img src = "https://github.com/jwlee07/Dadambira/blob/develop/Images/%ED%85%94%EB%A0%88%ED%8C%8C%EC%8B%9C_3.png" width = "200" height = "400" />    <img src = "https://github.com/jwlee07/Dadambira/blob/develop/Images/%ED%85%94%EB%A0%88%ED%8C%8C%EC%8B%9C_4.png" width = "200" height = "400" />    <img src = "https://github.com/jwlee07/Dadambira/blob/develop/Images/%ED%85%94%EB%A0%88%ED%8C%8C%EC%8B%9C_5.png" width = "200" height = "400" />
+<img src = "https://github.com/jwlee07/Dadambira/blob/develop/Images/%ED%85%94%EB%A0%88%ED%8C%8C%EC%8B%9C_1.png" width = "200" height = "400" />    <img src = "https://github.com/jwlee07/Dadambira/blob/develop/Images/%ED%85%94%EB%A0%88%ED%8C%8C%EC%8B%9C_2.png" width = "200" height = "400" />    <img src = "https://github.com/jwlee07/Dadambira/blob/develop/Images/%ED%85%94%EB%A0%88%ED%8C%8C%EC%8B%9C_3.png" width = "200" height = "400" />    <img src = "https://github.com/jwlee07/Dadambira/blob/develop/Images/%ED%85%94%EB%A0%88%ED%8C%8C%EC%8B%9C_4.png" width = "200" height = "400" />
 
 
 
